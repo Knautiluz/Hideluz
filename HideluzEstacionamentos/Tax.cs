@@ -17,10 +17,15 @@ namespace HideluzEstacionamentos
             // constructor
         }
 
-        public double CalculateTax(double PricePerHour, TimeSpan EntryTime, TimeSpan DepartureTime)
+        public double CalculateTax(double PricePerHour, DateTime EntryTime, DateTime DepartureTime)
         {
             // lógica do método
-            return 0.1;
+            var hours = DepartureTime.Hour - EntryTime.Hour;
+            var minutes = DepartureTime.Minute - EntryTime.Minute;
+            double total = ((hours * 60) + minutes) / 60;
+            Math.Ceiling(total);
+            var totaltax = PricePerHour * total;
+            return totaltax;
         }
     }
 }
