@@ -8,3 +8,13 @@ C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionament
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csproj.CoreCompileInputs.cache
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.exe
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.pdb
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\bin\Debug\HideluzEstacionamentos.exe.config
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\bin\Debug\HideluzEstacionamentos.exe
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\bin\Debug\HideluzEstacionamentos.pdb
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csprojResolveAssemblyReference.cache
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.FormMain.resources
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.Properties.Resources.resources
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csproj.GenerateResource.Cache
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csproj.CoreCompileInputs.cache
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.exe
+C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.pdb
