@@ -22,9 +22,15 @@ namespace HideluzEstacionamentos
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Splash Splash = new Splash();
+            Splash.Show();
             if(Login.Verify(TextBoxUser.Text, TextBoxPass.Text))
             {
+                Splash.Hide();
                 MessageBox.Show("Usuário aceito.");
+                FormLogged formLogged = new FormLogged();
+                formLogged.Show();
             }
         }
     }

@@ -18,3 +18,7 @@ C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\Hideluz
 C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csproj.CoreCompileInputs.cache
 C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.exe
 C:\Users\Mateus\Desktop\PIM2018\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.pdb
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.Splash.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.FormLogged.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterVehicle.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterClient.resources

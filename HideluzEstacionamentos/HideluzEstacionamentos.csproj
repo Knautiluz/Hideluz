@@ -47,6 +47,12 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="FormLogged.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogged.Designer.cs">
+      <DependentUpon>FormLogged.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,8 +63,29 @@
     <Compile Include="Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterClient.Designer.cs">
+      <DependentUpon>RegisterClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterVehicle.Designer.cs">
+      <DependentUpon>RegisterVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tax.cs" />
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="FormLogged.resx">
+      <DependentUpon>FormLogged.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,7 +97,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegisterClient.resx">
+      <DependentUpon>RegisterClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterVehicle.resx">
+      <DependentUpon>RegisterVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

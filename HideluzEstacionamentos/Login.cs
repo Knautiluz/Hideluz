@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HideluzEstacionamentos
@@ -13,6 +14,7 @@ namespace HideluzEstacionamentos
 
         public bool Verify(string u, string p)
         {
+            Thread.Sleep(8000);
             //implementar verificação no SGBD
             if(true)
             {
