@@ -27,8 +27,8 @@ namespace HideluzEstacionamentos
             Splash.Show();
             if(Login.Verify(TextBoxUser.Text, TextBoxPass.Text))
             {
-                Splash.Hide();
                 MessageBox.Show("Usuário aceito.");
+                Splash.Close();
                 FormLogged formLogged = new FormLogged();
                 formLogged.Show();
             }

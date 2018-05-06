@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
-    public partial class RegisterClient : Form
+    public partial class ModifyClient : Form
     {
         Client Client = new Client();
         Address ClientAddress = new Address();
-        public RegisterClient()
+        public ModifyClient()
         {
             InitializeComponent();
         }
 
-        private void SignupBtn_Click(object sender, EventArgs e)
+        private void ChangeBtn_Click(object sender, EventArgs e)
         {
-            if (ClientNameTextBox.Text == "" || ClientDocumentTextBox.Text == "" || ClientStateTextBox.Text == "" || ClientCityTextBox.Text == "" || ClientStreetNumberTextBox.Text == "" || ClientCepTextBox.Text == "")
-            {
-                MessageBox.Show("Preencha todos os campos para completar o cadastro. E-mail não obrigatório.", "Existem campos obrigatórios vazios.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             Client.Name = ClientNameTextBox.Text;
             Client.Document = ClientDocumentTextBox.Text;
             Client.Email = ClientEmailTextBox.Text;
@@ -38,8 +33,8 @@ namespace HideluzEstacionamentos
             ClientAddress.Cep = ClientCepTextBox.Text;
             Client.Address = ClientAddress;
             // cadastrar cliente no banco.
-            FormLogged.Operator.AddClient(Client, FormLogged.Operator.EmployeeRegistry);
-            ResultLabel.Text = "Cadastro efetuado com sucesso.";
+            FormLogged.Operator.ModifyClient(Client, FormLogged.Operator.EmployeeRegistry);
+            ResultLabel.Text = "Cliente alterado.";
         }
     }
 }

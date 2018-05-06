@@ -13,72 +13,108 @@ namespace HideluzEstacionamentos
         public string Email { get; set; }
         Address Address = new Address();
 
-        public Operator()
+        public Operator(string employeeRegistry, string name, string email, Address address = null)
         {
-            // constructor
+            EmployeeRegistry = employeeRegistry;
+            Name = name;
+            Email = email;
+            Address = address;
         }
 
-        public void AddClient(string Document, string Name, Address Address, string Email, string Type)
-        {
-            // method logic
-        }
-
-        public void AddVehicle(string LicencePlate, string Model, string Type, string OwnerDocument)
+        public void AddClient(Client client, string operatorId)
         {
             // method logic
         }
 
-        public void AddTax(double PricePerHour, string Type)
+        public void AddVehicle(Vehicle vehicle, string operatorId)
         {
             // method logic
         }
 
-        public void ModifyClient(string Document)
+        public void AddTax(Tax tax)
         {
             // method logic
         }
 
-        public void ModifyVehicle(string LicencePlate)
+        public void ModifyClient(Client client, string operatorId)
+        {
+            /*---------------------*/
+            // search for client in SGBD
+            /*---------------------*/
+            if(client.Name != null)
+            {
+                // change in SGBD
+            }
+            if (client.Address != null)
+            {
+                // change in SGBD
+            }
+            if (client.Email != null)
+            {
+                // change in SGBD
+            }
+            if (client.Type != null)
+            {
+                // change in SGBD
+            }
+
+        }
+
+        public void ModifyVehicle(Vehicle vehicle, string operatorId)
+        {
+            /*---------------------*/
+            // search for client in SGBD
+            /*---------------------*/
+            if (vehicle.Model != null)
+            {
+                // change in SGBD
+            }
+            if (vehicle.Type != null)
+            {
+                // change in SGBD
+            }
+            if (vehicle.OwnerDocument != null)
+            {
+                // change in SGBD
+            }
+        }
+
+        public void ModifyTax(Tax tax, string operatorId)
         {
             // method logic
         }
 
-        public void ModifyTax()
-        {
-            // method logic
-        }
-
-        public bool DeleteClient(string Document)
+        public bool DeleteClient(string document)
         {
             // method logic
             return true;
         }
 
-        public bool DeleteVehicle(string LicencePlate)
+        public bool DeleteVehicle(string licencePlate)
         {
             // method logic
             return true;
         }
 
-        public bool DeleteTax(string Id)
+        public bool DeleteTax(string id)
         {
             // method logic
             return true;
         }
 
-        public string SearchClient(string Document)
+        public string SearchClient(string document)
         {
             // method logic
             return "Cliente";
         }
 
-        public string SearchVehicle(string LicencePlate)
+        public string SearchVehicle(string licencePlate)
         {
             // method logic
             return "Veículo";
         }
 
-        public string SearchTax(string ID)
+        public string SearchTax(string id)
         {
             // method logic
             return "Tarifa";

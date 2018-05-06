@@ -1,6 +1,6 @@
 ﻿namespace HideluzEstacionamentos
 {
-    partial class RegisterVehicle
+    partial class ModifyVehicle
     {
         /// <summary>
         /// Required designer variable.
@@ -28,53 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.VehiclePlateTextBox = new System.Windows.Forms.TextBox();
-            this.VehicleModelTextBox = new System.Windows.Forms.TextBox();
-            this.VehicleTypeTextBox = new System.Windows.Forms.TextBox();
-            this.VehicleDocumentTextBox = new System.Windows.Forms.TextBox();
             this.VehiclePanel = new System.Windows.Forms.Panel();
             this.ResultLabel = new System.Windows.Forms.Label();
-            this.SignupBtn = new System.Windows.Forms.Button();
             this.DocumentLabel = new System.Windows.Forms.Label();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.ModelLabel = new System.Windows.Forms.Label();
             this.PlateLabel = new System.Windows.Forms.Label();
+            this.VehiclePlateTextBox = new System.Windows.Forms.TextBox();
+            this.VehicleDocumentTextBox = new System.Windows.Forms.TextBox();
+            this.VehicleModelTextBox = new System.Windows.Forms.TextBox();
+            this.VehicleTypeTextBox = new System.Windows.Forms.TextBox();
+            this.TipLabel = new System.Windows.Forms.Label();
+            this.ChangeBtn = new System.Windows.Forms.Button();
             this.VehiclePanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // VehiclePlateTextBox
-            // 
-            this.VehiclePlateTextBox.Location = new System.Drawing.Point(66, 29);
-            this.VehiclePlateTextBox.Name = "VehiclePlateTextBox";
-            this.VehiclePlateTextBox.Size = new System.Drawing.Size(100, 20);
-            this.VehiclePlateTextBox.TabIndex = 0;
-            // 
-            // VehicleModelTextBox
-            // 
-            this.VehicleModelTextBox.Location = new System.Drawing.Point(66, 68);
-            this.VehicleModelTextBox.Name = "VehicleModelTextBox";
-            this.VehicleModelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.VehicleModelTextBox.TabIndex = 1;
-            // 
-            // VehicleTypeTextBox
-            // 
-            this.VehicleTypeTextBox.Location = new System.Drawing.Point(66, 107);
-            this.VehicleTypeTextBox.Name = "VehicleTypeTextBox";
-            this.VehicleTypeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.VehicleTypeTextBox.TabIndex = 2;
-            // 
-            // VehicleDocumentTextBox
-            // 
-            this.VehicleDocumentTextBox.Location = new System.Drawing.Point(66, 146);
-            this.VehicleDocumentTextBox.Name = "VehicleDocumentTextBox";
-            this.VehicleDocumentTextBox.Size = new System.Drawing.Size(100, 20);
-            this.VehicleDocumentTextBox.TabIndex = 3;
             // 
             // VehiclePanel
             // 
             this.VehiclePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VehiclePanel.Controls.Add(this.ChangeBtn);
             this.VehiclePanel.Controls.Add(this.ResultLabel);
-            this.VehiclePanel.Controls.Add(this.SignupBtn);
             this.VehiclePanel.Controls.Add(this.DocumentLabel);
             this.VehiclePanel.Controls.Add(this.TypeLabel);
             this.VehiclePanel.Controls.Add(this.ModelLabel);
@@ -83,10 +56,10 @@
             this.VehiclePanel.Controls.Add(this.VehicleDocumentTextBox);
             this.VehiclePanel.Controls.Add(this.VehicleModelTextBox);
             this.VehiclePanel.Controls.Add(this.VehicleTypeTextBox);
-            this.VehiclePanel.Location = new System.Drawing.Point(295, 102);
+            this.VehiclePanel.Location = new System.Drawing.Point(277, 101);
             this.VehiclePanel.Name = "VehiclePanel";
             this.VehiclePanel.Size = new System.Drawing.Size(232, 248);
-            this.VehiclePanel.TabIndex = 4;
+            this.VehiclePanel.TabIndex = 5;
             // 
             // ResultLabel
             // 
@@ -96,16 +69,6 @@
             this.ResultLabel.Size = new System.Drawing.Size(100, 17);
             this.ResultLabel.TabIndex = 9;
             this.ResultLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // SignupBtn
-            // 
-            this.SignupBtn.Location = new System.Drawing.Point(66, 172);
-            this.SignupBtn.Name = "SignupBtn";
-            this.SignupBtn.Size = new System.Drawing.Size(100, 23);
-            this.SignupBtn.TabIndex = 8;
-            this.SignupBtn.Text = "Cadastrar";
-            this.SignupBtn.UseVisualStyleBackColor = true;
-            this.SignupBtn.Click += new System.EventHandler(this.SignupBtn_Click);
             // 
             // DocumentLabel
             // 
@@ -143,14 +106,62 @@
             this.PlateLabel.Text = "Placa";
             this.PlateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // RegisterVehicle
+            // VehiclePlateTextBox
+            // 
+            this.VehiclePlateTextBox.Location = new System.Drawing.Point(66, 29);
+            this.VehiclePlateTextBox.Name = "VehiclePlateTextBox";
+            this.VehiclePlateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.VehiclePlateTextBox.TabIndex = 0;
+            // 
+            // VehicleDocumentTextBox
+            // 
+            this.VehicleDocumentTextBox.Location = new System.Drawing.Point(66, 146);
+            this.VehicleDocumentTextBox.Name = "VehicleDocumentTextBox";
+            this.VehicleDocumentTextBox.Size = new System.Drawing.Size(100, 20);
+            this.VehicleDocumentTextBox.TabIndex = 3;
+            // 
+            // VehicleModelTextBox
+            // 
+            this.VehicleModelTextBox.Location = new System.Drawing.Point(66, 68);
+            this.VehicleModelTextBox.Name = "VehicleModelTextBox";
+            this.VehicleModelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.VehicleModelTextBox.TabIndex = 1;
+            // 
+            // VehicleTypeTextBox
+            // 
+            this.VehicleTypeTextBox.Location = new System.Drawing.Point(66, 107);
+            this.VehicleTypeTextBox.Name = "VehicleTypeTextBox";
+            this.VehicleTypeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.VehicleTypeTextBox.TabIndex = 2;
+            // 
+            // TipLabel
+            // 
+            this.TipLabel.Location = new System.Drawing.Point(274, 85);
+            this.TipLabel.Name = "TipLabel";
+            this.TipLabel.Size = new System.Drawing.Size(235, 13);
+            this.TipLabel.TabIndex = 8;
+            this.TipLabel.Text = "Preencha os campos que deseja alterar.";
+            this.TipLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // ChangeBtn
+            // 
+            this.ChangeBtn.Location = new System.Drawing.Point(66, 172);
+            this.ChangeBtn.Name = "ChangeBtn";
+            this.ChangeBtn.Size = new System.Drawing.Size(100, 23);
+            this.ChangeBtn.TabIndex = 10;
+            this.ChangeBtn.Text = "Alterar";
+            this.ChangeBtn.UseVisualStyleBackColor = true;
+            this.ChangeBtn.Click += new System.EventHandler(this.ChangeBtn_Click);
+            // 
+            // ModifyVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TipLabel);
             this.Controls.Add(this.VehiclePanel);
-            this.Name = "RegisterVehicle";
-            this.Text = "RegisterVehicle";
+            this.Name = "ModifyVehicle";
+            this.Text = "ModifyVehicle";
             this.VehiclePanel.ResumeLayout(false);
             this.VehiclePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -159,16 +170,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox VehiclePlateTextBox;
-        private System.Windows.Forms.TextBox VehicleModelTextBox;
-        private System.Windows.Forms.TextBox VehicleTypeTextBox;
-        private System.Windows.Forms.TextBox VehicleDocumentTextBox;
         private System.Windows.Forms.Panel VehiclePanel;
-        private System.Windows.Forms.Label PlateLabel;
+        private System.Windows.Forms.Label ResultLabel;
         private System.Windows.Forms.Label DocumentLabel;
         private System.Windows.Forms.Label TypeLabel;
         private System.Windows.Forms.Label ModelLabel;
-        private System.Windows.Forms.Button SignupBtn;
-        private System.Windows.Forms.Label ResultLabel;
+        private System.Windows.Forms.Label PlateLabel;
+        private System.Windows.Forms.TextBox VehiclePlateTextBox;
+        private System.Windows.Forms.TextBox VehicleDocumentTextBox;
+        private System.Windows.Forms.TextBox VehicleModelTextBox;
+        private System.Windows.Forms.TextBox VehicleTypeTextBox;
+        private System.Windows.Forms.Label TipLabel;
+        private System.Windows.Forms.Button ChangeBtn;
     }
 }

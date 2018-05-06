@@ -14,8 +14,8 @@ namespace HideluzEstacionamentos
 
         public bool Verify(string u, string p)
         {
-            Thread.Sleep(8000);
-            //implementar verificação no SGBD
+            Thread.Sleep(2000); // pra testar a tela de splash
+            // implementar verificação no SGBD
             if(true)
             {
                 return true;

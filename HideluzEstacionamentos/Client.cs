@@ -10,7 +10,7 @@ namespace HideluzEstacionamentos
     {
         public string Document { get; set; }
         public string Name { get; set; }
-        Address Address = new Address();
+        public Address Address { get; set; }
         public string Email { get; set; }
         public string Type { get; set; }
 
