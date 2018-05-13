@@ -22,47 +22,25 @@ namespace HideluzEstacionamentos
 
         private void Splash_Load(object sender, EventArgs e)
         {
-            OracleConnection Connection = new OracleConnection
-            {
-                ConnectionString = "User Id=system;Password=1234;Data Source=127.0.0.1:1521"
-            };
-            OracleCommand SelectCount = Connection.CreateCommand();
-            SelectCount.CommandText = "SELECT COUNT(*) FROM TIPOCLIENTE";
-            try
-            {
-                Connection.Open();
-            }
-            catch(OracleException ex)
-            {
-                MessageBox.Show(ex.Message, "Erro Interno", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
-            }
-            var result = SelectCount.ExecuteScalar();
+            Connection con = new Connection();
+            con.RunQuery("SELECT COUNT(*) FROM TIPOCLIENTE", 0);
+            var result = con.Rows;
             if (int.Parse(result.ToString()) == 0)
             {
-                // Cadastra os tipos de cliente.
-                OracleCommand Insert = Connection.CreateCommand();
-                Insert.CommandText = "INSERT INTO TIPOCLIENTE (TIPOCLIENTE) VALUES ('Avulso')";
-                Insert.ExecuteNonQuery();
-                Insert.CommandText = "INSERT INTO TIPOCLIENTE (TIPOCLIENTE) VALUES ('Mensalista')";
-                Insert.ExecuteNonQuery();
-                // Popula o listbox.
-                OracleCommand Select = Connection.CreateCommand();
-                Select.CommandText = "SELECT TIPOCLIENTE FROM TIPOCLIENTE";
-                OracleDataReader Reader = Select.ExecuteReader();
-                while (Reader.Read())
+                con.RunQuery("INSERT INTO TIPOCLIENTE (TIPOCLIENTE) VALUES ('Avulso')", 2);
+                con.RunQuery("INSERT INTO TIPOCLIENTE (TIPOCLIENTE) VALUES ('Mensalista')", 2);
+                con.RunQuery("SELECT TIPOCLIENTE FROM TIPOCLIENTE", 1);
+                for(int i = 0; i < con.Fecth.Count; i++)
                 {
-                    Types.Add(Reader.GetValue(0).ToString());
+                    Types.Add(con.Fecth.Values.ElementAt(i).ToString());
                 }
             }
             else
             {
-                OracleCommand Select = Connection.CreateCommand();
-                Select.CommandText = "SELECT TIPOCLIENTE FROM TIPOCLIENTE";
-                OracleDataReader Reader = Select.ExecuteReader();
-                while (Reader.Read())
+                con.RunQuery("SELECT TIPOCLIENTE FROM TIPOCLIENTE", 1);
+                for (int i = 0; i < con.Fecth.Count; i++)
                 {
-                    Types.Add(Reader.GetValue(0).ToString());
+                    Types.Add(con.Fecth.Values.ElementAt(i).ToString());
                 }
             }
             SplashProgressBar.PerformStep();

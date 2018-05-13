@@ -28,7 +28,7 @@ namespace HideluzEstacionamentos
             InitializeComponent();
             Operator = new Operator(Login.EmployeeRegistry, Login.Name, Login.Type);
             OperatorStripMenuItem.Text = Operator.Name;
-            if(Operator.Type == 0)
+            if(Operator.Type == 1)
             {
                 ToolStripMenuItem adm = new ToolStripMenuItem
                 {
@@ -213,6 +213,11 @@ namespace HideluzEstacionamentos
                 SearchClient = new SearchClient();
                 SearchClient.Show();
             }
+        }
+
+        private void BtnGenerateValue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

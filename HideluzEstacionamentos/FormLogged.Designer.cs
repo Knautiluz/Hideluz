@@ -81,28 +81,28 @@
             // AddClientToolStripItem
             // 
             this.AddClientToolStripItem.Name = "AddClientToolStripItem";
-            this.AddClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.AddClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.AddClientToolStripItem.Text = "Adicionar";
             this.AddClientToolStripItem.Click += new System.EventHandler(this.AddClientToolStripItem_Click);
             // 
             // ConsultClientToolStripItem
             // 
             this.ConsultClientToolStripItem.Name = "ConsultClientToolStripItem";
-            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ConsultClientToolStripItem.Text = "Consultar";
             this.ConsultClientToolStripItem.Click += new System.EventHandler(this.ConsultClientToolStripItem_Click);
             // 
             // ChangeClientToolStripItem
             // 
             this.ChangeClientToolStripItem.Name = "ChangeClientToolStripItem";
-            this.ChangeClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ChangeClientToolStripItem.Text = "Alterar";
             this.ChangeClientToolStripItem.Click += new System.EventHandler(this.ChangeClientToolStripItem_Click);
             // 
             // RemoveClientToolStripItem
             // 
             this.RemoveClientToolStripItem.Name = "RemoveClientToolStripItem";
-            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.RemoveClientToolStripItem.Text = "Remover";
             // 
             // VehicleToolStripMenuItem
@@ -226,6 +226,7 @@
             this.BtnGenerateValue.TabIndex = 3;
             this.BtnGenerateValue.Text = "Gerar Valor";
             this.BtnGenerateValue.UseVisualStyleBackColor = true;
+            this.BtnGenerateValue.Click += new System.EventHandler(this.BtnGenerateValue_Click);
             // 
             // ClientResultListBox
             // 

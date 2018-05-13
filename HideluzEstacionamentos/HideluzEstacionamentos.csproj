@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="DeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
