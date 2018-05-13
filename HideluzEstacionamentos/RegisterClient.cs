@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,9 @@ namespace HideluzEstacionamentos
 {
     public partial class RegisterClient : Form
     {
-        Client Client = new Client();
-        Address ClientAddress = new Address();
+        public Client Client = new Client();
+        public Address ClientAddress = new Address();
+        public static string Operation = "";
         public RegisterClient()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace HideluzEstacionamentos
 
         private void SignupBtn_Click(object sender, EventArgs e)
         {
-            if (ClientNameTextBox.Text == "" || ClientDocumentTextBox.Text == "" || ClientStateTextBox.Text == "" || ClientCityTextBox.Text == "" || ClientStreetNumberTextBox.Text == "" || ClientCepTextBox.Text == "")
+            if (ClientNameTextBox.Text == "" || ClientDocumentTextBox.Text == "" || ClientStateTextBox.Text == "" || ClientCityTextBox.Text == "" || ClientStreetNumberTextBox.Text == "" || ClientCepTextBox.Text == "" || ClientListBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha todos os campos para completar o cadastro. E-mail não obrigatório.", "Existem campos obrigatórios vazios.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -29,7 +32,8 @@ namespace HideluzEstacionamentos
             Client.Name = ClientNameTextBox.Text;
             Client.Document = ClientDocumentTextBox.Text;
             Client.Email = ClientEmailTextBox.Text;
-            Client.Type = ClientListBox.SelectedItem.ToString();
+            Client.Tel = ClientTelTextBox.Text;
+            Client.Type = ClientListBox.SelectedIndex;
             ClientAddress.State = ClientStateTextBox.Text;
             ClientAddress.City = ClientCityTextBox.Text;
             ClientAddress.Street = ClientStreetTextBox.Text;
@@ -38,8 +42,22 @@ namespace HideluzEstacionamentos
             ClientAddress.Cep = ClientCepTextBox.Text;
             Client.Address = ClientAddress;
             // cadastrar cliente no banco.
-            FormLogged.Operator.AddClient(Client, FormLogged.Operator.EmployeeRegistry);
-            ResultLabel.Text = "Cadastro efetuado com sucesso.";
+            if(FormLogged.Operator.AddClient(Client, FormLogged.Operator.EmployeeRegistry))
+            {
+                MessageBox.Show(Operation, "Hideluz informa:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Operation, "Hideluz informa:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RegisterClient_Load(object sender, EventArgs e)
+        {
+            for(int i = 0; i < Splash.Types.Count; i++)
+            {
+                ClientListBox.Items.Add(Splash.Types.ElementAt(i));
+            }
         }
     }
 }

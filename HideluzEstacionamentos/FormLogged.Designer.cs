@@ -81,15 +81,16 @@
             // AddClientToolStripItem
             // 
             this.AddClientToolStripItem.Name = "AddClientToolStripItem";
-            this.AddClientToolStripItem.Size = new System.Drawing.Size(125, 22);
+            this.AddClientToolStripItem.Size = new System.Drawing.Size(180, 22);
             this.AddClientToolStripItem.Text = "Adicionar";
             this.AddClientToolStripItem.Click += new System.EventHandler(this.AddClientToolStripItem_Click);
             // 
             // ConsultClientToolStripItem
             // 
             this.ConsultClientToolStripItem.Name = "ConsultClientToolStripItem";
-            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(125, 22);
+            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(180, 22);
             this.ConsultClientToolStripItem.Text = "Consultar";
+            this.ConsultClientToolStripItem.Click += new System.EventHandler(this.ConsultClientToolStripItem_Click);
             // 
             // ChangeClientToolStripItem
             // 
@@ -101,7 +102,7 @@
             // RemoveClientToolStripItem
             // 
             this.RemoveClientToolStripItem.Name = "RemoveClientToolStripItem";
-            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(125, 22);
+            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(180, 22);
             this.RemoveClientToolStripItem.Text = "Remover";
             // 
             // VehicleToolStripMenuItem
@@ -131,7 +132,7 @@
             // ChangeVehicleToolStripItem
             // 
             this.ChangeVehicleToolStripItem.Name = "ChangeVehicleToolStripItem";
-            this.ChangeVehicleToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeVehicleToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ChangeVehicleToolStripItem.Text = "Alterar";
             this.ChangeVehicleToolStripItem.Click += new System.EventHandler(this.ChangeVehicleToolStripItem_Click);
             // 
@@ -173,7 +174,7 @@
             // SairToolStripMenuItem
             // 
             this.SairToolStripMenuItem.Name = "SairToolStripMenuItem";
-            this.SairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.SairToolStripMenuItem.Text = "Sair";
             this.SairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 

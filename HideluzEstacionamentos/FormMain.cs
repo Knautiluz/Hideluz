@@ -13,8 +13,8 @@ namespace HideluzEstacionamentos
     public partial class FormMain : Form
     {
         //atributos de inicialização.
-        Login Login = new Login();
-
+        private Login Login = new Login();
+        public static string OperationResult;
         public FormMain()
         {
             InitializeComponent();
@@ -25,12 +25,19 @@ namespace HideluzEstacionamentos
             this.Hide();
             Splash Splash = new Splash();
             Splash.Show();
-            if(Login.Verify(TextBoxUser.Text, TextBoxPass.Text))
+            if (Login.Verify(TextBoxUser.Text, TextBoxPass.Text) && Splash.ProgressComplete)
             {
-                MessageBox.Show("Usuário aceito.");
+                MessageBox.Show(string.Format("{0}, bem-vindo!", Login.Name));
                 Splash.Close();
                 FormLogged formLogged = new FormLogged();
                 formLogged.Show();
+            }
+            else
+            {
+                MessageBox.Show(OperationResult);
+                Splash.Close();
+                var form = Application.OpenForms[0];
+                form.Show();
             }
         }
     }

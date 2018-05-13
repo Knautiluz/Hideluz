@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SplashProgressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
+            // 
+            // SplashProgressBar
+            // 
+            this.SplashProgressBar.Location = new System.Drawing.Point(109, 367);
+            this.SplashProgressBar.Name = "SplashProgressBar";
+            this.SplashProgressBar.Size = new System.Drawing.Size(570, 23);
+            this.SplashProgressBar.Step = 100;
+            this.SplashProgressBar.TabIndex = 0;
             // 
             // Splash
             // 
@@ -37,16 +46,20 @@
             this.BackgroundImage = global::HideluzEstacionamentos.Properties.Resources.Splash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SplashProgressBar);
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Splash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Splash";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Splash_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ProgressBar SplashProgressBar;
     }
 }

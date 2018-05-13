@@ -24,7 +24,7 @@ namespace HideluzEstacionamentos
             Client.Name = ClientNameTextBox.Text;
             Client.Document = ClientDocumentTextBox.Text;
             Client.Email = ClientEmailTextBox.Text;
-            Client.Type = ClientListBox.SelectedItem.ToString();
+            Client.Type = ClientListBox.SelectedIndex;
             ClientAddress.State = ClientStateTextBox.Text;
             ClientAddress.City = ClientCityTextBox.Text;
             ClientAddress.Street = ClientStreetTextBox.Text;

@@ -22,3 +22,12 @@ C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionament
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.FormLogged.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterVehicle.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterClient.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.ModifyClient.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.ModifyVehicle.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.csproj.CopyComplete
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchClient.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterUser.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.ModifyUser.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchUser.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.DeleteUser.resources

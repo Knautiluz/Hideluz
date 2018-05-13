@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteUser.Designer.cs">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyUser.Designer.cs">
+      <DependentUpon>ModifyUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterUser.Designer.cs">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="FormLogged.cs">
       <SubType>Form</SubType>
@@ -60,6 +81,18 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
+    <Compile Include="ModifyClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyClient.Designer.cs">
+      <DependentUpon>ModifyClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyVehicle.Designer.cs">
+      <DependentUpon>ModifyVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +108,18 @@
     <Compile Include="RegisterVehicle.Designer.cs">
       <DependentUpon>RegisterVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchClient.Designer.cs">
+      <DependentUpon>SearchClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchUser.Designer.cs">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +127,28 @@
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="Tax.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="DeleteUser.resx">
+      <DependentUpon>DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyUser.resx">
+      <DependentUpon>ModifyUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterUser.resx">
+      <DependentUpon>RegisterUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogged.resx">
       <DependentUpon>FormLogged.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyClient.resx">
+      <DependentUpon>ModifyClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyVehicle.resx">
+      <DependentUpon>ModifyVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,9 +166,16 @@
     <EmbeddedResource Include="RegisterVehicle.resx">
       <DependentUpon>RegisterVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchClient.resx">
+      <DependentUpon>SearchClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchUser.resx">
+      <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
