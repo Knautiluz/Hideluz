@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -27,14 +20,14 @@ namespace HideluzEstacionamentos
             Splash.Show();
             if (Login.Verify(TextBoxUser.Text, TextBoxPass.Text) && Splash.ProgressComplete)
             {
-                MessageBox.Show(string.Format("{0}, bem-vindo!", Login.Name));
+                MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
                 FormLogged formLogged = new FormLogged();
                 formLogged.Show();
             }
             else
             {
-                MessageBox.Show(OperationResult);
+                MessageBox.Show(Login.Message, "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Splash.Close();
                 var form = Application.OpenForms[0];
                 form.Show();

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
     public partial class ModifyClient : Form
     {
-        Client Client = new Client();
-        Address ClientAddress = new Address();
+        public Client Client = new Client();
+        public Address ClientAddress = new Address();
+        public static string Operation = "";
         public ModifyClient()
         {
             InitializeComponent();
@@ -24,6 +18,7 @@ namespace HideluzEstacionamentos
             Client.Name = ClientNameTextBox.Text;
             Client.Document = ClientDocumentTextBox.Text;
             Client.Email = ClientEmailTextBox.Text;
+            Client.Tel = ClientTelTextBox.Text;
             Client.Type = ClientListBox.SelectedIndex;
             ClientAddress.State = ClientStateTextBox.Text;
             ClientAddress.City = ClientCityTextBox.Text;
@@ -33,8 +28,42 @@ namespace HideluzEstacionamentos
             ClientAddress.Cep = ClientCepTextBox.Text;
             Client.Address = ClientAddress;
             // cadastrar cliente no banco.
-            FormLogged.Operator.ModifyClient(Client, FormLogged.Operator.EmployeeRegistry);
-            ResultLabel.Text = "Cliente alterado.";
+            if(ClientListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione o tipo do cliente.");
+                return;
+            }
+            if(FormLogged.Operator.ChangeClient(Client, ClientSearchTextBox.Text))
+            {
+                MessageBox.Show("Dados alterados.");
+                RegisterClientPanel.Enabled = false;
+            } else
+            {
+                MessageBox.Show(Operation);
+            }
+        }
+
+        private void ClientSearchBtn_Click(object sender, EventArgs e)
+        {
+            var list = FormLogged.Operator.SearchClient(ClientSearchTextBox.Text);
+            if(list.Count == 0)
+            {
+                MessageBox.Show("Esse usuário não existe.");
+                RegisterClientPanel.Enabled = false;
+                return;
+            }
+
+            RegisterClientPanel.Enabled = true;
+            ClientDocumentTextBox.Text = list["CPF"];
+            ClientNameTextBox.Text = list["NOME"];
+            ClientTelTextBox.Text = list["TELEFONE"];
+            ClientEmailTextBox.Text = list["EMAIL"];
+            ClientStateTextBox.Text = list["ESTADO"];
+            ClientCityTextBox.Text = list["CIDADE"];
+            ClientNeighborhoodTextBox.Text = list["BAIRRO"];
+            ClientStreetTextBox.Text = list["RUA"];
+            ClientStreetNumberTextBox.Text = list["NUMERO"];
+            ClientCepTextBox.Text = list["CEP"];
         }
     }
 }

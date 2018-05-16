@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -13,15 +6,19 @@ namespace HideluzEstacionamentos
     public partial class FormLogged : Form
     {
         public static Operator Operator;
-        public static RegisterClient RegisterClient = new RegisterClient();
-        public static RegisterVehicle RegisterVehicle = new RegisterVehicle();
-        public static ModifyClient ModifyClient = new ModifyClient();
-        public static ModifyVehicle ModifyVehicle = new ModifyVehicle();
-        public static SearchClient SearchClient = new SearchClient();
-        public static RegisterUser RegisterUser = new RegisterUser();
-        public static ModifyUser ModifyUser = new ModifyUser();
-        public static SearchUser SearchUser = new SearchUser();
-        public static DeleteUser DeleteUser = new DeleteUser();
+        public static Administrator Administrator;
+        public  RegisterClient RegisterClient = new RegisterClient();
+        public  RegisterVehicle RegisterVehicle = new RegisterVehicle();
+        public  RegisterUser RegisterUser = new RegisterUser();
+        public  ModifyClient ModifyClient = new ModifyClient();
+        public  ModifyVehicle ModifyVehicle = new ModifyVehicle();
+        public  ModifyUser ModifyUser = new ModifyUser();
+        public  SearchClient SearchClient = new SearchClient();
+        public  SearchVehicle SearchVehicle = new SearchVehicle();
+        public  SearchUser SearchUser = new SearchUser();
+        public  RemoveUser RemoveUser = new RemoveUser();
+        public  RemoveClient RemoveClient = new RemoveClient();
+        public  RemoveVehicle RemoveVehicle = new RemoveVehicle();
 
         public FormLogged()
         {
@@ -30,97 +27,13 @@ namespace HideluzEstacionamentos
             OperatorStripMenuItem.Text = Operator.Name;
             if(Operator.Type == 1)
             {
-                ToolStripMenuItem adm = new ToolStripMenuItem
-                {
-                    Text = "Administrador",
-                    Name = "AdministratorStripMenuItem",
-                    DropDownDirection = ToolStripDropDownDirection.BelowRight
-                };
-                ToolStripMenuItem addUser = new ToolStripMenuItem
-                {
-                    Text = "Adicionar Usuário",
-                    Name = "AddUserStripMenuItem"
-                };
-                addUser.Click += (s, e) => AddUserToolStripItem_Click();
-                ToolStripMenuItem changeUser = new ToolStripMenuItem
-                {
-                    Text = "Alterar Usuário",
-                    Name = "ChangeUserStripMenuItem"
-                };
-                //changeUser.Click += (s, e) => ChangeUserToolStripItem_Click();
-                ToolStripMenuItem searchUser = new ToolStripMenuItem
-                {
-                    Text = "Pesquisar Usuário",
-                    Name = "SearchUserStripMenuItem"
-                };
-                searchUser.Click += (s, e) => SearchUserToolStripItem_Click();
-                ToolStripMenuItem deleteUser = new ToolStripMenuItem
-                {
-                    Text = "Deletar Usuário",
-                    Name = "DeleteUserStripMenuItem"
-                };
-                deleteUser.Click += (s, e) => DeleteUserToolStripItem_Click();
-
-                adm.DropDownItems.Add(addUser);
-                adm.DropDownItems.Add(changeUser);
-                adm.DropDownItems.Add(searchUser);
-                adm.DropDownItems.Add(deleteUser);
-                HideluzMenuStrip.Items.Add(adm);
+                OperatorTaxToolStripMenuItem.Available = false;
+            } else
+            {
+                AdmTaxToolStripMenuItem.Available = false;
+                UserToolStripMenuItem.Available = false;
             }
         }
-
-        private void DeleteUserToolStripItem_Click()
-        {
-            try
-            {
-                DeleteUser.Show();
-            }
-            catch (ObjectDisposedException)
-            {
-                DeleteUser = new DeleteUser();
-                DeleteUser.Show();
-            }
-        }
-
-        private void SearchUserToolStripItem_Click()
-        {
-            try
-            {
-                SearchUser.Show();
-            }
-            catch (ObjectDisposedException)
-            {
-                SearchUser = new SearchUser();
-                SearchUser.Show();
-            }
-        }
-
-        private void AddUserToolStripItem_Click()
-        {
-            try
-            {
-                RegisterUser.Show();
-            }
-            catch (ObjectDisposedException)
-            {
-                RegisterUser = new RegisterUser();
-                RegisterUser.Show();
-            }
-        }
-
-        private void ChangeUserToolStripItem_Click()
-        {
-            try
-            {
-                ModifyUser.Show();
-            }
-            catch (ObjectDisposedException)
-            {
-                ModifyUser = new ModifyUser();
-                ModifyUser.Show();
-            }
-        }
-
         private void AddVehicleToolStripItem_Click(object sender, EventArgs e)
         {
             try
@@ -138,11 +51,16 @@ namespace HideluzEstacionamentos
         {   
             try
             {
+                RegisterClient.MdiParent = this;
+                FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
+
             }
             catch (ObjectDisposedException)
             {
                 RegisterClient = new RegisterClient();
+                RegisterClient.MdiParent = this;
+                FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
             }
         }
@@ -175,13 +93,16 @@ namespace HideluzEstacionamentos
         {
             RegisterClient.Close();
             RegisterUser.Close();
-            ModifyUser.Close();
             RegisterVehicle.Close();
+            ModifyUser.Close();
             ModifyVehicle.Close();
             ModifyClient.Close();
             SearchClient.Close();
             SearchUser.Close();
-            DeleteUser.Close();
+            SearchVehicle.Close();
+            RemoveUser.Close();
+            RemoveClient.Close();
+            RemoveVehicle.Close();
             var form = Application.OpenForms[0];
             form.Show();
         }
@@ -190,13 +111,16 @@ namespace HideluzEstacionamentos
         {
             RegisterClient.Close();
             RegisterUser.Close();
-            ModifyUser.Close();
             RegisterVehicle.Close();
+            ModifyUser.Close();
             ModifyVehicle.Close();
             ModifyClient.Close();
             SearchClient.Close();
             SearchUser.Close();
-            DeleteUser.Close();
+            SearchVehicle.Close();
+            RemoveUser.Close();
+            RemoveClient.Close();
+            RemoveVehicle.Close();
             var form = Application.OpenForms[0];
             form.Show();
             Close();
@@ -215,9 +139,94 @@ namespace HideluzEstacionamentos
             }
         }
 
-        private void BtnGenerateValue_Click(object sender, EventArgs e)
+        private void ConsultVehicleToolStripItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SearchVehicle.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                SearchVehicle = new SearchVehicle();
+                SearchVehicle.Show();
+            }
+        }
 
+        private void RemoveClientToolStripItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RemoveClient.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RemoveClient = new RemoveClient();
+                RemoveClient.Show();
+            }
+        }
+
+        private void RemoveVehicleToolStripItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RemoveVehicle.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RemoveVehicle = new RemoveVehicle();
+                RemoveVehicle.Show();
+            }
+        }
+        private void AddUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegisterUser.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RegisterUser = new RegisterUser();
+                RegisterUser.Show();
+            }
+        }
+
+        private void ConsultUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SearchUser.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                SearchUser = new SearchUser();
+                SearchUser.Show();
+            }
+        }
+
+        private void ChangeUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ModifyUser.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                ModifyUser = new ModifyUser();
+                ModifyUser.Show();
+            }
+        }
+
+        private void RemoveUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RemoveUser.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RemoveUser = new RemoveUser();
+                RemoveUser.Show();
+            }
         }
     }
 }

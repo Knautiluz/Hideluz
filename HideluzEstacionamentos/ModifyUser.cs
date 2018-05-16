@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -21,12 +14,23 @@ namespace HideluzEstacionamentos
 
         private void ClientModifyBtn_Click(object sender, EventArgs e)
         {
-            User.Document = ClientDocumentTextBox.Text;
-            User.Name = ClientNameTextBox.Text;
-            User.Username = ClientUsernameTextBox.Text;
-            User.Password = ClientPasswordTextBox.Text;
-            User.Type = ClientTypeListBox.SelectedIndex;
-            if (FormLogged.Operator.ModifyUser(User, FormLogged.Operator.EmployeeRegistry))
+            User.Document = UserDocumentTextBox.Text;
+            User.Name = UserNameTextBox.Text;
+            User.Username = UserUsernameTextBox.Text;
+            User.Password = UserPasswordTextBox.Text;
+            User.Status = UserStatusListBox.SelectedIndex + 1;
+            User.Type = UserTypeListBox.SelectedIndex + 1;
+            if(UserStatusListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione o novo status do usuário.");
+                return;
+            }
+            if(UserTypeListBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione o novo tipo do usuário.");
+                return;
+            }
+            if (FormLogged.Administrator.ChangeUser(User, UserSearchDocumentTextBox.Text))
             {
                 MessageBox.Show(Operation);
             }
@@ -34,6 +38,22 @@ namespace HideluzEstacionamentos
             {
                 MessageBox.Show(Operation);
             }
+        }
+
+        private void UserSearchBtn_Click(object sender, EventArgs e)
+        {
+            var list = FormLogged.Administrator.SearchUser(UserSearchDocumentTextBox.Text);
+            if (list.Count == 0)
+            {
+                MessageBox.Show("Esse usuário não existe.");
+                UserDataPanel.Enabled = false;
+                return;
+            }
+            UserDataPanel.Enabled = true;
+            UserDocumentTextBox.Text = list["CPF"];
+            UserNameTextBox.Text = list["NOME"];
+            UserUsernameTextBox.Text = list["USUARIO"];
+            UserPasswordTextBox.Text = list["SENHA"];
         }
     }
 }

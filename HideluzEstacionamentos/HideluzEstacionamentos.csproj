@@ -49,12 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Administrator.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="DeleteUser.cs">
+    <Compile Include="RemoveUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteUser.Designer.cs">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
+    <Compile Include="RemoveUser.Designer.cs">
+      <DependentUpon>RemoveUser.cs</DependentUpon>
     </Compile>
     <Compile Include="ModifyUser.cs">
       <SubType>Form</SubType>
@@ -109,6 +110,18 @@
     <Compile Include="RegisterVehicle.Designer.cs">
       <DependentUpon>RegisterVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="RemoveClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveClient.Designer.cs">
+      <DependentUpon>RemoveClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveVehicle.Designer.cs">
+      <DependentUpon>RemoveVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +134,12 @@
     <Compile Include="SearchUser.Designer.cs">
       <DependentUpon>SearchUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchVehicle.Designer.cs">
+      <DependentUpon>SearchVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,8 +149,11 @@
     <Compile Include="Tax.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
-    <EmbeddedResource Include="DeleteUser.resx">
-      <DependentUpon>DeleteUser.cs</DependentUpon>
+    <EmbeddedResource Include="RemoveClient.resx">
+      <DependentUpon>RemoveClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveUser.resx">
+      <DependentUpon>RemoveUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyUser.resx">
       <DependentUpon>ModifyUser.cs</DependentUpon>
@@ -167,11 +189,17 @@
     <EmbeddedResource Include="RegisterVehicle.resx">
       <DependentUpon>RegisterVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RemoveVehicle.resx">
+      <DependentUpon>RemoveVehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchClient.resx">
       <DependentUpon>SearchClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchVehicle.resx">
+      <DependentUpon>SearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

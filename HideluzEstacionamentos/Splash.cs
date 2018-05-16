@@ -1,12 +1,6 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -42,6 +36,12 @@ namespace HideluzEstacionamentos
                 {
                     Types.Add(con.Fecth.Values.ElementAt(i).ToString());
                 }
+            }
+            con.RunQuery("SELECT COUNT(*) FROM TIPOVEICULO", 0);
+            if(con.Rows == 0)
+            {
+                con.RunQuery("INSERT INTO TIPOVEICULO (TIPOVEICULO) VALUES('Carro')", 2);
+                con.RunQuery("INSERT INTO TIPOVEICULO (TIPOVEICULO) VALUES('Moto')", 2);
             }
             SplashProgressBar.PerformStep();
             ProgressComplete = true;

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -24,7 +17,7 @@ namespace HideluzEstacionamentos
                 MessageBox.Show("Digite o CPF para continuar", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var list = FormLogged.Operator.SearchUser(UserDocumentTextBox.Text);
+            var list = FormLogged.Administrator.SearchUser(UserDocumentTextBox.Text);
             if (list.Count < 1)
             {
                 MessageBox.Show("O CPF consultado não foi cadastrado!", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);

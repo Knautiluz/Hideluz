@@ -1,10 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HideluzEstacionamentos
 {
@@ -20,168 +15,128 @@ namespace HideluzEstacionamentos
             Name = name;
             Type = type;
         }
-        public bool AddUser(User user, string operatorId)
-        {
-            Connection con = new Connection();
-            con.RunQuery(string.Format("SELECT COUNT(CPF) FROM USUARIO WHERE CPF = '{0}'", user.Document), 0);
-            var result = con.Rows;
-            if (result > 0)
-            {
-                RegisterUser.Operation = "O CPF informado já está cadastrado.";
-                return false;
-            }
-            else
-            {
-                con.RunQuery(string.Format("INSERT INTO USUARIO (CPF, NOME, USUARIO, SENHA, STATUS, TIPOUSUARIO) values ('{0}', '{1}', '{2}', '{3}', {4}, {5})", user.Document, user.Name, user.Username, user.Password, 1, user.Type), 2);
-                RegisterUser.Operation = "Usuário cadastrado com sucesso!";
-                return true;
-            }
-        }
-        public bool ModifyUser(User user, string operatorId)
-        {
-            Connection con = new Connection();
-            return true;
-        }
-        public Dictionary<string, string> SearchUser(string document)
-        {
-            var results = new Dictionary<string, string>();
-            Connection con = new Connection();
-            con.RunQuery(string.Format("SELECT COUNT(*) FROM USUARIO WHERE CPF = '{0}'", document), 0);
-            var result = con.Rows;
-            if (result < 1)
-            {
-                return results;
-            }
-            con.RunQuery(string.Format("SELECT * FROM USUARIO WHERE CPF = '{0}'", document), 1);
-            results.Add("CPF", con.Fecth.Values.ElementAt(0));
-            results.Add("NOME", con.Fecth.Values.ElementAt(1));
-            results.Add("USUARIO", con.Fecth.Values.ElementAt(2));
-            results.Add("STATUS", con.Fecth.Values.ElementAt(4));
-            results.Add("TIPO", con.Fecth.Values.ElementAt(5));
-            return results;
-        }
-        public bool DeleteUser(string doc)
-        {
-            Connection con = new Connection();
-            con.RunQuery(string.Format("SELECT COUNT(CPF) FROM USUARIO WHERE CPF = {0}", doc), 0);
-            var result = con.Rows;
-            if(result > 0)
-            {
-                con.RunQuery(string.Format("DELETE FROM USUARIO WHERE CPF = {0}", doc), 4);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-           
-        }
         public bool AddClient(Client client, string operatorId)
         {
             Connection con = new Connection();
-            try
+            con.RunQuery(string.Format("SELECT COUNT(CPF) FROM CLIENTE WHERE CPF = '{0}'", client.Document), 0);
+            if (con.Rows > 0)
             {
-                con.RunQuery(string.Format("SELECT COUNT(CPF) FROM CLIENTE WHERE CPF = '{0}'", client.Document), 0);
-                var result = con.Rows;
-                if(result > 0)
+                RegisterClient.Operation = "O CPF informado já está cadastrado.";
+                return false;
+            }
+            else
+            {
+                con.RunQuery(string.Format("INSERT INTO CLIENTE (CPF, NOME, ESTADO, CIDADE, BAIRRO, RUA, NUMERO, CEP, EMAIL, TELCONTATO, IDTIPOCLIENTE) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10})", client.Document, client.Name, client.Address.State, client.Address.City, client.Address.Neighborhood, client.Address.Street, client.Address.Number, client.Address.Cep, client.Email, client.Tel, client.Type), 2);
+                RegisterClient.Operation = "Usuário cadastrado com sucesso!";
+                return true;
+            }
+        }
+
+        public bool AddVehicle(Vehicle vehicle, string operatorId)
+        {
+            Connection con = new Connection();
+            con.RunQuery(string.Format("SELECT COUNT(CPF) FROM CLIENTE WHERE CPF = '{0}'", vehicle.OwnerDocument), 0);
+            if (con.Rows > 0)
+            {
+                if (con.RunQuery(string.Format("INSERT INTO VEICULO (PLACA, MODELO, CLIENTE_CPF, STATUS, IDTIPOVEICULO) values ('{0}', '{1}', '{2}', {3}, {4})", vehicle.LicencePlate, vehicle.Model, vehicle.OwnerDocument, 1, vehicle.Type), 2))
                 {
-                    RegisterClient.Operation = "O CPF informado já está cadastrado.";
-                    return false;
+                    RegisterVehicle.Operation = "Veículo cadastrado com sucesso!";
+                    return true;
                 }
                 else
                 {
-                    con.RunQuery(string.Format("INSERT INTO CLIENTE (CPF, NOME, ESTADO, CIDADE, BAIRRO, RUA, NUMERO, CEP, EMAIL, TELCONTATO, IDTIPOCLIENTE) values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', {10})", client.Document, client.Name, client.Address.State, client.Address.City, client.Address.Neighborhood, client.Address.Street, client.Address.Number, client.Address.Cep, client.Email, client.Tel, client.Type), 2);
-                    RegisterClient.Operation = "Usuário cadastrado com sucesso!";
-                    return true;
+                    RegisterVehicle.Operation = con.Message;
+                    return false;
                 }
             }
-            catch(OracleException Ex)
+            else
             {
-                Debug.Write(Ex.ToString());
-                RegisterClient.Operation = "Ocorreu um erro interno no sistema, se persistir informe ao administrador.";
+                RegisterVehicle.Operation = "Esse cliente não está cadastrado, não foi possivel registrar o veículo.";
+                return false;
+            }
+        }
+        public bool ChangeClient(Client client, string doc)
+        {
+            Connection con = new Connection();
+            if(con.RunQuery(string.Format("UPDATE CLIENTE SET CPF = '{0}', NOME = '{1}', ESTADO = '{2}', CIDADE = '{3}', BAIRRO = '{4}', RUA = '{5}', NUMERO = '{6}', CEP = '{7}', EMAIL = '{8}', TELCONTATO = '{9}', IDTIPOCLIENTE = {10} WHERE CPF = '{11}'", client.Document, client.Name, client.Address.State, client.Address.City, client.Address.Neighborhood, client.Address.Street, client.Address.Number, client.Address.Cep, client.Email, client.Tel, client.Type, doc), 3))
+            {
+                ModifyClient.Operation = con.Message;
+                return true;
+            }
+            else
+            {
+                ModifyClient.Operation = con.Message;
                 return false;
             }
         }
 
-        public void AddVehicle(Vehicle vehicle, string operatorId)
+        public bool ChangeVehicle(Vehicle vehicle, string plate)
         {
-            // method logic
+            Connection con = new Connection();
+            if (con.RunQuery(string.Format("UPDATE VEICULO SET PLACA = '{0}', MODELO = '{1}', CLIENTE_CPF = '{2}', STATUS = {3}, IDTIPOVEICULO = {4} WHERE PLACA = '{5}'", vehicle.LicencePlate, vehicle.Model, vehicle.OwnerDocument, vehicle.Status, vehicle.Type, plate), 3))
+            {
+                ModifyVehicle.Operation = con.Message;
+                return true;
+            }
+            else
+            {
+                ModifyVehicle.Operation = con.Message;
+                return false;
+            }
         }
-
-        public void AddTax(Tax tax)
+        public bool DeleteClient(string doc)
         {
-            // method logic
-        }
-
-        public void ModifyClient(Client client, string operatorId)
-        {
-            /*---------------------*/
-            // search for client in SGBD
-            /*---------------------*/
-            if(client.Name != null)
+            Connection con = new Connection();
+            con.RunQuery(string.Format("SELECT COUNT(CPF) FROM CLIENTE WHERE CPF = '{0}'", doc), 0);
+            if (con.Rows > 0)
             {
-                // change in SGBD
+                if(con.RunQuery(string.Format("DELETE FROM CLIENTE WHERE CPF = '{0}'", doc), 4))
+                {
+                    RemoveClient.Operation = "O cliente foi apagado!";
+                    return true;
+                }
+                else
+                {
+                    RemoveClient.Operation = con.Message;
+                    return false;
+                }
             }
-            if (client.Address != null)
+            else
             {
-                // change in SGBD
-            }
-            if (client.Email != null)
-            {
-                // change in SGBD
-            }
-
-        }
-
-        public void ModifyVehicle(Vehicle vehicle, string operatorId)
-        {
-            /*---------------------*/
-            // search for client in SGBD
-            /*---------------------*/
-            if (vehicle.Model != null)
-            {
-                // change in SGBD
-            }
-            if (vehicle.Type != null)
-            {
-                // change in SGBD
-            }
-            if (vehicle.OwnerDocument != null)
-            {
-                // change in SGBD
+                RemoveClient.Operation = "O CPF digitado não foi encontrado.";
+                return false;
             }
         }
 
-        public void ModifyTax(Tax tax, string operatorId)
+        public bool DeleteVehicle(string plate)
         {
-            // method logic
+            Connection con = new Connection();
+            con.RunQuery(string.Format("SELECT COUNT(PLACA) FROM VEICULO WHERE PLACA = '{0}'", plate), 0);
+            if (con.Rows > 0)
+            {
+                if (con.RunQuery(string.Format("DELETE FROM VEICULO WHERE PLACA = '{0}'", plate), 4))
+                {
+                    RemoveVehicle.Operation = "O veículo foi apagado!";
+                    return true;
+                }
+                else
+                {
+                    RemoveVehicle.Operation = con.Message;
+                    return false;
+                }
+            }
+            else
+            {
+                RemoveVehicle.Operation = "A placa digitada não foi encontrada.";
+                return false;
+            }
         }
-
-        public bool DeleteClient(string document)
-        {
-            // method logic
-            return true;
-        }
-
-        public bool DeleteVehicle(string licencePlate)
-        {
-            // method logic
-            return true;
-        }
-
-        public bool DeleteTax(string id)
-        {
-            // method logic
-            return true;
-        }
-
         public Dictionary<string, string> SearchClient(string document)
         {
             var results = new Dictionary<string, string>();
             Connection con = new Connection();
             con.RunQuery(string.Format("SELECT COUNT(*) FROM CLIENTE WHERE CPF = '{0}'", document), 0);
-            var result = con.Rows;
-            if(result < 1)
+            if(con.Rows < 1)
             {
                 return results;
             }
@@ -199,10 +154,22 @@ namespace HideluzEstacionamentos
             return results;
         }
 
-        public string SearchVehicle(string licencePlate)
+        public Dictionary<string, string> SearchVehicle(string plate)
         {
-            // method logic
-            return "Veículo";
+            var results = new Dictionary<string, string>();
+            Connection con = new Connection();
+            con.RunQuery(string.Format("SELECT COUNT(*) FROM VEICULO WHERE PLACA = '{0}'", plate), 0);
+            if (con.Rows < 1)
+            {
+                return results;
+            }
+            con.RunQuery(string.Format("SELECT * FROM VEICULO WHERE PLACA = '{0}'", plate), 1);
+            results.Add("PLACA", con.Fecth.Values.ElementAt(0));
+            results.Add("MODELO", con.Fecth.Values.ElementAt(1));
+            results.Add("CLIENTE_CPF", con.Fecth.Values.ElementAt(2));
+            results.Add("STATUS", con.Fecth.Values.ElementAt(3));
+            results.Add("TIPO", con.Fecth.Values.ElementAt(4));
+            return results;
         }
 
         public string SearchTax(string id)

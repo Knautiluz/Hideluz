@@ -30,4 +30,7 @@ C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionament
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterUser.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.ModifyUser.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchUser.resources
-C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.DeleteUser.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveClient.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveUser.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchVehicle.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveVehicle.resources

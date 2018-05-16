@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.RegisterClientPanel = new System.Windows.Forms.Panel();
+            this.ClientTelTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ClientListBox = new System.Windows.Forms.ListBox();
             this.LabelEmail = new System.Windows.Forms.Label();
             this.ClientEmailTextBox = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.ClientStreetNumberTextBox = new System.Windows.Forms.TextBox();
             this.ClientNameTextBox = new System.Windows.Forms.TextBox();
             this.ClientStreetTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ClientTelTextBox = new System.Windows.Forms.MaskedTextBox();
             this.RegisterClientPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,24 @@
             this.RegisterClientPanel.Name = "RegisterClientPanel";
             this.RegisterClientPanel.Size = new System.Drawing.Size(232, 453);
             this.RegisterClientPanel.TabIndex = 0;
+            // 
+            // ClientTelTextBox
+            // 
+            this.ClientTelTextBox.Culture = new System.Globalization.CultureInfo("en-US");
+            this.ClientTelTextBox.Location = new System.Drawing.Point(67, 136);
+            this.ClientTelTextBox.Mask = "(00)00000-0000";
+            this.ClientTelTextBox.Name = "ClientTelTextBox";
+            this.ClientTelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ClientTelTextBox.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(64, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Telefone";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ClientListBox
             // 
@@ -252,30 +270,15 @@
             this.ClientStreetTextBox.Size = new System.Drawing.Size(100, 20);
             this.ClientStreetTextBox.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(64, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Telefone";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ClientTelTextBox
-            // 
-            this.ClientTelTextBox.Culture = new System.Globalization.CultureInfo("en-US");
-            this.ClientTelTextBox.Location = new System.Drawing.Point(67, 136);
-            this.ClientTelTextBox.Mask = "(00)00000-0000";
-            this.ClientTelTextBox.Name = "ClientTelTextBox";
-            this.ClientTelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ClientTelTextBox.TabIndex = 4;
-            // 
             // RegisterClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(800, 469);
             this.Controls.Add(this.RegisterClientPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegisterClient";
             this.Text = "RegisterClient";
             this.Load += new System.EventHandler(this.RegisterClient_Load);
