@@ -34,7 +34,7 @@ namespace HideluzEstacionamentos
             ClientAddress.Cep = ClientCepTextBox.Text;
             Client.Address = ClientAddress;
             // cadastrar cliente no banco.
-            if(FormLogged.Operator.AddClient(Client, FormLogged.Operator.EmployeeRegistry))
+            if(Login.Operator.AddClient(Client, Login.Operator.EmployeeRegistry))
             {
                 MessageBox.Show(Operation, "Hideluz informa:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

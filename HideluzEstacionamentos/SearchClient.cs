@@ -21,7 +21,7 @@ namespace HideluzEstacionamentos
                 MessageBox.Show("Digite o CPF para continuar", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var list = FormLogged.Operator.SearchClient(ClientDocumentTextBox.Text);
+            var list = Login.Operator.CheckClient(ClientDocumentTextBox.Text);
             if(list.Count < 1)
             {
                 MessageBox.Show("O CPF consultado não foi cadastrado!", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);

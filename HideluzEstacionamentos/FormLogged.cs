@@ -1,31 +1,34 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
     public partial class FormLogged : Form
     {
-        public static Operator Operator;
+        
         public static Administrator Administrator;
-        public  RegisterClient RegisterClient = new RegisterClient();
-        public  RegisterVehicle RegisterVehicle = new RegisterVehicle();
-        public  RegisterUser RegisterUser = new RegisterUser();
-        public  ModifyClient ModifyClient = new ModifyClient();
-        public  ModifyVehicle ModifyVehicle = new ModifyVehicle();
-        public  ModifyUser ModifyUser = new ModifyUser();
-        public  SearchClient SearchClient = new SearchClient();
-        public  SearchVehicle SearchVehicle = new SearchVehicle();
-        public  SearchUser SearchUser = new SearchUser();
-        public  RemoveUser RemoveUser = new RemoveUser();
-        public  RemoveClient RemoveClient = new RemoveClient();
-        public  RemoveVehicle RemoveVehicle = new RemoveVehicle();
-
+        public RegisterClient RegisterClient = new RegisterClient();
+        public RegisterVehicle RegisterVehicle = new RegisterVehicle();
+        public RegisterUser RegisterUser = new RegisterUser();
+        public RegisterTax RegisterTax = new RegisterTax();
+        public ModifyClient ModifyClient = new ModifyClient();
+        public ModifyVehicle ModifyVehicle = new ModifyVehicle();
+        public ModifyUser ModifyUser = new ModifyUser();
+        public ModifyTax ModifyTax = new ModifyTax();
+        public SearchClient SearchClient = new SearchClient();
+        public SearchVehicle SearchVehicle = new SearchVehicle();
+        public SearchUser SearchUser = new SearchUser();
+        public SearchTax SearchTax = new SearchTax();
+        public RemoveUser RemoveUser = new RemoveUser();
+        public RemoveClient RemoveClient = new RemoveClient();
+        public RemoveVehicle RemoveVehicle = new RemoveVehicle();
+        public RemoveTax RemoveTax = new RemoveTax();
         public FormLogged()
         {
             InitializeComponent();
-            Operator = new Operator(Login.EmployeeRegistry, Login.Name, Login.Type);
-            OperatorStripMenuItem.Text = Operator.Name;
-            if(Operator.Type == 1)
+            OperatorStripMenuItem.Text = Login.Operator.Name;
+            if(Login.Operator.Type == 1)
             {
                 OperatorTaxToolStripMenuItem.Available = false;
             } else
@@ -51,7 +54,6 @@ namespace HideluzEstacionamentos
         {   
             try
             {
-                RegisterClient.MdiParent = this;
                 FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
 
@@ -94,15 +96,19 @@ namespace HideluzEstacionamentos
             RegisterClient.Close();
             RegisterUser.Close();
             RegisterVehicle.Close();
+            RegisterTax.Close();
             ModifyUser.Close();
             ModifyVehicle.Close();
             ModifyClient.Close();
+            ModifyTax.Close();
             SearchClient.Close();
             SearchUser.Close();
             SearchVehicle.Close();
+            SearchTax.Close();
             RemoveUser.Close();
             RemoveClient.Close();
             RemoveVehicle.Close();
+            RemoveTax.Close();
             var form = Application.OpenForms[0];
             form.Show();
         }
@@ -112,15 +118,19 @@ namespace HideluzEstacionamentos
             RegisterClient.Close();
             RegisterUser.Close();
             RegisterVehicle.Close();
+            RegisterTax.Close();
             ModifyUser.Close();
             ModifyVehicle.Close();
             ModifyClient.Close();
+            ModifyTax.Close();
             SearchClient.Close();
             SearchUser.Close();
             SearchVehicle.Close();
+            SearchTax.Close();
             RemoveUser.Close();
             RemoveClient.Close();
             RemoveVehicle.Close();
+            RemoveTax.Close();
             var form = Application.OpenForms[0];
             form.Show();
             Close();
@@ -226,6 +236,71 @@ namespace HideluzEstacionamentos
             {
                 RemoveUser = new RemoveUser();
                 RemoveUser.Show();
+            }
+        }
+
+        private void AdministratorAddTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RegisterTax.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RegisterTax = new RegisterTax();
+                RegisterTax.Show();
+            }
+        }
+
+        private void OperatorConsultTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SearchTax.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                SearchTax = new SearchTax();
+                SearchTax.Show();
+            }
+        }
+
+        private void AdministratorConsultTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SearchTax.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                SearchTax = new SearchTax();
+                SearchTax.Show();
+            }
+        }
+
+        private void AdministratorChangeTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ModifyTax.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                ModifyTax = new ModifyTax();
+                ModifyTax.Show();
+            }
+        }
+
+        private void AdministratorRemoveTaxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RemoveTax.Show();
+            }
+            catch (ObjectDisposedException)
+            {
+                RemoveTax = new RemoveTax();
+                RemoveTax.Show();
             }
         }
     }

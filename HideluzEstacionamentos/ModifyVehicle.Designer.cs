@@ -162,6 +162,7 @@
             this.VehiclePanel.Controls.Add(this.ModelLabel);
             this.VehiclePanel.Controls.Add(this.PlateLabel);
             this.VehiclePanel.Controls.Add(this.VehicleModelTextBox);
+            this.VehiclePanel.Enabled = false;
             this.VehiclePanel.Location = new System.Drawing.Point(277, 124);
             this.VehiclePanel.Name = "VehiclePanel";
             this.VehiclePanel.Size = new System.Drawing.Size(232, 255);

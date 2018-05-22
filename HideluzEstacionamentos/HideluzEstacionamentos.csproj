@@ -51,6 +51,24 @@
     <Compile Include="Address.cs" />
     <Compile Include="Administrator.cs" />
     <Compile Include="Connection.cs" />
+    <Compile Include="ModifyTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyTax.Designer.cs">
+      <DependentUpon>ModifyTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterTax.Designer.cs">
+      <DependentUpon>RegisterTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveTax.Designer.cs">
+      <DependentUpon>RemoveTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="RemoveUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +146,12 @@
     <Compile Include="SearchClient.Designer.cs">
       <DependentUpon>SearchClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTax.Designer.cs">
+      <DependentUpon>SearchTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,8 +173,17 @@
     <Compile Include="Tax.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
+    <EmbeddedResource Include="ModifyTax.resx">
+      <DependentUpon>ModifyTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterTax.resx">
+      <DependentUpon>RegisterTax.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RemoveClient.resx">
       <DependentUpon>RemoveClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveTax.resx">
+      <DependentUpon>RemoveTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RemoveUser.resx">
       <DependentUpon>RemoveUser.cs</DependentUpon>
@@ -194,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchClient.resx">
       <DependentUpon>SearchClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTax.resx">
+      <DependentUpon>SearchTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchUser.resx">
       <DependentUpon>SearchUser.cs</DependentUpon>

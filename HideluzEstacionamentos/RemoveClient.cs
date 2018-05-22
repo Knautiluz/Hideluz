@@ -13,7 +13,7 @@ namespace HideluzEstacionamentos
 
         private void ClientDeleteBtn_Click(object sender, EventArgs e)
         {
-            if(FormLogged.Operator.DeleteClient(ClientDocumentTextBox.Text))
+            if(Login.Operator.DeleteClient(ClientDocumentTextBox.Text))
             {
                 MessageBox.Show(Operation);
             }

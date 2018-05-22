@@ -13,7 +13,7 @@ namespace HideluzEstacionamentos
 
         private void VehicleDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (FormLogged.Operator.DeleteVehicle(VehiclePlateTextBox.Text))
+            if (Login.Operator.DeleteVehicle(VehiclePlateTextBox.Text))
             {
                 MessageBox.Show(Operation);
             }

@@ -20,7 +20,7 @@ namespace HideluzEstacionamentos
             User.Username = ClientUsernameTextBox.Text;
             User.Password = ClientPasswordTextBox.Text;
             User.Type = ClientTypeListBox.SelectedIndex +1;
-            if(FormLogged.Administrator.AddUser(User, FormLogged.Operator.EmployeeRegistry))
+            if(FormLogged.Administrator.AddUser(User, Login.Operator.EmployeeRegistry))
             {
                 MessageBox.Show(Operation);
             }

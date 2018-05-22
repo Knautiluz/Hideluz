@@ -34,6 +34,11 @@
             this.ConsultClientToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeClientToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveClientToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ConsultUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.RemoveUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.VehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddVehicleToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsultVehicleToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,25 +46,23 @@
             this.RemoveVehicleToolStripItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OperatorTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OperatorConsultTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdmTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdministratorAddTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdministratorConsultTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdministratorChangeTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AdministratorRemoveTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OperatorStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AdmTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelPayment = new System.Windows.Forms.Panel();
             this.ClientTextBoxKey = new System.Windows.Forms.MaskedTextBox();
             this.LabelResult = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.BtnGenerateValue = new System.Windows.Forms.Button();
-            this.ClientResultListBox = new System.Windows.Forms.ListBox();
+            this.BtnGenerateEntry = new System.Windows.Forms.Button();
+            this.VehicleClientResultListBox = new System.Windows.Forms.ListBox();
             this.FormLoggedMainPanel = new System.Windows.Forms.Panel();
-            this.UserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ConsultUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ChangeUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.RemoveUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnGenerateExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.HideluzMenuStrip.SuspendLayout();
             this.PanelPayment.SuspendLayout();
             this.FormLoggedMainPanel.SuspendLayout();
@@ -94,30 +97,69 @@
             // AddClientToolStripItem
             // 
             this.AddClientToolStripItem.Name = "AddClientToolStripItem";
-            this.AddClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.AddClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.AddClientToolStripItem.Text = "Adicionar";
             this.AddClientToolStripItem.Click += new System.EventHandler(this.AddClientToolStripItem_Click);
             // 
             // ConsultClientToolStripItem
             // 
             this.ConsultClientToolStripItem.Name = "ConsultClientToolStripItem";
-            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ConsultClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ConsultClientToolStripItem.Text = "Consultar";
             this.ConsultClientToolStripItem.Click += new System.EventHandler(this.ConsultClientToolStripItem_Click);
             // 
             // ChangeClientToolStripItem
             // 
             this.ChangeClientToolStripItem.Name = "ChangeClientToolStripItem";
-            this.ChangeClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ChangeClientToolStripItem.Text = "Alterar";
             this.ChangeClientToolStripItem.Click += new System.EventHandler(this.ChangeClientToolStripItem_Click);
             // 
             // RemoveClientToolStripItem
             // 
             this.RemoveClientToolStripItem.Name = "RemoveClientToolStripItem";
-            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoveClientToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.RemoveClientToolStripItem.Text = "Remover";
             this.RemoveClientToolStripItem.Click += new System.EventHandler(this.RemoveClientToolStripItem_Click);
+            // 
+            // UserToolStripMenuItem
+            // 
+            this.UserToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddUserToolStripMenuItem1,
+            this.ConsultUserToolStripMenuItem1,
+            this.ChangeUserToolStripMenuItem1,
+            this.RemoveUserToolStripMenuItem1});
+            this.UserToolStripMenuItem.Name = "UserToolStripMenuItem";
+            this.UserToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.UserToolStripMenuItem.Text = "&Usuario";
+            // 
+            // AddUserToolStripMenuItem1
+            // 
+            this.AddUserToolStripMenuItem1.Name = "AddUserToolStripMenuItem1";
+            this.AddUserToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.AddUserToolStripMenuItem1.Text = "Adicionar";
+            this.AddUserToolStripMenuItem1.Click += new System.EventHandler(this.AddUserToolStripMenuItem1_Click);
+            // 
+            // ConsultUserToolStripMenuItem1
+            // 
+            this.ConsultUserToolStripMenuItem1.Name = "ConsultUserToolStripMenuItem1";
+            this.ConsultUserToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.ConsultUserToolStripMenuItem1.Text = "Consultar";
+            this.ConsultUserToolStripMenuItem1.Click += new System.EventHandler(this.ConsultUserToolStripMenuItem1_Click);
+            // 
+            // ChangeUserToolStripMenuItem1
+            // 
+            this.ChangeUserToolStripMenuItem1.Name = "ChangeUserToolStripMenuItem1";
+            this.ChangeUserToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.ChangeUserToolStripMenuItem1.Text = "Alterar";
+            this.ChangeUserToolStripMenuItem1.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem1_Click);
+            // 
+            // RemoveUserToolStripMenuItem1
+            // 
+            this.RemoveUserToolStripMenuItem1.Name = "RemoveUserToolStripMenuItem1";
+            this.RemoveUserToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.RemoveUserToolStripMenuItem1.Text = "Remover";
+            this.RemoveUserToolStripMenuItem1.Click += new System.EventHandler(this.RemoveUserToolStripMenuItem1_Click);
             // 
             // VehicleToolStripMenuItem
             // 
@@ -171,6 +213,46 @@
             this.OperatorConsultTaxToolStripMenuItem.Name = "OperatorConsultTaxToolStripMenuItem";
             this.OperatorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OperatorConsultTaxToolStripMenuItem.Text = "Consultar";
+            this.OperatorConsultTaxToolStripMenuItem.Click += new System.EventHandler(this.OperatorConsultTaxToolStripMenuItem_Click);
+            // 
+            // AdmTaxToolStripMenuItem
+            // 
+            this.AdmTaxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AdministratorAddTaxToolStripMenuItem,
+            this.AdministratorConsultTaxToolStripMenuItem,
+            this.AdministratorChangeTaxToolStripMenuItem,
+            this.AdministratorRemoveTaxToolStripMenuItem});
+            this.AdmTaxToolStripMenuItem.Name = "AdmTaxToolStripMenuItem";
+            this.AdmTaxToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.AdmTaxToolStripMenuItem.Text = "&Taxa";
+            // 
+            // AdministratorAddTaxToolStripMenuItem
+            // 
+            this.AdministratorAddTaxToolStripMenuItem.Name = "AdministratorAddTaxToolStripMenuItem";
+            this.AdministratorAddTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorAddTaxToolStripMenuItem.Text = "Adicionar";
+            this.AdministratorAddTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorAddTaxToolStripMenuItem_Click);
+            // 
+            // AdministratorConsultTaxToolStripMenuItem
+            // 
+            this.AdministratorConsultTaxToolStripMenuItem.Name = "AdministratorConsultTaxToolStripMenuItem";
+            this.AdministratorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorConsultTaxToolStripMenuItem.Text = "Consultar";
+            this.AdministratorConsultTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorConsultTaxToolStripMenuItem_Click);
+            // 
+            // AdministratorChangeTaxToolStripMenuItem
+            // 
+            this.AdministratorChangeTaxToolStripMenuItem.Name = "AdministratorChangeTaxToolStripMenuItem";
+            this.AdministratorChangeTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorChangeTaxToolStripMenuItem.Text = "Alterar";
+            this.AdministratorChangeTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorChangeTaxToolStripMenuItem_Click);
+            // 
+            // AdministratorRemoveTaxToolStripMenuItem
+            // 
+            this.AdministratorRemoveTaxToolStripMenuItem.Name = "AdministratorRemoveTaxToolStripMenuItem";
+            this.AdministratorRemoveTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorRemoveTaxToolStripMenuItem.Text = "Remover";
+            this.AdministratorRemoveTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorRemoveTaxToolStripMenuItem_Click);
             // 
             // OperatorStripMenuItem
             // 
@@ -183,63 +265,31 @@
             // SairToolStripMenuItem
             // 
             this.SairToolStripMenuItem.Name = "SairToolStripMenuItem";
-            this.SairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.SairToolStripMenuItem.Text = "Sair";
             this.SairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
-            // 
-            // AdmTaxToolStripMenuItem
-            // 
-            this.AdmTaxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adicionarToolStripMenuItem,
-            this.consultarToolStripMenuItem,
-            this.alterarToolStripMenuItem,
-            this.removerToolStripMenuItem});
-            this.AdmTaxToolStripMenuItem.Name = "AdmTaxToolStripMenuItem";
-            this.AdmTaxToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.AdmTaxToolStripMenuItem.Text = "&Taxa";
-            // 
-            // adicionarToolStripMenuItem
-            // 
-            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.adicionarToolStripMenuItem.Text = "Adicionar";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem.Text = "Consultar";
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // removerToolStripMenuItem
-            // 
-            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
-            this.removerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removerToolStripMenuItem.Text = "Remover";
             // 
             // PanelPayment
             // 
             this.PanelPayment.BackColor = System.Drawing.SystemColors.Control;
             this.PanelPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelPayment.Controls.Add(this.label2);
+            this.PanelPayment.Controls.Add(this.label1);
+            this.PanelPayment.Controls.Add(this.BtnGenerateExit);
             this.PanelPayment.Controls.Add(this.ClientTextBoxKey);
             this.PanelPayment.Controls.Add(this.LabelResult);
             this.PanelPayment.Controls.Add(this.button1);
-            this.PanelPayment.Controls.Add(this.BtnGenerateValue);
-            this.PanelPayment.Controls.Add(this.ClientResultListBox);
-            this.PanelPayment.Location = new System.Drawing.Point(261, 85);
+            this.PanelPayment.Controls.Add(this.BtnGenerateEntry);
+            this.PanelPayment.Controls.Add(this.VehicleClientResultListBox);
+            this.PanelPayment.Location = new System.Drawing.Point(261, 58);
             this.PanelPayment.Name = "PanelPayment";
-            this.PanelPayment.Size = new System.Drawing.Size(279, 243);
+            this.PanelPayment.Size = new System.Drawing.Size(279, 336);
             this.PanelPayment.TabIndex = 7;
             // 
             // ClientTextBoxKey
             // 
             this.ClientTextBoxKey.Culture = new System.Globalization.CultureInfo("en-US");
-            this.ClientTextBoxKey.Location = new System.Drawing.Point(39, 11);
+            this.ClientTextBoxKey.Location = new System.Drawing.Point(38, 34);
             this.ClientTextBoxKey.Mask = "000.000.000-00";
             this.ClientTextBoxKey.Name = "ClientTextBoxKey";
             this.ClientTextBoxKey.Size = new System.Drawing.Size(197, 20);
@@ -248,36 +298,36 @@
             // LabelResult
             // 
             this.LabelResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelResult.Location = new System.Drawing.Point(39, 163);
+            this.LabelResult.Location = new System.Drawing.Point(38, 217);
             this.LabelResult.Name = "LabelResult";
-            this.LabelResult.Size = new System.Drawing.Size(197, 23);
+            this.LabelResult.Size = new System.Drawing.Size(197, 19);
             this.LabelResult.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 37);
+            this.button1.Location = new System.Drawing.Point(38, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(197, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Localizar Cliente";
+            this.button1.Text = "Localizar Veículos";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // BtnGenerateValue
+            // BtnGenerateEntry
             // 
-            this.BtnGenerateValue.Location = new System.Drawing.Point(39, 137);
-            this.BtnGenerateValue.Name = "BtnGenerateValue";
-            this.BtnGenerateValue.Size = new System.Drawing.Size(197, 23);
-            this.BtnGenerateValue.TabIndex = 3;
-            this.BtnGenerateValue.Text = "Gerar Valor";
-            this.BtnGenerateValue.UseVisualStyleBackColor = true;
+            this.BtnGenerateEntry.Location = new System.Drawing.Point(38, 160);
+            this.BtnGenerateEntry.Name = "BtnGenerateEntry";
+            this.BtnGenerateEntry.Size = new System.Drawing.Size(197, 23);
+            this.BtnGenerateEntry.TabIndex = 3;
+            this.BtnGenerateEntry.Text = "Gerar Entrada";
+            this.BtnGenerateEntry.UseVisualStyleBackColor = true;
             // 
-            // ClientResultListBox
+            // VehicleClientResultListBox
             // 
-            this.ClientResultListBox.FormattingEnabled = true;
-            this.ClientResultListBox.Location = new System.Drawing.Point(39, 62);
-            this.ClientResultListBox.Name = "ClientResultListBox";
-            this.ClientResultListBox.Size = new System.Drawing.Size(197, 69);
-            this.ClientResultListBox.TabIndex = 1;
+            this.VehicleClientResultListBox.FormattingEnabled = true;
+            this.VehicleClientResultListBox.Location = new System.Drawing.Point(38, 85);
+            this.VehicleClientResultListBox.Name = "VehicleClientResultListBox";
+            this.VehicleClientResultListBox.Size = new System.Drawing.Size(197, 69);
+            this.VehicleClientResultListBox.TabIndex = 1;
             // 
             // FormLoggedMainPanel
             // 
@@ -287,55 +337,41 @@
             this.FormLoggedMainPanel.Size = new System.Drawing.Size(800, 421);
             this.FormLoggedMainPanel.TabIndex = 9;
             // 
-            // UserToolStripMenuItem
+            // BtnGenerateExit
             // 
-            this.UserToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddUserToolStripMenuItem1,
-            this.ConsultUserToolStripMenuItem1,
-            this.ChangeUserToolStripMenuItem1,
-            this.RemoveUserToolStripMenuItem1});
-            this.UserToolStripMenuItem.Name = "UserToolStripMenuItem";
-            this.UserToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.UserToolStripMenuItem.Text = "&Usuario";
+            this.BtnGenerateExit.Enabled = false;
+            this.BtnGenerateExit.Location = new System.Drawing.Point(38, 188);
+            this.BtnGenerateExit.Name = "BtnGenerateExit";
+            this.BtnGenerateExit.Size = new System.Drawing.Size(197, 23);
+            this.BtnGenerateExit.TabIndex = 5;
+            this.BtnGenerateExit.Text = "Gerar Saída";
+            this.BtnGenerateExit.UseVisualStyleBackColor = true;
             // 
-            // AddUserToolStripMenuItem1
+            // label1
             // 
-            this.AddUserToolStripMenuItem1.Name = "AddUserToolStripMenuItem1";
-            this.AddUserToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.AddUserToolStripMenuItem1.Text = "Adicionar";
-            this.AddUserToolStripMenuItem1.Click += new System.EventHandler(this.AddUserToolStripMenuItem1_Click);
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(38, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 69);
+            this.label1.TabIndex = 6;
             // 
-            // ConsultUserToolStripMenuItem1
+            // label2
             // 
-            this.ConsultUserToolStripMenuItem1.Name = "ConsultUserToolStripMenuItem1";
-            this.ConsultUserToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.ConsultUserToolStripMenuItem1.Text = "Consultar";
-            this.ConsultUserToolStripMenuItem1.Click += new System.EventHandler(this.ConsultUserToolStripMenuItem1_Click);
-            // 
-            // ChangeUserToolStripMenuItem1
-            // 
-            this.ChangeUserToolStripMenuItem1.Name = "ChangeUserToolStripMenuItem1";
-            this.ChangeUserToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.ChangeUserToolStripMenuItem1.Text = "Alterar";
-            this.ChangeUserToolStripMenuItem1.Click += new System.EventHandler(this.ChangeUserToolStripMenuItem1_Click);
-            // 
-            // RemoveUserToolStripMenuItem1
-            // 
-            this.RemoveUserToolStripMenuItem1.Name = "RemoveUserToolStripMenuItem1";
-            this.RemoveUserToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.RemoveUserToolStripMenuItem1.Text = "Remover";
-            this.RemoveUserToolStripMenuItem1.Click += new System.EventHandler(this.RemoveUserToolStripMenuItem1_Click);
+            this.label2.Location = new System.Drawing.Point(38, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "CPF";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormLogged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.FormLoggedMainPanel);
             this.Controls.Add(this.HideluzMenuStrip);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.HideluzMenuStrip;
             this.Name = "FormLogged";
             this.Text = "Hideluz";
@@ -366,22 +402,25 @@
         private System.Windows.Forms.MaskedTextBox ClientTextBoxKey;
         private System.Windows.Forms.Label LabelResult;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button BtnGenerateValue;
-        private System.Windows.Forms.ListBox ClientResultListBox;
+        private System.Windows.Forms.Button BtnGenerateEntry;
+        private System.Windows.Forms.ListBox VehicleClientResultListBox;
         private System.Windows.Forms.ToolStripMenuItem OperatorTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OperatorConsultTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OperatorStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SairToolStripMenuItem;
         private System.Windows.Forms.Panel FormLoggedMainPanel;
         private System.Windows.Forms.ToolStripMenuItem AdmTaxToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdministratorAddTaxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdministratorConsultTaxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdministratorChangeTaxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AdministratorRemoveTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem UserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ConsultUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ChangeUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem RemoveUserToolStripMenuItem1;
+        private System.Windows.Forms.Button BtnGenerateExit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

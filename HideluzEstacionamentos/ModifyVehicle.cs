@@ -28,7 +28,7 @@ namespace HideluzEstacionamentos
                 MessageBox.Show("Selecione o novo tipo do veículo.");
                 return;
             }
-            if (FormLogged.Operator.ChangeVehicle(Vehicle, VehicleSearchPlateTextBox.Text))
+            if (Login.Operator.ChangeVehicle(Vehicle, VehicleSearchPlateTextBox.Text))
             {
                 MessageBox.Show(Operation);
             }
@@ -40,7 +40,7 @@ namespace HideluzEstacionamentos
 
         private void VehicleSearchBtn_Click(object sender, EventArgs e)
         {
-            var list = FormLogged.Operator.SearchVehicle(VehicleSearchPlateTextBox.Text);
+            var list = Login.Operator.CheckVehicle(VehicleSearchPlateTextBox.Text);
             if (list.Count == 0)
             {
                 MessageBox.Show("Esse usuário não existe.");

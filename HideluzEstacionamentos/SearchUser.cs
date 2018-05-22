@@ -5,6 +5,8 @@ namespace HideluzEstacionamentos
 {
     public partial class SearchUser : Form
     {
+        public static string Operation;
+
         public SearchUser()
         {
             InitializeComponent();
@@ -17,7 +19,7 @@ namespace HideluzEstacionamentos
                 MessageBox.Show("Digite o CPF para continuar", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var list = FormLogged.Administrator.SearchUser(UserDocumentTextBox.Text);
+            var list = FormLogged.Administrator.CheckUser(UserDocumentTextBox.Text);
             if (list.Count < 1)
             {
                 MessageBox.Show("O CPF consultado não foi cadastrado!", "CPF inválido.", MessageBoxButtons.OK, MessageBoxIcon.Warning);

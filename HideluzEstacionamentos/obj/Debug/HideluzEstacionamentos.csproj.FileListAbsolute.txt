@@ -34,3 +34,7 @@ C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionament
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveUser.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchVehicle.resources
 C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveVehicle.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RegisterTax.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.SearchTax.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.ModifyTax.resources
+C:\Users\Jackson\source\repos\HideluzEstacionamento\Hideluz\HideluzEstacionamentos\obj\Debug\HideluzEstacionamentos.RemoveTax.resources

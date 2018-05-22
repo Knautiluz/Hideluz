@@ -42,7 +42,7 @@ namespace HideluzEstacionamentos
 
         private void UserSearchBtn_Click(object sender, EventArgs e)
         {
-            var list = FormLogged.Administrator.SearchUser(UserSearchDocumentTextBox.Text);
+            var list = FormLogged.Administrator.CheckUser(UserSearchDocumentTextBox.Text);
             if (list.Count == 0)
             {
                 MessageBox.Show("Esse usuário não existe.");

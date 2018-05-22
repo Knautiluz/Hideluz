@@ -5,6 +5,8 @@ namespace HideluzEstacionamentos
 {
     public partial class SearchVehicle : Form
     {
+        public static string Operation;
+
         public SearchVehicle()
         {
             InitializeComponent();
@@ -12,7 +14,7 @@ namespace HideluzEstacionamentos
 
         private void VehicleSearchBtn_Click(object sender, EventArgs e)
         {
-            var list = FormLogged.Operator.SearchVehicle(VehicleSearchPlateTextBox.Text);
+            var list = Login.Operator.CheckVehicle(VehicleSearchPlateTextBox.Text);
             if (list.Count == 0)
             {
                 MessageBox.Show("Esse usuário não existe.");

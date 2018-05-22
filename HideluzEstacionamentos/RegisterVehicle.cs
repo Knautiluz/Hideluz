@@ -23,7 +23,7 @@ namespace HideluzEstacionamentos
             Vehicle.Model = VehicleModelTextBox.Text;
             Vehicle.Type = VehicleTypeListBox.SelectedIndex + 1;
             Vehicle.OwnerDocument = VehicleDocumentTextBox.Text;
-            if(FormLogged.Operator.AddVehicle(Vehicle, FormLogged.Operator.EmployeeRegistry))
+            if(Login.Operator.AddVehicle(Vehicle, Login.Operator.EmployeeRegistry))
             {
                 MessageBox.Show(Operation);
             }

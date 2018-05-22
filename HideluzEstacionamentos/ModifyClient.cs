@@ -33,7 +33,7 @@ namespace HideluzEstacionamentos
                 MessageBox.Show("Selecione o tipo do cliente.");
                 return;
             }
-            if(FormLogged.Operator.ChangeClient(Client, ClientSearchTextBox.Text))
+            if(Login.Operator.ChangeClient(Client, ClientSearchTextBox.Text))
             {
                 MessageBox.Show("Dados alterados.");
                 RegisterClientPanel.Enabled = false;
@@ -45,7 +45,7 @@ namespace HideluzEstacionamentos
 
         private void ClientSearchBtn_Click(object sender, EventArgs e)
         {
-            var list = FormLogged.Operator.SearchClient(ClientSearchTextBox.Text);
+            var list = Login.Operator.CheckClient(ClientSearchTextBox.Text);
             if(list.Count == 0)
             {
                 MessageBox.Show("Esse usuário não existe.");
