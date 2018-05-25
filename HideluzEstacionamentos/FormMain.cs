@@ -36,28 +36,7 @@ namespace HideluzEstacionamentos
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Connection con = new Connection();
-            con.RunQuery("SELECT COUNT(*) FROM TIPOUSUARIO", 0);
-            if (con.Rows == 0)
-            {
-
-                if (con.RunQuery("INSERT INTO TIPOUSUARIO (TIPOUSUARIO) VALUES ('Administrador')", 2))
-                {
-                    MessageBox.Show("Foi criada uma conta de administrador, o adm deve ser cadastrado no banco de dados.", "Administrador Criado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (con.RunQuery("INSERT INTO TIPOUSUARIO (TIPOUSUARIO) VALUES ('Operador')", 2))
-                    {
-                        MessageBox.Show("Uma conta de operador foi criada.", "Operador Criado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(con.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(con.Message);
-                }
-            }
+            
         }
     }
 }

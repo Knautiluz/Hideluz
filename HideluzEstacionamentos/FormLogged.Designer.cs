@@ -54,15 +54,15 @@
             this.OperatorStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelPayment = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnGenerateExit = new System.Windows.Forms.Button();
             this.ClientTextBoxKey = new System.Windows.Forms.MaskedTextBox();
             this.LabelResult = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnGenerateEntry = new System.Windows.Forms.Button();
             this.VehicleClientResultListBox = new System.Windows.Forms.ListBox();
             this.FormLoggedMainPanel = new System.Windows.Forms.Panel();
-            this.BtnGenerateExit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.HideluzMenuStrip.SuspendLayout();
             this.PanelPayment.SuspendLayout();
             this.FormLoggedMainPanel.SuspendLayout();
@@ -175,28 +175,28 @@
             // AddVehicleToolStripItem
             // 
             this.AddVehicleToolStripItem.Name = "AddVehicleToolStripItem";
-            this.AddVehicleToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.AddVehicleToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.AddVehicleToolStripItem.Text = "Adcionar";
             this.AddVehicleToolStripItem.Click += new System.EventHandler(this.AddVehicleToolStripItem_Click);
             // 
             // ConsultVehicleToolStripItem
             // 
             this.ConsultVehicleToolStripItem.Name = "ConsultVehicleToolStripItem";
-            this.ConsultVehicleToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ConsultVehicleToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ConsultVehicleToolStripItem.Text = "Consultar";
             this.ConsultVehicleToolStripItem.Click += new System.EventHandler(this.ConsultVehicleToolStripItem_Click);
             // 
             // ChangeVehicleToolStripItem
             // 
             this.ChangeVehicleToolStripItem.Name = "ChangeVehicleToolStripItem";
-            this.ChangeVehicleToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeVehicleToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.ChangeVehicleToolStripItem.Text = "Alterar";
             this.ChangeVehicleToolStripItem.Click += new System.EventHandler(this.ChangeVehicleToolStripItem_Click);
             // 
             // RemoveVehicleToolStripItem
             // 
             this.RemoveVehicleToolStripItem.Name = "RemoveVehicleToolStripItem";
-            this.RemoveVehicleToolStripItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoveVehicleToolStripItem.Size = new System.Drawing.Size(125, 22);
             this.RemoveVehicleToolStripItem.Text = "Remover";
             this.RemoveVehicleToolStripItem.Click += new System.EventHandler(this.RemoveVehicleToolStripItem_Click);
             // 
@@ -211,7 +211,7 @@
             // OperatorConsultTaxToolStripMenuItem
             // 
             this.OperatorConsultTaxToolStripMenuItem.Name = "OperatorConsultTaxToolStripMenuItem";
-            this.OperatorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OperatorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.OperatorConsultTaxToolStripMenuItem.Text = "Consultar";
             this.OperatorConsultTaxToolStripMenuItem.Click += new System.EventHandler(this.OperatorConsultTaxToolStripMenuItem_Click);
             // 
@@ -229,28 +229,28 @@
             // AdministratorAddTaxToolStripMenuItem
             // 
             this.AdministratorAddTaxToolStripMenuItem.Name = "AdministratorAddTaxToolStripMenuItem";
-            this.AdministratorAddTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorAddTaxToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.AdministratorAddTaxToolStripMenuItem.Text = "Adicionar";
             this.AdministratorAddTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorAddTaxToolStripMenuItem_Click);
             // 
             // AdministratorConsultTaxToolStripMenuItem
             // 
             this.AdministratorConsultTaxToolStripMenuItem.Name = "AdministratorConsultTaxToolStripMenuItem";
-            this.AdministratorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorConsultTaxToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.AdministratorConsultTaxToolStripMenuItem.Text = "Consultar";
             this.AdministratorConsultTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorConsultTaxToolStripMenuItem_Click);
             // 
             // AdministratorChangeTaxToolStripMenuItem
             // 
             this.AdministratorChangeTaxToolStripMenuItem.Name = "AdministratorChangeTaxToolStripMenuItem";
-            this.AdministratorChangeTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorChangeTaxToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.AdministratorChangeTaxToolStripMenuItem.Text = "Alterar";
             this.AdministratorChangeTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorChangeTaxToolStripMenuItem_Click);
             // 
             // AdministratorRemoveTaxToolStripMenuItem
             // 
             this.AdministratorRemoveTaxToolStripMenuItem.Name = "AdministratorRemoveTaxToolStripMenuItem";
-            this.AdministratorRemoveTaxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AdministratorRemoveTaxToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.AdministratorRemoveTaxToolStripMenuItem.Text = "Remover";
             this.AdministratorRemoveTaxToolStripMenuItem.Click += new System.EventHandler(this.AdministratorRemoveTaxToolStripMenuItem_Click);
             // 
@@ -285,6 +285,33 @@
             this.PanelPayment.Name = "PanelPayment";
             this.PanelPayment.Size = new System.Drawing.Size(279, 336);
             this.PanelPayment.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(38, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "CPF";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(38, 247);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 69);
+            this.label1.TabIndex = 6;
+            // 
+            // BtnGenerateExit
+            // 
+            this.BtnGenerateExit.Enabled = false;
+            this.BtnGenerateExit.Location = new System.Drawing.Point(38, 188);
+            this.BtnGenerateExit.Name = "BtnGenerateExit";
+            this.BtnGenerateExit.Size = new System.Drawing.Size(197, 23);
+            this.BtnGenerateExit.TabIndex = 5;
+            this.BtnGenerateExit.Text = "Gerar Saída";
+            this.BtnGenerateExit.UseVisualStyleBackColor = true;
             // 
             // ClientTextBoxKey
             // 
@@ -337,41 +364,14 @@
             this.FormLoggedMainPanel.Size = new System.Drawing.Size(800, 421);
             this.FormLoggedMainPanel.TabIndex = 9;
             // 
-            // BtnGenerateExit
-            // 
-            this.BtnGenerateExit.Enabled = false;
-            this.BtnGenerateExit.Location = new System.Drawing.Point(38, 188);
-            this.BtnGenerateExit.Name = "BtnGenerateExit";
-            this.BtnGenerateExit.Size = new System.Drawing.Size(197, 23);
-            this.BtnGenerateExit.TabIndex = 5;
-            this.BtnGenerateExit.Text = "Gerar Saída";
-            this.BtnGenerateExit.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(38, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 69);
-            this.label1.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(38, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "CPF";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormLogged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.FormLoggedMainPanel);
             this.Controls.Add(this.HideluzMenuStrip);
+            this.Controls.Add(this.FormLoggedMainPanel);
             this.MainMenuStrip = this.HideluzMenuStrip;
             this.Name = "FormLogged";
             this.Text = "Hideluz";

@@ -27,7 +27,6 @@ namespace HideluzEstacionamentos
         public FormLogged()
         {
             InitializeComponent();
-            OperatorStripMenuItem.Text = Login.Operator.Name;
             if(Login.Operator.Type == 1)
             {
                 OperatorTaxToolStripMenuItem.Available = false;
@@ -61,7 +60,6 @@ namespace HideluzEstacionamentos
             catch (ObjectDisposedException)
             {
                 RegisterClient = new RegisterClient();
-                RegisterClient.MdiParent = this;
                 FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
             }
