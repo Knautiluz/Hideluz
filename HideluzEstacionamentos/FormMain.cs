@@ -18,7 +18,7 @@ namespace HideluzEstacionamentos
             this.Hide();
             Splash Splash = new Splash();
             Splash.Show();
-            if (Login.Verify(TextBoxUser.Text, TextBoxPass.Text) && Splash.ProgressComplete)
+            if (!(TextBoxUser.Text == "") && Splash.ProgressComplete)
             {
                 MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
