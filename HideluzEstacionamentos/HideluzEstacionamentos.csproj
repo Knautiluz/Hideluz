@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Administrator.cs" />
-    <Compile Include="Connection.cs" />
     <Compile Include="ModifyTax.cs">
       <SubType>Form</SubType>
     </Compile>
