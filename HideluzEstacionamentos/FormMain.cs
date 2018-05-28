@@ -16,9 +16,9 @@ namespace HideluzEstacionamentos
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Splash Splash = new Splash();
+            FormSplash Splash = new FormSplash();
             Splash.Show();
-            if (!(TextBoxUser.Text == "") && Splash.ProgressComplete)
+            if (!(TextBoxUser.Text == ""))
             {
                 MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
@@ -27,7 +27,7 @@ namespace HideluzEstacionamentos
             }
             else
             {
-                MessageBox.Show(Login.Message, "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Dados inválidos", "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Splash.Close();
                 var form = Application.OpenForms[0];
                 form.Show();

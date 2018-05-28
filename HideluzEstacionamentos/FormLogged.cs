@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -8,26 +7,26 @@ namespace HideluzEstacionamentos
     {
         
         public static Administrator Administrator;
-        public RegisterClient RegisterClient = new RegisterClient();
-        public RegisterVehicle RegisterVehicle = new RegisterVehicle();
-        public RegisterUser RegisterUser = new RegisterUser();
-        public RegisterTax RegisterTax = new RegisterTax();
-        public ModifyClient ModifyClient = new ModifyClient();
-        public ModifyVehicle ModifyVehicle = new ModifyVehicle();
-        public ModifyUser ModifyUser = new ModifyUser();
-        public ModifyTax ModifyTax = new ModifyTax();
-        public SearchClient SearchClient = new SearchClient();
-        public SearchVehicle SearchVehicle = new SearchVehicle();
-        public SearchUser SearchUser = new SearchUser();
-        public SearchTax SearchTax = new SearchTax();
-        public RemoveUser RemoveUser = new RemoveUser();
-        public RemoveClient RemoveClient = new RemoveClient();
-        public RemoveVehicle RemoveVehicle = new RemoveVehicle();
-        public RemoveTax RemoveTax = new RemoveTax();
+        public FormRegisterClient RegisterClient = new FormRegisterClient();
+        public FormRegisterVehicle RegisterVehicle = new FormRegisterVehicle();
+        public FormRegisterUser RegisterUser = new FormRegisterUser();
+        public FormRegisterTax RegisterTax = new FormRegisterTax();
+        public FormModifyClient ModifyClient = new FormModifyClient();
+        public FormModifyVehicle ModifyVehicle = new FormModifyVehicle();
+        public FormModifyUser ModifyUser = new FormModifyUser();
+        public FormModifyTax ModifyTax = new FormModifyTax();
+        public FormSearchClient SearchClient = new FormSearchClient();
+        public FormSearchVehicle SearchVehicle = new FormSearchVehicle();
+        public FormSearchUser SearchUser = new FormSearchUser();
+        public FormSearchTax SearchTax = new FormSearchTax();
+        public FormRemoveUser RemoveUser = new FormRemoveUser();
+        public FormRemoveClient RemoveClient = new FormRemoveClient();
+        public FormRemoveVehicle RemoveVehicle = new FormRemoveVehicle();
+        public FormRemoveTax RemoveTax = new FormRemoveTax();
         public FormLogged()
         {
             InitializeComponent();
-            if(Login.Operator.Type == 1)
+            if(Login.Operator.Type == 0)
             {
                 OperatorTaxToolStripMenuItem.Available = false;
             } else
@@ -44,7 +43,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RegisterVehicle = new RegisterVehicle();
+                RegisterVehicle = new FormRegisterVehicle();
                 RegisterVehicle.Show();
             }
         }
@@ -59,7 +58,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RegisterClient = new RegisterClient();
+                RegisterClient = new FormRegisterClient();
                 FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
             }
@@ -72,7 +71,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                ModifyClient = new ModifyClient();
+                ModifyClient = new FormModifyClient();
                 ModifyClient.Show();
             }
         }
@@ -84,7 +83,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                ModifyVehicle = new ModifyVehicle();
+                ModifyVehicle = new FormModifyVehicle();
                 ModifyVehicle.Show();
             }
         }
@@ -142,7 +141,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                SearchClient = new SearchClient();
+                SearchClient = new FormSearchClient();
                 SearchClient.Show();
             }
         }
@@ -155,7 +154,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                SearchVehicle = new SearchVehicle();
+                SearchVehicle = new FormSearchVehicle();
                 SearchVehicle.Show();
             }
         }
@@ -168,7 +167,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RemoveClient = new RemoveClient();
+                RemoveClient = new FormRemoveClient();
                 RemoveClient.Show();
             }
         }
@@ -181,7 +180,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RemoveVehicle = new RemoveVehicle();
+                RemoveVehicle = new FormRemoveVehicle();
                 RemoveVehicle.Show();
             }
         }
@@ -193,7 +192,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RegisterUser = new RegisterUser();
+                RegisterUser = new FormRegisterUser();
                 RegisterUser.Show();
             }
         }
@@ -206,7 +205,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                SearchUser = new SearchUser();
+                SearchUser = new FormSearchUser();
                 SearchUser.Show();
             }
         }
@@ -219,7 +218,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                ModifyUser = new ModifyUser();
+                ModifyUser = new FormModifyUser();
                 ModifyUser.Show();
             }
         }
@@ -232,7 +231,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RemoveUser = new RemoveUser();
+                RemoveUser = new FormRemoveUser();
                 RemoveUser.Show();
             }
         }
@@ -245,7 +244,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RegisterTax = new RegisterTax();
+                RegisterTax = new FormRegisterTax();
                 RegisterTax.Show();
             }
         }
@@ -258,7 +257,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                SearchTax = new SearchTax();
+                SearchTax = new FormSearchTax();
                 SearchTax.Show();
             }
         }
@@ -271,7 +270,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                SearchTax = new SearchTax();
+                SearchTax = new FormSearchTax();
                 SearchTax.Show();
             }
         }
@@ -284,7 +283,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                ModifyTax = new ModifyTax();
+                ModifyTax = new FormModifyTax();
                 ModifyTax.Show();
             }
         }
@@ -297,7 +296,7 @@ namespace HideluzEstacionamentos
             }
             catch (ObjectDisposedException)
             {
-                RemoveTax = new RemoveTax();
+                RemoveTax = new FormRemoveTax();
                 RemoveTax.Show();
             }
         }

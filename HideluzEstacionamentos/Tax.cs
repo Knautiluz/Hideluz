@@ -5,9 +5,13 @@ namespace HideluzEstacionamentos
     public class Tax
     {
         public string Id { get; set; }
+        // qual o tipo da taxa, se é de carro, moto
         public double PricePerHour { get; set; }
+        // preço por hora da taxa
         public DateTime EntryTime { get; set; }
+        // hora de entrada no estacionamento
         public DateTime DepartureTime { get; set; }
+        // hora de saída do estacionamento
 
         public Tax()
         {
@@ -16,7 +20,7 @@ namespace HideluzEstacionamentos
 
         public double CalculateTax(double pricePerHour, DateTime entryTime, DateTime departureTime)
         {
-            // lógica do método
+            // lógica que vai calcular a taxa
             var hours = departureTime.Hour - entryTime.Hour;
             var minutes = departureTime.Minute - entryTime.Minute;
             double total = ((hours * 60) + minutes) / 60;

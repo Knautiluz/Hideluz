@@ -50,42 +50,41 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Administrator.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="ModifyTax.cs">
+    <Compile Include="FormModifyTax.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyTax.Designer.cs">
-      <DependentUpon>ModifyTax.cs</DependentUpon>
+    <Compile Include="FormModifyTax.Designer.cs">
+      <DependentUpon>FormModifyTax.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterTax.cs">
+    <Compile Include="FormRegisterTax.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterTax.Designer.cs">
-      <DependentUpon>RegisterTax.cs</DependentUpon>
+    <Compile Include="FormRegisterTax.Designer.cs">
+      <DependentUpon>FormRegisterTax.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveTax.cs">
+    <Compile Include="FormRemoveTax.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveTax.Designer.cs">
-      <DependentUpon>RemoveTax.cs</DependentUpon>
+    <Compile Include="FormRemoveTax.Designer.cs">
+      <DependentUpon>FormRemoveTax.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveUser.cs">
+    <Compile Include="FormRemoveUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveUser.Designer.cs">
-      <DependentUpon>RemoveUser.cs</DependentUpon>
+    <Compile Include="FormRemoveUser.Designer.cs">
+      <DependentUpon>FormRemoveUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyUser.cs">
+    <Compile Include="FormModifyUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyUser.Designer.cs">
-      <DependentUpon>ModifyUser.cs</DependentUpon>
+    <Compile Include="FormModifyUser.Designer.cs">
+      <DependentUpon>FormModifyUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterUser.cs">
+    <Compile Include="FormRegisterUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterUser.Designer.cs">
-      <DependentUpon>RegisterUser.cs</DependentUpon>
+    <Compile Include="FormRegisterUser.Designer.cs">
+      <DependentUpon>FormRegisterUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="FormLogged.cs">
@@ -101,98 +100,98 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs" />
-    <Compile Include="ModifyClient.cs">
+    <Compile Include="FormModifyClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyClient.Designer.cs">
-      <DependentUpon>ModifyClient.cs</DependentUpon>
+    <Compile Include="FormModifyClient.Designer.cs">
+      <DependentUpon>FormModifyClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyVehicle.cs">
+    <Compile Include="FormModifyVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyVehicle.Designer.cs">
-      <DependentUpon>ModifyVehicle.cs</DependentUpon>
+    <Compile Include="FormModifyVehicle.Designer.cs">
+      <DependentUpon>FormModifyVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Operator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterClient.cs">
+    <Compile Include="FormRegisterClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterClient.Designer.cs">
-      <DependentUpon>RegisterClient.cs</DependentUpon>
+    <Compile Include="FormRegisterClient.Designer.cs">
+      <DependentUpon>FormRegisterClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegisterVehicle.cs">
+    <Compile Include="FormRegisterVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterVehicle.Designer.cs">
-      <DependentUpon>RegisterVehicle.cs</DependentUpon>
+    <Compile Include="FormRegisterVehicle.Designer.cs">
+      <DependentUpon>FormRegisterVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveClient.cs">
+    <Compile Include="FormRemoveClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveClient.Designer.cs">
-      <DependentUpon>RemoveClient.cs</DependentUpon>
+    <Compile Include="FormRemoveClient.Designer.cs">
+      <DependentUpon>FormRemoveClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoveVehicle.cs">
+    <Compile Include="FormRemoveVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RemoveVehicle.Designer.cs">
-      <DependentUpon>RemoveVehicle.cs</DependentUpon>
+    <Compile Include="FormRemoveVehicle.Designer.cs">
+      <DependentUpon>FormRemoveVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchClient.cs">
+    <Compile Include="FormSearchClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchClient.Designer.cs">
-      <DependentUpon>SearchClient.cs</DependentUpon>
+    <Compile Include="FormSearchClient.Designer.cs">
+      <DependentUpon>FormSearchClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchTax.cs">
+    <Compile Include="FormSearchTax.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchTax.Designer.cs">
-      <DependentUpon>SearchTax.cs</DependentUpon>
+    <Compile Include="FormSearchTax.Designer.cs">
+      <DependentUpon>FormSearchTax.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchUser.cs">
+    <Compile Include="FormSearchUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchUser.Designer.cs">
-      <DependentUpon>SearchUser.cs</DependentUpon>
+    <Compile Include="FormSearchUser.Designer.cs">
+      <DependentUpon>FormSearchUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchVehicle.cs">
+    <Compile Include="FormSearchVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchVehicle.Designer.cs">
-      <DependentUpon>SearchVehicle.cs</DependentUpon>
+    <Compile Include="FormSearchVehicle.Designer.cs">
+      <DependentUpon>FormSearchVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Splash.cs">
+    <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash.Designer.cs">
-      <DependentUpon>Splash.cs</DependentUpon>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Tax.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
-    <EmbeddedResource Include="ModifyTax.resx">
-      <DependentUpon>ModifyTax.cs</DependentUpon>
+    <EmbeddedResource Include="FormModifyTax.resx">
+      <DependentUpon>FormModifyTax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterTax.resx">
-      <DependentUpon>RegisterTax.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterTax.resx">
+      <DependentUpon>FormRegisterTax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveClient.resx">
-      <DependentUpon>RemoveClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormRemoveClient.resx">
+      <DependentUpon>FormRemoveClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveTax.resx">
-      <DependentUpon>RemoveTax.cs</DependentUpon>
+    <EmbeddedResource Include="FormRemoveTax.resx">
+      <DependentUpon>FormRemoveTax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveUser.resx">
-      <DependentUpon>RemoveUser.cs</DependentUpon>
+    <EmbeddedResource Include="FormRemoveUser.resx">
+      <DependentUpon>FormRemoveUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyUser.resx">
-      <DependentUpon>ModifyUser.cs</DependentUpon>
+    <EmbeddedResource Include="FormModifyUser.resx">
+      <DependentUpon>FormModifyUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterUser.resx">
-      <DependentUpon>RegisterUser.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterUser.resx">
+      <DependentUpon>FormRegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogged.resx">
       <DependentUpon>FormLogged.cs</DependentUpon>
@@ -200,11 +199,11 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyClient.resx">
-      <DependentUpon>ModifyClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormModifyClient.resx">
+      <DependentUpon>FormModifyClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyVehicle.resx">
-      <DependentUpon>ModifyVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="FormModifyVehicle.resx">
+      <DependentUpon>FormModifyVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,29 +215,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegisterClient.resx">
-      <DependentUpon>RegisterClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterClient.resx">
+      <DependentUpon>FormRegisterClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegisterVehicle.resx">
-      <DependentUpon>RegisterVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterVehicle.resx">
+      <DependentUpon>FormRegisterVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RemoveVehicle.resx">
-      <DependentUpon>RemoveVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="FormRemoveVehicle.resx">
+      <DependentUpon>FormRemoveVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchClient.resx">
-      <DependentUpon>SearchClient.cs</DependentUpon>
+    <EmbeddedResource Include="FormSearchClient.resx">
+      <DependentUpon>FormSearchClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchTax.resx">
-      <DependentUpon>SearchTax.cs</DependentUpon>
+    <EmbeddedResource Include="FormSearchTax.resx">
+      <DependentUpon>FormSearchTax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchUser.resx">
-      <DependentUpon>SearchUser.cs</DependentUpon>
+    <EmbeddedResource Include="FormSearchUser.resx">
+      <DependentUpon>FormSearchUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchVehicle.resx">
-      <DependentUpon>SearchVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="FormSearchVehicle.resx">
+      <DependentUpon>FormSearchVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash.resx">
-      <DependentUpon>Splash.cs</DependentUpon>
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
