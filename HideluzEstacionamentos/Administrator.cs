@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
@@ -13,68 +14,45 @@ namespace HideluzEstacionamentos
         }
         public bool AddTax(int type, float value)
         {
-<<<<<<< HEAD
-            //faz a verificação se a tarifa já existe e insere nova tarifa no banco de dados.
-=======
->>>>>>> 9c289803da1ef3d38ee126b1662ad633efb0fb79
+            //método que adiciona uma tarifa, recebe como parametro o tipo de tarifa (carro ou moto...) e o valor.
+            MessageBox.Show("Método que adiciona uma tarifa, recebe como parametro o tipo de tarifa (carro ou moto...) e o valor.");
             return true;
         }
         public bool ChangeTax(int type, float value)
         {
-<<<<<<< HEAD
-            //altera a tarifa no banco de dados
-=======
->>>>>>> 9c289803da1ef3d38ee126b1662ad633efb0fb79
+            //método que altera uma tarifa, recebe como parametro o tipo de tarifa (carro ou moto...) e o valor.
+            MessageBox.Show("Método que altera uma tarifa, recebe como parametro o tipo de tarifa (carro ou moto...) e o valor.");
             return true;
         }
         public bool DeleteTax(int type)
         {
-<<<<<<< HEAD
-            //verifica se a tarifa existe e se exister remove a tarifa no banco.
-=======
->>>>>>> 9c289803da1ef3d38ee126b1662ad633efb0fb79
+            //método que deleta tarifa, recebe como parametro uma tarifa.
+            MessageBox.Show("Método que deleta tarifa, recebe como parametro uma tarifa.");
             return true;
         }
-        public bool AddUser(User user, string operatorId)
+        public bool AddUser(User user)
         {
-<<<<<<< HEAD
-            //verifica se o usuário (operador) já existe e se não existir adiciona ele no banco de dados.
-=======
->>>>>>> 9c289803da1ef3d38ee126b1662ad633efb0fb79
+            //método que adiciona um novo usuário, recebe como parametro o objeto usuário
+            MessageBox.Show("Método que adiciona um novo usuário, recebe como parametro o objeto usuário.");
             return true;
         }
-        public bool ChangeUser(User user, string doc)
+        public bool ChangeUser(User user)
         {
-<<<<<<< HEAD
-            //altera dados do usuário (operador) no banco de dados
+            //método que altera um usuário, recebe como parametro o objeto usuário.
+            MessageBox.Show("Método que altera um usuário, recebe como parametro o objeto usuário.");
             return true;
         }
-        public User[] CheckUser(string document)
+        public User CheckUser(string userId)
         {
-            //faz consulta no banco pra saber quantos operadores existem e retorna o numero de linhas
-            int rows = 1; // supondo que só tenha retornado 1
-            var usuarios = new User[rows]; //istancia vetor com o numero de usuarios existentes
-            //preenche o vetor de usuários com os dados recebidos e retorna o vetor de objeto usuario
-            return usuarios;
+            User user = new User();
+            //método que verifica os dados do usuário, recebe como parametro o id do usuário.
+            MessageBox.Show("Método que verifica os dados do usuário, recebe como parametro o documento o id do usuário.");
+            return user;
         }
-        public bool DeleteUser(string doc)
+        public bool DeleteUser(string userId)
         {
-            //verifica se existe usuário e se exister apaga do banco.
-=======
-            return true;
-        }
-        public Client[] CheckUser(string document)
-        {
-            //recebe o numero de clientes do banco
-            int num_clients = 1;
-            //instancia um vetor de clientes com os clientes recebidos do banco
-            Client[] clients = new Client[num_clients];
-            //adiciona os clientes no vetor e retorna o vetor de clientes;
-            return clients;
-        }
-        public bool DeleteUser(string doc)
-        {
->>>>>>> 9c289803da1ef3d38ee126b1662ad633efb0fb79
+            //método que deleta um usuário, recebe como parametro id do usuário.
+            MessageBox.Show("Método que deleta um usuário, recebe como parametro id do usuário.");
             return true;
         }
     }

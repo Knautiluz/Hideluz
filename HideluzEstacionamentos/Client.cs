@@ -6,8 +6,6 @@
         // documento do cliente (cpf)
         public string Name { get; set; }
         // nome do cliente
-        public Address Address { get; set; }
-        // endereço do cliente
         public string Email { get; set; }
         // e-mail do cliente
         public string Tel { get; set; }
@@ -18,6 +16,20 @@
         public Client()
         {
             // constructor
+        }
+        public class Address
+        {
+            public string State { get; set; }
+            public string City { get; set; }
+            public string Street { get; set; }
+            public string Number { get; set; }
+            public string Neighborhood { get; set; }
+            public string Cep { get; set; }
+
+            public Address()
+            {
+                // constructor
+            }
         }
     }
 }

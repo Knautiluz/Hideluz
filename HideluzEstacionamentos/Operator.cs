@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
@@ -18,64 +19,71 @@ namespace HideluzEstacionamentos
         }
         public bool AddClient(Client client, string operatorId)
         {
-            //verifica se cliente já existe no banco e caso não exista adiciona um novo cliente.
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que adiciona um novo cliente, que recebe como parametro o objeto cliente e o id do operador que fez o registro.
+            MessageBox.Show("Esse é o método que adiciona o cliente.");
             return true;
         }
 
         public bool AddVehicle(Vehicle vehicle, string operatorId)
         {
-            //verifica se veículo já existe e adiciona um novo veículo no banco.
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que adiciona um novo veículo, que recebe como parametro o objeto veículo e o id do operador que fez o registro.
+            MessageBox.Show("Esse é o método que adiciona o veículo.");
             return true;
         }
-        public bool ChangeClient(Client client, string doc)
+        public bool ChangeClient(Client client)
         {
-            //altera o cliente no banco de dados
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que altera o cliente, que recebe como parametro o objeto cliente.
+            MessageBox.Show("Esse é o método que altera o cliente.");
             return true;
         }
 
-        public bool ChangeVehicle(Vehicle vehicle, string plate)
+        public bool ChangeVehicle(Vehicle vehicle)
         {
-            //altera o veículo no banco de dados
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que altera um veículo, que recebe como parametro o objeto veículo.
+            MessageBox.Show("Esse é o método que altera o veículo.");
             return true;
         }
         public bool DeleteClient(string doc)
         {
-            //verifica se cliente existe e se existir apaga
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que deleta um cliente, recebe como parametro o documento do cliente.
+            MessageBox.Show("Esse é o método que deleta o cliente.");
             return true;
         }
 
         public bool DeleteVehicle(string plate)
         {
-            //verifica se veículo existe e se existir apaga.
-            //se ouver algum erro ele será preenchido no form de origem da requisição atráves de um atributo public static string
+            //método que deleta o veículo, que recebe como parametro a placa do veículo.
+            MessageBox.Show("Esse é o método que deleta o veículo.");
             return true;
         }
-        public Client[] CheckClient(string document)
+        public Client CheckClient(string document)
         {
-            //verifica os clientes no banco de dados e retorna o numero de linhas
-            int rows = 1; //supondo que retornou 1 cliente
-            var clients = new Client[rows]; //instancia clientes com o numero retornado do banco
-            return clients; //retorna o vetor de clientes preenchidos com os dados do banco.            
+            var client = new Client();
+            //método usado para verificar um veículo, que recebe como parametro o documento do cliente.
+            MessageBox.Show("Esse é o método que verifica o cliente.");
+            return client;
         }
 
-        public Vehicle[] CheckVehicle(string plate)
+        public Vehicle CheckVehicle(string plate)
         {
-            //verifica os veículos no banco de dados e retorna o numero de linhas
-            int rows = 1; //supondo que retornou 1 veículo
-            var vehicles = new Vehicle[rows]; //instancia clientes com o numero retornado do banco
-            return vehicles; //retorna o vetor de veículos preenchidos com os dados do banco.            
+            var vehicle = new Vehicle();
+            //método usado para verificar um veículo, que recebe como parametro a placa do veículo.
+            MessageBox.Show("Esse é o método que verifica o veículo.");
+            return vehicle;
         }
-        public Tax[] CheckTax(int type)
+        public Tax CheckTax(int type)
         {
-            //verifica as tarifas no banco de dados e retorna o numero de linhas
-            int rows = 1; //supondo que retornou 1 tarifa
-            var taxes = new Tax[rows]; //instancia tarifas com o numero retornado do banco
-            return taxes; //retorna o vetor de tarifas preenchidos com os dados do banco.            
+            var tax = new Tax();
+            //método usado para verificar uma tarifa, que recebe como parametro o tipo da tarifa, se é de carro ou moto ou ect...
+            MessageBox.Show("Esse é o método que verifica a tarifa.");
+            return tax;
+        }
+        public Vehicle[] ParkedVehicles()
+        {
+            //retorna o numero de veículos marcados como estacionados no banco.
+            var vehicles = new Vehicle[500]; 
+            MessageBox.Show("Esse é o método que retorna os veículos marcados como estacionados.");
+            return vehicles; //retorna o vetor de veículos preenchidos com os dados do banco.
         }
     }
 }

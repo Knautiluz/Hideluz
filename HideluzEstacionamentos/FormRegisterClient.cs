@@ -7,7 +7,9 @@ namespace HideluzEstacionamentos
     {
         public FormRegisterClient()
         {
-            InitializeComponent();
+           InitializeComponent();
+           Client Client = new Client();
+           Client.Address Address = new Client.Address();
         }
 
         private void SignupBtn_Click(object sender, EventArgs e)
