@@ -5,8 +5,6 @@ namespace HideluzEstacionamentos
 {
     public partial class FormLogged : Form
     {
-        
-        public static Administrator Administrator;
         public FormRegisterClient RegisterClient = new FormRegisterClient();
         public FormRegisterVehicle RegisterVehicle = new FormRegisterVehicle();
         public FormRegisterUser RegisterUser = new FormRegisterUser();

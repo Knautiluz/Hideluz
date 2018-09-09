@@ -1,4 +1,5 @@
 ﻿using System;
+using HideluzEstacionamentos.Models;
 
 namespace HideluzEstacionamentos.Controllers
 {
