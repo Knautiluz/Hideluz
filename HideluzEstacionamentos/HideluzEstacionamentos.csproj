@@ -92,7 +92,7 @@
     <Compile Include="Views\FormRegisterUser.Designer.cs">
       <DependentUpon>FormRegisterUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Views\FormLogged.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,7 +105,7 @@
     <Compile Include="Views\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Views\FormModifyClient.cs">
       <SubType>Form</SubType>
     </Compile>
