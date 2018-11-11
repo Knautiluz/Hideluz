@@ -1,12 +1,26 @@
 ﻿using HideluzEstacionamentos.Models;
+using HideluzEstacionamentos.DAO;
+using System;
+using System.Data;
 
 namespace HideluzEstacionamentos.Controllers
 {
     public class Ctr_Operator
     {
-        public bool AddClient(Client Client, Operator Operator)
+        /* Instancia ClientDAO */
+        ClientDAO ClientDAO = new ClientDAO();
+
+        public bool AddClient(Client Client)
         {
-            return true;
+            try
+            {
+                ClientDAO.Save(Client);
+                return true;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
         }
 
         public bool AddVehicle(Vehicle Vehicle, Operator Operator)
@@ -52,6 +66,13 @@ namespace HideluzEstacionamentos.Controllers
         {
             var vehicles = new Vehicle[500];
             return vehicles;
+        }
+
+        public DataTable FillType()
+        {
+            var tunga = new DataTable();
+            tunga.Load(ClientDAO.FillClientType());
+            return tunga;
         }
     }
 }
