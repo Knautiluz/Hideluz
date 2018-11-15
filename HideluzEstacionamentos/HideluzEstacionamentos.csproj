@@ -64,8 +64,10 @@
     <Compile Include="Controllers\Ctr_Administrator.cs" />
     <Compile Include="Controllers\Ctr_Operator.cs" />
     <Compile Include="Controllers\Ctr_Tax.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Operator.cs" />
