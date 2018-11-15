@@ -206,6 +206,7 @@
             // ClientDocumentTextBox
             // 
             this.ClientDocumentTextBox.Culture = new System.Globalization.CultureInfo("en-US");
+            this.ClientDocumentTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ClientDocumentTextBox.Location = new System.Drawing.Point(67, 19);
             this.ClientDocumentTextBox.Mask = "000.000.000-00";
             this.ClientDocumentTextBox.Name = "ClientDocumentTextBox";
