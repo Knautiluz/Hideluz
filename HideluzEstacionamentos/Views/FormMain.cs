@@ -9,6 +9,7 @@ namespace HideluzEstacionamentos
         //atributos de inicialização.
         private Login Login = new Login();
         private LoginController Controller = new LoginController();
+        private InitializerController Initializator = new InitializerController();
         public static string OperationResult;
         public FormMain()
         {
@@ -24,6 +25,7 @@ namespace HideluzEstacionamentos
             Login.Username = TextBoxUser.Text;
             Login.Password = TextBoxPass.Text;
 
+            Initializator.CreateUsersTable();
             var validate = Controller.SelectUser(Login);
 
             if (validate)
@@ -34,13 +36,6 @@ namespace HideluzEstacionamentos
                 formLogged.Show();
             }
 
-            //if (!(TextBoxUser.Text == ""))
-            //{
-            //    MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    Splash.Close();
-            //    FormLogged formLogged = new FormLogged();
-            //    formLogged.Show();
-            //}
             else
             {
                 MessageBox.Show("Dados inválidos", "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
