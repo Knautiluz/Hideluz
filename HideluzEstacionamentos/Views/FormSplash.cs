@@ -1,10 +1,14 @@
-﻿using System;
+﻿using HideluzEstacionamentos.Controllers;
+using System;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
 {
     public partial class FormSplash : Form
     {
+
+        InitializerController Controller = new InitializerController();
+
         public FormSplash()
         {
             InitializeComponent();
