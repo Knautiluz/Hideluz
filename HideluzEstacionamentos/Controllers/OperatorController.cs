@@ -5,7 +5,7 @@ using System.Data;
 
 namespace HideluzEstacionamentos.Controllers
 {
-    public class Ctr_Operator
+    public class OperatorController
     {
         /* Instancia ClientDAO */
         ClientDAO ClientDAO = new ClientDAO();
