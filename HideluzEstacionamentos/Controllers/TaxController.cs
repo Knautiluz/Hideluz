@@ -3,7 +3,7 @@ using HideluzEstacionamentos.Models;
 
 namespace HideluzEstacionamentos.Controllers
 {
-    public class Ctr_Tax
+    public class TaxController
     {
         Tax Tax = new Tax();
 
