@@ -2,7 +2,7 @@
 
 namespace HideluzEstacionamentos.Controllers
 {
-    class Ctr_Administrator
+    class AdministratorController
     {
         public bool AddTax(Tax tax)
         {
