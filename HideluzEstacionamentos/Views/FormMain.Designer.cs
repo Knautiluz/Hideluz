@@ -70,7 +70,7 @@
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.Color.White;
-            this.BtnLogin.Location = new System.Drawing.Point(56, 314);
+            this.BtnLogin.Location = new System.Drawing.Point(59, 314);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(310, 37);
             this.BtnLogin.TabIndex = 4;
@@ -85,7 +85,7 @@
             this.panel_topLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_topLogo.Location = new System.Drawing.Point(0, 0);
             this.panel_topLogo.Name = "panel_topLogo";
-            this.panel_topLogo.Size = new System.Drawing.Size(300, 470);
+            this.panel_topLogo.Size = new System.Drawing.Size(300, 471);
             this.panel_topLogo.TabIndex = 5;
             // 
             // pictureBox1
@@ -93,7 +93,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-5, 103);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(311, 268);
+            this.pictureBox1.Size = new System.Drawing.Size(305, 268);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -130,9 +130,9 @@
             this.panel1.Controls.Add(this.lbl_Password);
             this.panel1.Controls.Add(this.BtnLogin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(299, 0);
+            this.panel1.Location = new System.Drawing.Point(300, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 470);
+            this.panel1.Size = new System.Drawing.Size(474, 471);
             this.panel1.TabIndex = 8;
             // 
             // label1
@@ -140,7 +140,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myriad Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
-            this.label1.Location = new System.Drawing.Point(53, 73);
+            this.label1.Location = new System.Drawing.Point(54, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 33);
             this.label1.TabIndex = 9;
@@ -151,7 +151,7 @@
             this.lbl_WelcomeText.AutoSize = true;
             this.lbl_WelcomeText.Font = new System.Drawing.Font("Myriad Pro", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_WelcomeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
-            this.lbl_WelcomeText.Location = new System.Drawing.Point(53, 108);
+            this.lbl_WelcomeText.Location = new System.Drawing.Point(54, 108);
             this.lbl_WelcomeText.Name = "lbl_WelcomeText";
             this.lbl_WelcomeText.Size = new System.Drawing.Size(320, 35);
             this.lbl_WelcomeText.TabIndex = 8;
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 470);
+            this.ClientSize = new System.Drawing.Size(774, 471);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_topLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
