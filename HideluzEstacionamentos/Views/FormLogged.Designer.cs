@@ -53,19 +53,7 @@
             this.AdministratorRemoveTaxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OperatorStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelPayment = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BtnGenerateExit = new System.Windows.Forms.Button();
-            this.ClientTextBoxKey = new System.Windows.Forms.MaskedTextBox();
-            this.LabelResult = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BtnGenerateEntry = new System.Windows.Forms.Button();
-            this.VehicleClientResultListBox = new System.Windows.Forms.ListBox();
-            this.FormLoggedMainPanel = new System.Windows.Forms.Panel();
             this.HideluzMenuStrip.SuspendLayout();
-            this.PanelPayment.SuspendLayout();
-            this.FormLoggedMainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // HideluzMenuStrip
@@ -79,7 +67,7 @@
             this.OperatorStripMenuItem});
             this.HideluzMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.HideluzMenuStrip.Name = "HideluzMenuStrip";
-            this.HideluzMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.HideluzMenuStrip.Size = new System.Drawing.Size(1017, 24);
             this.HideluzMenuStrip.TabIndex = 6;
             this.HideluzMenuStrip.Text = "menuStrip1";
             // 
@@ -169,7 +157,7 @@
             this.ChangeVehicleToolStripItem,
             this.RemoveVehicleToolStripItem});
             this.VehicleToolStripMenuItem.Name = "VehicleToolStripMenuItem";
-            this.VehicleToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.VehicleToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.VehicleToolStripMenuItem.Text = "&Veículo";
             // 
             // AddVehicleToolStripItem
@@ -205,7 +193,7 @@
             this.OperatorTaxToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OperatorConsultTaxToolStripMenuItem});
             this.OperatorTaxToolStripMenuItem.Name = "OperatorTaxToolStripMenuItem";
-            this.OperatorTaxToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.OperatorTaxToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.OperatorTaxToolStripMenuItem.Text = "&Taxa";
             // 
             // OperatorConsultTaxToolStripMenuItem
@@ -223,7 +211,7 @@
             this.AdministratorChangeTaxToolStripMenuItem,
             this.AdministratorRemoveTaxToolStripMenuItem});
             this.AdmTaxToolStripMenuItem.Name = "AdmTaxToolStripMenuItem";
-            this.AdmTaxToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.AdmTaxToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.AdmTaxToolStripMenuItem.Text = "&Taxa";
             // 
             // AdministratorAddTaxToolStripMenuItem
@@ -269,118 +257,19 @@
             this.SairToolStripMenuItem.Text = "Sair";
             this.SairToolStripMenuItem.Click += new System.EventHandler(this.SairToolStripMenuItem_Click);
             // 
-            // PanelPayment
-            // 
-            this.PanelPayment.BackColor = System.Drawing.SystemColors.Control;
-            this.PanelPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PanelPayment.Controls.Add(this.label2);
-            this.PanelPayment.Controls.Add(this.label1);
-            this.PanelPayment.Controls.Add(this.BtnGenerateExit);
-            this.PanelPayment.Controls.Add(this.ClientTextBoxKey);
-            this.PanelPayment.Controls.Add(this.LabelResult);
-            this.PanelPayment.Controls.Add(this.button1);
-            this.PanelPayment.Controls.Add(this.BtnGenerateEntry);
-            this.PanelPayment.Controls.Add(this.VehicleClientResultListBox);
-            this.PanelPayment.Location = new System.Drawing.Point(261, 58);
-            this.PanelPayment.Name = "PanelPayment";
-            this.PanelPayment.Size = new System.Drawing.Size(279, 336);
-            this.PanelPayment.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(38, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "CPF";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(38, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 69);
-            this.label1.TabIndex = 6;
-            // 
-            // BtnGenerateExit
-            // 
-            this.BtnGenerateExit.Enabled = false;
-            this.BtnGenerateExit.Location = new System.Drawing.Point(38, 188);
-            this.BtnGenerateExit.Name = "BtnGenerateExit";
-            this.BtnGenerateExit.Size = new System.Drawing.Size(197, 23);
-            this.BtnGenerateExit.TabIndex = 5;
-            this.BtnGenerateExit.Text = "Gerar Saída";
-            this.BtnGenerateExit.UseVisualStyleBackColor = true;
-            // 
-            // ClientTextBoxKey
-            // 
-            this.ClientTextBoxKey.Culture = new System.Globalization.CultureInfo("en-US");
-            this.ClientTextBoxKey.Location = new System.Drawing.Point(38, 34);
-            this.ClientTextBoxKey.Mask = "000.000.000-00";
-            this.ClientTextBoxKey.Name = "ClientTextBoxKey";
-            this.ClientTextBoxKey.Size = new System.Drawing.Size(197, 20);
-            this.ClientTextBoxKey.TabIndex = 1;
-            // 
-            // LabelResult
-            // 
-            this.LabelResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LabelResult.Location = new System.Drawing.Point(38, 217);
-            this.LabelResult.Name = "LabelResult";
-            this.LabelResult.Size = new System.Drawing.Size(197, 19);
-            this.LabelResult.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(38, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Localizar Veículos";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // BtnGenerateEntry
-            // 
-            this.BtnGenerateEntry.Location = new System.Drawing.Point(38, 160);
-            this.BtnGenerateEntry.Name = "BtnGenerateEntry";
-            this.BtnGenerateEntry.Size = new System.Drawing.Size(197, 23);
-            this.BtnGenerateEntry.TabIndex = 3;
-            this.BtnGenerateEntry.Text = "Gerar Entrada";
-            this.BtnGenerateEntry.UseVisualStyleBackColor = true;
-            // 
-            // VehicleClientResultListBox
-            // 
-            this.VehicleClientResultListBox.FormattingEnabled = true;
-            this.VehicleClientResultListBox.Location = new System.Drawing.Point(38, 85);
-            this.VehicleClientResultListBox.Name = "VehicleClientResultListBox";
-            this.VehicleClientResultListBox.Size = new System.Drawing.Size(197, 69);
-            this.VehicleClientResultListBox.TabIndex = 1;
-            // 
-            // FormLoggedMainPanel
-            // 
-            this.FormLoggedMainPanel.Controls.Add(this.PanelPayment);
-            this.FormLoggedMainPanel.Location = new System.Drawing.Point(0, 27);
-            this.FormLoggedMainPanel.Name = "FormLoggedMainPanel";
-            this.FormLoggedMainPanel.Size = new System.Drawing.Size(800, 421);
-            this.FormLoggedMainPanel.TabIndex = 9;
-            // 
             // FormLogged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
+            this.ClientSize = new System.Drawing.Size(1017, 541);
             this.Controls.Add(this.HideluzMenuStrip);
-            this.Controls.Add(this.FormLoggedMainPanel);
             this.MainMenuStrip = this.HideluzMenuStrip;
             this.Name = "FormLogged";
             this.Text = "Hideluz";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogged_FormClosing);
             this.HideluzMenuStrip.ResumeLayout(false);
             this.HideluzMenuStrip.PerformLayout();
-            this.PanelPayment.ResumeLayout(false);
-            this.PanelPayment.PerformLayout();
-            this.FormLoggedMainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,17 +287,10 @@
         private System.Windows.Forms.ToolStripMenuItem ConsultVehicleToolStripItem;
         private System.Windows.Forms.ToolStripMenuItem ChangeVehicleToolStripItem;
         private System.Windows.Forms.ToolStripMenuItem RemoveVehicleToolStripItem;
-        private System.Windows.Forms.Panel PanelPayment;
-        private System.Windows.Forms.MaskedTextBox ClientTextBoxKey;
-        private System.Windows.Forms.Label LabelResult;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button BtnGenerateEntry;
-        private System.Windows.Forms.ListBox VehicleClientResultListBox;
         private System.Windows.Forms.ToolStripMenuItem OperatorTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OperatorConsultTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OperatorStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SairToolStripMenuItem;
-        private System.Windows.Forms.Panel FormLoggedMainPanel;
         private System.Windows.Forms.ToolStripMenuItem AdmTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AdministratorAddTaxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AdministratorConsultTaxToolStripMenuItem;
@@ -419,8 +301,5 @@
         private System.Windows.Forms.ToolStripMenuItem ConsultUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ChangeUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem RemoveUserToolStripMenuItem1;
-        private System.Windows.Forms.Button BtnGenerateExit;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }
