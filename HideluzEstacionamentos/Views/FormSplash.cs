@@ -1,5 +1,6 @@
 ﻿using HideluzEstacionamentos.Controllers;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -16,6 +17,7 @@ namespace HideluzEstacionamentos
 
         private void Splash_Load(object sender, EventArgs e)
         {
+            SplashProgressBar.ForeColor = Color.Red;
             SplashProgressBar.PerformStep();
         }
     }
