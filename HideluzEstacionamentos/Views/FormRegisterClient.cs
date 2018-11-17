@@ -7,7 +7,7 @@ namespace HideluzEstacionamentos
 {
     public partial class FormRegisterClient : Form
     {
-        Ctr_Operator Controller = new Ctr_Operator();
+        OperatorController Controller = new OperatorController();
 
         public FormRegisterClient()
         {
