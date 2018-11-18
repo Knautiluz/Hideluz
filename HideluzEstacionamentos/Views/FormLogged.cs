@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HideluzEstacionamentos.Views;
+using System;
 using System.Windows.Forms;
 
 namespace HideluzEstacionamentos
@@ -21,16 +22,20 @@ namespace HideluzEstacionamentos
         public FormRemoveClient RemoveClient = new FormRemoveClient();
         public FormRemoveVehicle RemoveVehicle = new FormRemoveVehicle();
         public FormRemoveTax RemoveTax = new FormRemoveTax();
+        public ClientMenuView ClientMenu = new ClientMenuView();
+
         public FormLogged()
         {
             InitializeComponent();
-            if(Login.Operator.Type == 0)
+
+            if (Login.Operator.Type == 0)
             {
-                OperatorTaxToolStripMenuItem.Available = false;
-            } else
+                //OperatorTaxToolStripMenuItem.Available = false;
+            }
+            else
             {
-                AdmTaxToolStripMenuItem.Available = false;
-                UserToolStripMenuItem.Available = false;
+                //AdmTaxToolStripMenuItem.Available = false;
+                //UserToolStripMenuItem.Available = false;
             }
         }
         private void AddVehicleToolStripItem_Click(object sender, EventArgs e)
@@ -47,17 +52,15 @@ namespace HideluzEstacionamentos
         }
 
         private void AddClientToolStripItem_Click(object sender, EventArgs e)
-        {   
+        {
             try
             {
-                FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
 
             }
             catch (ObjectDisposedException)
             {
                 RegisterClient = new FormRegisterClient();
-                FormLoggedMainPanel.Hide();
                 RegisterClient.Show();
             }
         }
@@ -297,6 +300,14 @@ namespace HideluzEstacionamentos
                 RemoveTax = new FormRemoveTax();
                 RemoveTax.Show();
             }
+        }
+
+        private void btn_Clients_Click(object sender, EventArgs e)
+        {
+            /** Instancia ClientMenu e Preenche o Panel **/
+            //panel_ClientMenu.Dock = DockStyle.Fill;
+            ClientMenu.Dock = DockStyle.Fill;
+            panel_ClientMenu.Controls.Add(ClientMenu);
         }
     }
 }
