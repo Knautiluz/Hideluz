@@ -64,7 +64,7 @@
             this.btn_Reports.Location = new System.Drawing.Point(0, 203);
             this.btn_Reports.Name = "btn_Reports";
             this.btn_Reports.Size = new System.Drawing.Size(184, 30);
-            this.btn_Reports.TabIndex = 4;
+            this.btn_Reports.TabIndex = 7;
             this.btn_Reports.Text = "             Relatórios";
             this.btn_Reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Reports.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             this.btn_Home.Location = new System.Drawing.Point(0, 63);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(184, 30);
-            this.btn_Home.TabIndex = 3;
+            this.btn_Home.TabIndex = 1;
             this.btn_Home.Text = "             Início";
             this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Home.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             this.btn_Taxes.Location = new System.Drawing.Point(0, 168);
             this.btn_Taxes.Name = "btn_Taxes";
             this.btn_Taxes.Size = new System.Drawing.Size(184, 30);
-            this.btn_Taxes.TabIndex = 2;
+            this.btn_Taxes.TabIndex = 4;
             this.btn_Taxes.Text = "             Tarifas";
             this.btn_Taxes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Taxes.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.btn_Vehicles.Location = new System.Drawing.Point(0, 133);
             this.btn_Vehicles.Name = "btn_Vehicles";
             this.btn_Vehicles.Size = new System.Drawing.Size(184, 30);
-            this.btn_Vehicles.TabIndex = 1;
+            this.btn_Vehicles.TabIndex = 3;
             this.btn_Vehicles.Text = "             Veículos";
             this.btn_Vehicles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Vehicles.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.btn_Clients.Location = new System.Drawing.Point(0, 98);
             this.btn_Clients.Name = "btn_Clients";
             this.btn_Clients.Size = new System.Drawing.Size(184, 30);
-            this.btn_Clients.TabIndex = 0;
+            this.btn_Clients.TabIndex = 2;
             this.btn_Clients.Text = "             Clientes";
             this.btn_Clients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Clients.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             this.panel_ClientMenu.Location = new System.Drawing.Point(180, 0);
             this.panel_ClientMenu.Name = "panel_ClientMenu";
             this.panel_ClientMenu.Size = new System.Drawing.Size(839, 541);
-            this.panel_ClientMenu.TabIndex = 1;
+            this.panel_ClientMenu.TabIndex = 8;
             // 
             // FormLogged
             // 
