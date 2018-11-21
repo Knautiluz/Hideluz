@@ -44,7 +44,7 @@
             this.btn_ClientRegister.Location = new System.Drawing.Point(88, 14);
             this.btn_ClientRegister.Name = "btn_ClientRegister";
             this.btn_ClientRegister.Size = new System.Drawing.Size(153, 41);
-            this.btn_ClientRegister.TabIndex = 0;
+            this.btn_ClientRegister.TabIndex = 9;
             this.btn_ClientRegister.Text = "Cadastrar";
             this.btn_ClientRegister.UseVisualStyleBackColor = false;
             this.btn_ClientRegister.Click += new System.EventHandler(this.btn_ClientRegister_Click);
@@ -59,7 +59,7 @@
             this.btn_ClientSearch.Location = new System.Drawing.Point(352, 14);
             this.btn_ClientSearch.Name = "btn_ClientSearch";
             this.btn_ClientSearch.Size = new System.Drawing.Size(153, 41);
-            this.btn_ClientSearch.TabIndex = 1;
+            this.btn_ClientSearch.TabIndex = 10;
             this.btn_ClientSearch.Text = "Consultar";
             this.btn_ClientSearch.UseVisualStyleBackColor = false;
             // 
@@ -73,7 +73,7 @@
             this.btn_ClientDelete.Location = new System.Drawing.Point(616, 14);
             this.btn_ClientDelete.Name = "btn_ClientDelete";
             this.btn_ClientDelete.Size = new System.Drawing.Size(153, 41);
-            this.btn_ClientDelete.TabIndex = 2;
+            this.btn_ClientDelete.TabIndex = 11;
             this.btn_ClientDelete.Text = "Excluir";
             this.btn_ClientDelete.UseVisualStyleBackColor = false;
             // 
