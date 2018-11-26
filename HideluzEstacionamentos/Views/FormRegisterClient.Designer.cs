@@ -206,6 +206,7 @@
             // ClientDocumentTextBox
             // 
             this.ClientDocumentTextBox.Culture = new System.Globalization.CultureInfo("en-US");
+            this.ClientDocumentTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ClientDocumentTextBox.Location = new System.Drawing.Point(67, 19);
             this.ClientDocumentTextBox.Mask = "000.000.000-00";
             this.ClientDocumentTextBox.Name = "ClientDocumentTextBox";
@@ -270,14 +271,14 @@
             this.ClientStreetTextBox.Size = new System.Drawing.Size(100, 20);
             this.ClientStreetTextBox.TabIndex = 5;
             // 
-            // RegisterClient
+            // FormRegisterClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 469);
             this.Controls.Add(this.RegisterClientPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "RegisterClient";
+            this.Name = "FormRegisterClient";
             this.Text = "RegisterClient";
             this.RegisterClientPanel.ResumeLayout(false);
             this.RegisterClientPanel.PerformLayout();
