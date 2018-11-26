@@ -57,7 +57,15 @@ namespace HideluzEstacionamentos.Controllers
         }
         public Client CheckClient(Client client)
         {
-            return client;
+            try
+            {
+                ClientDAO.SearchByDocument(client);
+                return client;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
         }
 
         public Vehicle CheckVehicle(string plate)
