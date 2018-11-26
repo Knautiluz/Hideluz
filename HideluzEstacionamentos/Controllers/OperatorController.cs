@@ -86,9 +86,15 @@ namespace HideluzEstacionamentos.Controllers
 
         public DataTable FillType()
         {
-            var tunga = new DataTable();
-            tunga.Load(ClientDAO.FillClientType());
-            return tunga;
+            DataTable ClientTypes = new DataTable();
+            ClientTypes.Load(ClientDAO.FillClientType());
+            return ClientTypes;
+        }
+
+        public bool CheckClientExists(Client client)
+        {
+            if (ClientDAO.CheckClientExists(client)) { return true; }
+            else { return false; }
         }
     }
 }
