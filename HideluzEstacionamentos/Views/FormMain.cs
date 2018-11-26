@@ -1,4 +1,5 @@
 ﻿using HideluzEstacionamentos.Controllers;
+using HideluzEstacionamentos.Views;
 using System;
 using System.Windows.Forms;
 
@@ -32,7 +33,7 @@ namespace HideluzEstacionamentos
             {
                 MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
-                FormLogged formLogged = new FormLogged();
+                FormLoggerv2 formLogged = new FormLoggerv2();
                 formLogged.Show();
             }
 
