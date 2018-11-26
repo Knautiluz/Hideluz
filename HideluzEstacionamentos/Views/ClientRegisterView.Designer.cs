@@ -69,12 +69,13 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel1.Controls.Add(this.btn_RegisterSubmit);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(58, 17);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(722, 438);
+            this.panel1.Size = new System.Drawing.Size(863, 567);
             this.panel1.TabIndex = 12;
             // 
             // btn_RegisterSubmit
@@ -127,7 +128,7 @@
             this.txt_ClientDocument.Name = "txt_ClientDocument";
             this.txt_ClientDocument.Size = new System.Drawing.Size(245, 20);
             this.txt_ClientDocument.TabIndex = 30;
-            this.txt_ClientDocument.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txt_ClientDocument.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // combo_ClientType
             // 
@@ -151,6 +152,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(29, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 23);
@@ -245,6 +247,7 @@
             // 
             this.lbl_AddressTitle.AutoSize = true;
             this.lbl_AddressTitle.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_AddressTitle.ForeColor = System.Drawing.Color.Gray;
             this.lbl_AddressTitle.Location = new System.Drawing.Point(22, 4);
             this.lbl_AddressTitle.Name = "lbl_AddressTitle";
             this.lbl_AddressTitle.Size = new System.Drawing.Size(247, 23);
@@ -363,7 +366,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.Controls.Add(this.panel1);
             this.Name = "ClientRegisterView";
-            this.Size = new System.Drawing.Size(837, 472);
+            this.Size = new System.Drawing.Size(863, 567);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

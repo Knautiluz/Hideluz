@@ -8,6 +8,7 @@ namespace HideluzEstacionamentos.Views
     public partial class ClientRegisterView : UserControl
     {
         OperatorController Controller = new OperatorController();
+        Client Client = new Client();
 
         public ClientRegisterView()
         {
@@ -70,15 +71,24 @@ namespace HideluzEstacionamentos.Views
 
         private bool DocumentValidator()
         {
-            if (!string.IsNullOrEmpty(txt_ClientDocument.Text) && txt_ClientDocument.Text.Length >= 11)
+            if (!string.IsNullOrEmpty(txt_ClientDocument.TextNoFormatting()) && txt_ClientDocument.TextNoFormatting().Length >= 11)
             {
-                errorProvider_OK.SetError(txt_ClientDocument, "OK");
-                return true;
+                Client.Document = txt_ClientDocument.Text;
+                if (!Controller.CheckClientExists(Client))
+                {
+                    errorProvider_OK.SetError(txt_ClientDocument, "OK");
+                    return true;
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_ClientDocument, "CPF já cadastrado");
+                    return false;
+                }
             }
 
-            if (txt_ClientDocument.Text.Length < 14)
+            if (txt_ClientDocument.TextNoFormatting().Length < 14)
             {
-                if (string.IsNullOrEmpty(txt_ClientDocument.Text))
+                if (string.IsNullOrEmpty(txt_ClientDocument.TextNoFormatting()))
                 {
                     errorProvider1.SetError(txt_ClientDocument, "Preencha o campo.");
                     return false;
@@ -127,15 +137,15 @@ namespace HideluzEstacionamentos.Views
 
         private bool PhoneValidator()
         {
-            if (!string.IsNullOrEmpty((txt_ClientPhone.Text)) && txt_ClientPhone.Text.Length >= 11)
+            if (!string.IsNullOrEmpty((txt_ClientPhone.TextNoFormatting())) && txt_ClientPhone.TextNoFormatting().Length >= 11)
             {
                 errorProvider_OK.SetError(txt_ClientPhone, "OK");
                 return true;
             }
 
-            if (txt_ClientPhone.Text.Length < 8)
+            if (txt_ClientPhone.TextNoFormatting().Length < 8)
             {
-                if (string.IsNullOrEmpty(txt_ClientPhone.Text))
+                if (string.IsNullOrEmpty(txt_ClientPhone.TextNoFormatting()))
                 {
                     errorProvider1.SetError(txt_ClientPhone, "Preencha o campo.");
                     return false;
@@ -220,15 +230,15 @@ namespace HideluzEstacionamentos.Views
 
         private bool ZIPCodeValidator()
         {
-            if (!string.IsNullOrEmpty((txt_ClientZIPCode.Text)) && txt_ClientZIPCode.Text.Length >= 8)
+            if (!string.IsNullOrEmpty((txt_ClientZIPCode.TextNoFormatting())) && txt_ClientZIPCode.TextNoFormatting().Length >= 8)
             {
                 errorProvider_OK.SetError(txt_ClientZIPCode, "OK");
                 return true;
             }
 
-            if (txt_ClientZIPCode.Text.Length < 8)
+            if (txt_ClientZIPCode.TextNoFormatting().Length < 8)
             {
-                if (string.IsNullOrEmpty(txt_ClientZIPCode.Text))
+                if (string.IsNullOrEmpty(txt_ClientZIPCode.TextNoFormatting()))
                 {
                     errorProvider1.SetError(txt_ClientZIPCode, "Preencha o campo.");
                     return false;
@@ -263,6 +273,8 @@ namespace HideluzEstacionamentos.Views
         private bool GeneralValidator()
         {
             int falses = 0;
+            errorProvider1.Clear();
+            errorProvider_OK.Clear();
 
             if (!DocumentValidator())
             {
