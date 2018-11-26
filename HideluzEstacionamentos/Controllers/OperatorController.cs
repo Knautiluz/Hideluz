@@ -28,9 +28,17 @@ namespace HideluzEstacionamentos.Controllers
             return true;
         }
 
-        public bool ChangeClient(Client Client)
+        public bool UpdateClient(Client OldClient, Client UpdatedClient)
         {
-            return true;
+            if (OldClient != UpdatedClient)
+            {
+                ClientDAO.UpdateClient(OldClient, UpdatedClient);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool ChangeVehicle(Vehicle vehicle)
