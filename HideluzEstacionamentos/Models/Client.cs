@@ -1,4 +1,5 @@
 ﻿using HideluzEstacionamentos.Models;
+using System;
 
 namespace HideluzEstacionamentos
 {
@@ -10,6 +11,8 @@ namespace HideluzEstacionamentos
         public string Phone { get; set; }
         public int IdType { get; set; }
         public Address Address { get; set; }
+        public bool Status { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public Client()
         {
