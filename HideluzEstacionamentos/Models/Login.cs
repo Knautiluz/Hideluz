@@ -7,6 +7,8 @@ namespace HideluzEstacionamentos
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Name { get; set; }
+        public int IdType { get; set; }
         public static string Message;
         public static Operator Operator = new Operator();
 
