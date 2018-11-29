@@ -28,6 +28,9 @@ namespace HideluzEstacionamentos
 
             Initializator.CreateUserTypeTable();
             Initializator.CreateUsersTable();
+            Initializator.InsertDefaultUsersValues();
+            Initializator.CreateClientTypeTable();
+            Initializator.InsertDefaultClientValues();
 
             if (Controller.ValidateUser(InputLogin))
             {
