@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.btn_ClientRegister = new System.Windows.Forms.Button();
-            this.btn_ClientSearch = new System.Windows.Forms.Button();
-            this.btn_ClientDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clientSearchView = new HideluzEstacionamentos.Views.ClientSearchView();
-            this.clientRegisterView = new HideluzEstacionamentos.Views.ClientRegisterView();
+            this.clientRegisterView = new HideluzEstacionamentos.Views.ClientView();
+            this.btn_ClientSearch = new System.Windows.Forms.Button();
+            this.btn_ClientDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +51,33 @@
             this.btn_ClientRegister.Text = "Cadastrar";
             this.btn_ClientRegister.UseVisualStyleBackColor = false;
             this.btn_ClientRegister.Click += new System.EventHandler(this.btn_ClientRegister_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.panel1.Controls.Add(this.btn_ClientRegister);
+            this.panel1.Controls.Add(this.btn_ClientDelete);
+            this.panel1.Controls.Add(this.btn_ClientSearch);
+            this.panel1.Location = new System.Drawing.Point(15, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(837, 53);
+            this.panel1.TabIndex = 12;
+            // 
+            // clientSearchView
+            // 
+            this.clientSearchView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.clientSearchView.Location = new System.Drawing.Point(15, 66);
+            this.clientSearchView.Name = "clientSearchView";
+            this.clientSearchView.Size = new System.Drawing.Size(837, 472);
+            this.clientSearchView.TabIndex = 14;
+            // 
+            // clientRegisterView
+            // 
+            this.clientRegisterView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.clientRegisterView.Location = new System.Drawing.Point(15, 66);
+            this.clientRegisterView.Name = "clientRegisterView";
+            this.clientRegisterView.Size = new System.Drawing.Size(837, 472);
+            this.clientRegisterView.TabIndex = 13;
             // 
             // btn_ClientSearch
             // 
@@ -82,33 +109,6 @@
             this.btn_ClientDelete.UseVisualStyleBackColor = false;
             this.btn_ClientDelete.Click += new System.EventHandler(this.btn_ClientDelete_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.panel1.Controls.Add(this.btn_ClientRegister);
-            this.panel1.Controls.Add(this.btn_ClientDelete);
-            this.panel1.Controls.Add(this.btn_ClientSearch);
-            this.panel1.Location = new System.Drawing.Point(15, 11);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 53);
-            this.panel1.TabIndex = 12;
-            // 
-            // clientSearchView
-            // 
-            this.clientSearchView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.clientSearchView.Location = new System.Drawing.Point(15, 66);
-            this.clientSearchView.Name = "clientSearchView";
-            this.clientSearchView.Size = new System.Drawing.Size(837, 472);
-            this.clientSearchView.TabIndex = 14;
-            // 
-            // clientRegisterView
-            // 
-            this.clientRegisterView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.clientRegisterView.Location = new System.Drawing.Point(15, 66);
-            this.clientRegisterView.Name = "clientRegisterView";
-            this.clientRegisterView.Size = new System.Drawing.Size(837, 472);
-            this.clientRegisterView.TabIndex = 13;
-            // 
             // ClientMenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,10 +127,10 @@
         #endregion
 
         private System.Windows.Forms.Button btn_ClientRegister;
-        private System.Windows.Forms.Button btn_ClientSearch;
-        private System.Windows.Forms.Button btn_ClientDelete;
         private System.Windows.Forms.Panel panel1;
-        private ClientRegisterView clientRegisterView;
+        private ClientView clientRegisterView;
         private ClientSearchView clientSearchView;
+        private System.Windows.Forms.Button btn_ClientDelete;
+        private System.Windows.Forms.Button btn_ClientSearch;
     }
 }

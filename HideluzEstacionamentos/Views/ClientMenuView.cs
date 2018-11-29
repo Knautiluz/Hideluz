@@ -6,7 +6,7 @@ namespace HideluzEstacionamentos.Views
 {
     public partial class ClientMenuView : UserControl
     {
-        public ClientRegisterView ClientControl = new ClientRegisterView();
+        public ClientView ClientControl = new ClientView();
 
         public ClientMenuView()
         {
