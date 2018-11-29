@@ -56,12 +56,12 @@ namespace HideluzEstacionamentos.DAO
                 MySqlCommand DefaultUserTypeAdmin = new MySqlCommand("INSERT INTO tb_tipo_usuario" +
                     "SELECT t.*" +
                     "FROM((SELECT 1 as col1, 'Administrador' as col2)) t" +
-                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario)");
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario)", connection);
 
                 MySqlCommand DefaultUserTypeOperator = new MySqlCommand("INSERT INTO tb_tipo_usuario" +
                     "SELECT t.*" +
                     "FROM((SELECT 2 as col1, 'Operador' as col2)) t" +
-                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario where tx_tipo != 'Administrador'); ");
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario where tx_tipo != 'Administrador')", connection);
 
                 DefaultUserTypeAdmin.ExecuteNonQuery();
                 DefaultUserTypeOperator.ExecuteNonQuery();
@@ -101,12 +101,12 @@ namespace HideluzEstacionamentos.DAO
                 MySqlCommand DefaultClientTypeLoose = new MySqlCommand("INSERT INTO tb_tipo_cliente" +
                     "SELECT t.*" +
                     "FROM((SELECT 1 as col1, 'Avulso' as col2)) t" +
-                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente)");
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente)", connection);
 
                 MySqlCommand DefaultClientTypeMonthly = new MySqlCommand("INSERT INTO tb_tipo_cliente" +
                     "SELECT t.*" +
                     "FROM((SELECT 2 as col1, 'Mensalista' as col2)) t" +
-                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente where tx_tipo != 'Avulso')");
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente where tx_tipo != 'Avulso')", connection);
 
                 DefaultClientTypeLoose.ExecuteNonQuery();
                 DefaultClientTypeMonthly.ExecuteNonQuery();
