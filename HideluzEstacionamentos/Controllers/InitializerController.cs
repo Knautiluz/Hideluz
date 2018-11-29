@@ -15,5 +15,10 @@ namespace HideluzEstacionamentos.Controllers
         {
             InitializerDAO.CreateUsersTable();
         }
+
+        public void CreateUserTypeTable()
+        {
+            InitializerDAO.CreateUserTypeTable();
+        }
     }
 }
