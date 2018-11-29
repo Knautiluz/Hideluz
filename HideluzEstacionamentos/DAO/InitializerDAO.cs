@@ -5,14 +5,14 @@ namespace HideluzEstacionamentos.DAO
 {
     public class InitializerDAO : Connection
     {
-        MySqlCommand command = null;
+        #region Users
 
         public void CreateUserTypeTable()
         {
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tipo_cliente` (" +
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tipo_usuario` (" +
                     "`id` int(11) NOT NULL AUTO_INCREMENT," +
                     "`tx_tipo` varchar(256) NOT NULL," +
                     "PRIMARY KEY(`id`))", connection);
@@ -29,7 +29,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_usuarios` (" +
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_usuarios` (" +
                     "`id` int(11) NOT NULL AUTO_INCREMENT," +
                     "`tx_nome` varchar(45) NOT NULL," +
                     "`tx_usuario` varchar(45) NOT NULL," +
@@ -47,5 +47,76 @@ namespace HideluzEstacionamentos.DAO
                 throw err;
             }
         }
+
+        public void InsertDefaultUserValues()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand DefaultUserTypeAdmin = new MySqlCommand("INSERT INTO tb_tipo_usuario" +
+                    "SELECT t.*" +
+                    "FROM((SELECT 1 as col1, 'Administrador' as col2)) t" +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario)");
+
+                MySqlCommand DefaultUserTypeOperator = new MySqlCommand("INSERT INTO tb_tipo_usuario" +
+                    "SELECT t.*" +
+                    "FROM((SELECT 2 as col1, 'Operador' as col2)) t" +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_usuario where tx_tipo != 'Administrador'); ");
+
+                DefaultUserTypeAdmin.ExecuteNonQuery();
+                DefaultUserTypeOperator.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        #endregion
+
+        #region Clients
+
+        public void CreateClientTypeTable()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tipo_cliente` (" +
+                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
+                    "`tx_tipo` varchar(256) NOT NULL," +
+                    "PRIMARY KEY(`id`))", connection);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        public void InsertDefaultClientValues()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand DefaultClientTypeLoose = new MySqlCommand("INSERT INTO tb_tipo_cliente" +
+                    "SELECT t.*" +
+                    "FROM((SELECT 1 as col1, 'Avulso' as col2)) t" +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente)");
+
+                MySqlCommand DefaultClientTypeMonthly = new MySqlCommand("INSERT INTO tb_tipo_cliente" +
+                    "SELECT t.*" +
+                    "FROM((SELECT 2 as col1, 'Mensalista' as col2)) t" +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_cliente where tx_tipo != 'Avulso')");
+
+                DefaultClientTypeLoose.ExecuteNonQuery();
+                DefaultClientTypeMonthly.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        #endregion
     }
 }
