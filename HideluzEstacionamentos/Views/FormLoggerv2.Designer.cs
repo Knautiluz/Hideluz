@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoggerv2));
             this.panel_TopContent = new System.Windows.Forms.Panel();
-            this.panel_TopInfo = new System.Windows.Forms.Panel();
             this.panel_Logo = new System.Windows.Forms.Panel();
+            this.panel_TopInfo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_reports = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.panel_selectedMenu = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
             this.panel_ContentView = new System.Windows.Forms.Panel();
-            this.clientMenuView1 = new HideluzEstacionamentos.Views.ClientMenuView();
+            this.clientView1 = new HideluzEstacionamentos.Views.ClientView();
             this.panel_TopContent.SuspendLayout();
             this.panel_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,36 +58,36 @@
             // panel_TopContent
             // 
             this.panel_TopContent.BackColor = System.Drawing.Color.White;
-            this.panel_TopContent.Controls.Add(this.panel_TopInfo);
             this.panel_TopContent.Controls.Add(this.panel_Logo);
             this.panel_TopContent.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_TopContent.Location = new System.Drawing.Point(0, 0);
             this.panel_TopContent.Name = "panel_TopContent";
-            this.panel_TopContent.Size = new System.Drawing.Size(1041, 59);
+            this.panel_TopContent.Size = new System.Drawing.Size(1043, 59);
             this.panel_TopContent.TabIndex = 0;
-            // 
-            // panel_TopInfo
-            // 
-            this.panel_TopInfo.Location = new System.Drawing.Point(178, 0);
-            this.panel_TopInfo.Name = "panel_TopInfo";
-            this.panel_TopInfo.Size = new System.Drawing.Size(863, 59);
-            this.panel_TopInfo.TabIndex = 7;
             // 
             // panel_Logo
             // 
             this.panel_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
+            this.panel_Logo.Controls.Add(this.panel_TopInfo);
             this.panel_Logo.Controls.Add(this.pictureBox1);
             this.panel_Logo.Location = new System.Drawing.Point(0, 0);
             this.panel_Logo.Name = "panel_Logo";
             this.panel_Logo.Size = new System.Drawing.Size(180, 59);
             this.panel_Logo.TabIndex = 6;
             // 
+            // panel_TopInfo
+            // 
+            this.panel_TopInfo.Location = new System.Drawing.Point(178, 0);
+            this.panel_TopInfo.Name = "panel_TopInfo";
+            this.panel_TopInfo.Size = new System.Drawing.Size(864, 59);
+            this.panel_TopInfo.TabIndex = 7;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 59);
+            this.pictureBox1.Size = new System.Drawing.Size(181, 59);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -104,7 +104,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 59);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 567);
+            this.panel2.Size = new System.Drawing.Size(180, 580);
             this.panel2.TabIndex = 0;
             // 
             // btn_reports
@@ -239,24 +239,25 @@
             // panel_ContentView
             // 
             this.panel_ContentView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.panel_ContentView.Controls.Add(this.clientMenuView1);
-            this.panel_ContentView.Location = new System.Drawing.Point(178, 59);
+            this.panel_ContentView.Controls.Add(this.clientView1);
+            this.panel_ContentView.Location = new System.Drawing.Point(181, 59);
             this.panel_ContentView.Name = "panel_ContentView";
-            this.panel_ContentView.Size = new System.Drawing.Size(863, 567);
+            this.panel_ContentView.Size = new System.Drawing.Size(860, 580);
             this.panel_ContentView.TabIndex = 1;
             // 
-            // clientMenuView1
+            // clientView1
             // 
-            this.clientMenuView1.Location = new System.Drawing.Point(0, 0);
-            this.clientMenuView1.Name = "clientMenuView1";
-            this.clientMenuView1.Size = new System.Drawing.Size(863, 567);
-            this.clientMenuView1.TabIndex = 8;
+            this.clientView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
+            this.clientView1.Location = new System.Drawing.Point(0, 0);
+            this.clientView1.Name = "clientView1";
+            this.clientView1.Size = new System.Drawing.Size(865, 580);
+            this.clientView1.TabIndex = 0;
             // 
             // FormLoggerv2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 626);
+            this.ClientSize = new System.Drawing.Size(1043, 639);
             this.Controls.Add(this.panel_ContentView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_TopContent);
@@ -292,6 +293,6 @@
         private System.Windows.Forms.Label lbl_Username;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_Welcome;
-        private ClientMenuView clientMenuView1;
+        private ClientView clientView1;
     }
 }

@@ -8,10 +8,10 @@ namespace HideluzEstacionamentos
     public partial class FormMain : Form
     {
         //atributos de inicialização.
-        private Login Login = new Login();
+        private Login InputLogin = new Login();
         private LoginController Controller = new LoginController();
         private InitializerController Initializator = new InitializerController();
-        public static string OperationResult;
+
         public FormMain()
         {
             InitializeComponent();
@@ -23,17 +23,18 @@ namespace HideluzEstacionamentos
             FormSplash Splash = new FormSplash();
             Splash.Show();
 
-            Login.Username = TextBoxUser.Text;
-            Login.Password = TextBoxPass.Text;
+            InputLogin.Username = TextBoxUser.Text;
+            InputLogin.Password = TextBoxPass.Text;
 
+            Initializator.CreateUserTypeTable();
             Initializator.CreateUsersTable();
-            var validate = Controller.SelectUser(Login);
 
-            if (validate)
+            if (Controller.ValidateUser(InputLogin))
             {
+                Controller.FillUserData(InputLogin);
                 MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
-                FormLoggerv2 formLogged = new FormLoggerv2();
+                FormLoggerv2 formLogged = new FormLoggerv2(InputLogin);
                 formLogged.Show();
             }
 
