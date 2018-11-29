@@ -59,11 +59,11 @@
             this.lbl_ClientEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_ClientSearch = new System.Windows.Forms.Button();
-            this.txt_SearchInformation = new System.Windows.Forms.MaskedTextBox();
             this.lbl_SearchInfo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_OK = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txt_SearchInformation = new System.Windows.Forms.MaskedTextBox();
+            this.btn_ClientSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -365,32 +365,6 @@
             this.panel2.Size = new System.Drawing.Size(303, 164);
             this.panel2.TabIndex = 1;
             // 
-            // btn_ClientSearch
-            // 
-            this.btn_ClientSearch.BackColor = System.Drawing.Color.Green;
-            this.btn_ClientSearch.FlatAppearance.BorderSize = 0;
-            this.btn_ClientSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ClientSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClientSearch.ForeColor = System.Drawing.Color.White;
-            this.btn_ClientSearch.Location = new System.Drawing.Point(33, 90);
-            this.btn_ClientSearch.Name = "btn_ClientSearch";
-            this.btn_ClientSearch.Size = new System.Drawing.Size(234, 46);
-            this.btn_ClientSearch.TabIndex = 58;
-            this.btn_ClientSearch.Text = "Buscar";
-            this.btn_ClientSearch.UseVisualStyleBackColor = false;
-            this.btn_ClientSearch.Click += new System.EventHandler(this.btn_ClientSearch_Click);
-            // 
-            // txt_SearchInformation
-            // 
-            this.txt_SearchInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SearchInformation.Location = new System.Drawing.Point(40, 44);
-            this.txt_SearchInformation.Mask = "000\\.000\\.000-00";
-            this.txt_SearchInformation.Name = "txt_SearchInformation";
-            this.txt_SearchInformation.Size = new System.Drawing.Size(221, 22);
-            this.txt_SearchInformation.TabIndex = 1;
-            this.txt_SearchInformation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_SearchInformation.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
-            // 
             // lbl_SearchInfo
             // 
             this.lbl_SearchInfo.AutoSize = true;
@@ -410,6 +384,32 @@
             // 
             this.errorProvider_OK.ContainerControl = this;
             this.errorProvider_OK.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_OK.Icon")));
+            // 
+            // txt_SearchInformation
+            // 
+            this.txt_SearchInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchInformation.Location = new System.Drawing.Point(40, 44);
+            this.txt_SearchInformation.Mask = "000\\.000\\.000-00";
+            this.txt_SearchInformation.Name = "txt_SearchInformation";
+            this.txt_SearchInformation.Size = new System.Drawing.Size(221, 22);
+            this.txt_SearchInformation.TabIndex = 1;
+            this.txt_SearchInformation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SearchInformation.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            // 
+            // btn_ClientSearch
+            // 
+            this.btn_ClientSearch.BackColor = System.Drawing.Color.Green;
+            this.btn_ClientSearch.FlatAppearance.BorderSize = 0;
+            this.btn_ClientSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ClientSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClientSearch.ForeColor = System.Drawing.Color.White;
+            this.btn_ClientSearch.Location = new System.Drawing.Point(33, 90);
+            this.btn_ClientSearch.Name = "btn_ClientSearch";
+            this.btn_ClientSearch.Size = new System.Drawing.Size(234, 46);
+            this.btn_ClientSearch.TabIndex = 58;
+            this.btn_ClientSearch.Text = "Buscar";
+            this.btn_ClientSearch.UseVisualStyleBackColor = false;
+            this.btn_ClientSearch.Click += new System.EventHandler(this.btn_ClientSearch_Click);
             // 
             // ClientSearchView
             // 
@@ -434,7 +434,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MaskedTextBox txt_SearchInformation;
         private System.Windows.Forms.Label lbl_SearchInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txt_ClientPhone;
@@ -460,11 +459,12 @@
         private System.Windows.Forms.TextBox txt_ClientStreet;
         private System.Windows.Forms.Label lbl_ClientNeighborhood;
         private System.Windows.Forms.Button btn_UpdateSubmit;
-        private System.Windows.Forms.Button btn_ClientSearch;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider_OK;
         private System.Windows.Forms.TextBox txt_ClientCreatedDate;
         private System.Windows.Forms.Label lbl_CreatedDate;
         private System.Windows.Forms.CheckBox checkBox_ClientStatus;
+        private System.Windows.Forms.Button btn_ClientSearch;
+        private System.Windows.Forms.MaskedTextBox txt_SearchInformation;
     }
 }

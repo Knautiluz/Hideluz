@@ -21,8 +21,8 @@ namespace HideluzEstacionamentos.Views
         {
             InitializeComponent();
             combo_ClientType.DataSource = Controller.FillType();
-            combo_ClientType.DisplayMember = "tipoCliente";
-            combo_ClientType.ValueMember = "idTipo";
+            combo_ClientType.DisplayMember = "tx_tipo";
+            combo_ClientType.ValueMember = "id";
         }
 
         private void btn_ClientSearch_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace HideluzEstacionamentos.Views
             UpdatedClient.Name = txt_ClientName.Text;
             UpdatedClient.Email = txt_ClientEmail.Text;
             UpdatedClient.Phone = txt_ClientPhone.Text;
-            UpdatedClient.IdType = combo_ClientType.SelectedIndex;
+            UpdatedClient.IdType = Convert.ToInt32(combo_ClientType.SelectedValue);
             UpdatedClient.Address.State = txt_ClientState.Text;
             UpdatedClient.Address.City = txt_ClientCity.Text;
             UpdatedClient.Address.Neighborhood = txt_ClientNeighborhood.Text;
