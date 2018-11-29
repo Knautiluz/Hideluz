@@ -77,11 +77,11 @@
     <Compile Include="Models\Tax.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vehicle.cs" />
-    <Compile Include="Views\ClientRegisterView.cs">
+    <Compile Include="Views\ClientView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ClientRegisterView.Designer.cs">
-      <DependentUpon>ClientRegisterView.cs</DependentUpon>
+    <Compile Include="Views\ClientView.Designer.cs">
+      <DependentUpon>ClientView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ClientMenuView.cs">
       <SubType>UserControl</SubType>
@@ -219,8 +219,8 @@
     <Compile Include="Views\FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\ClientRegisterView.resx">
-      <DependentUpon>ClientRegisterView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ClientView.resx">
+      <DependentUpon>ClientView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ClientMenuView.resx">
       <DependentUpon>ClientMenuView.cs</DependentUpon>

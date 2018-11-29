@@ -32,12 +32,33 @@ namespace HideluzEstacionamentos.Controllers
         {
             if (OldClient != UpdatedClient)
             {
-                ClientDAO.UpdateClient(OldClient, UpdatedClient);
-                return true;
+                try
+                {
+                    ClientDAO.UpdateClient(OldClient, UpdatedClient);
+                    return true;
+                }
+                catch (Exception err)
+                {
+
+                    throw err;
+                }
             }
             else
             {
                 return false;
+            }
+        }
+
+        public bool DeleteClient(Client client)
+        {
+            try
+            {
+                ClientDAO.DeleteClient(client);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -46,15 +67,11 @@ namespace HideluzEstacionamentos.Controllers
             return true;
         }
 
-        public bool DeleteClient(Client client)
-        {
-            return true;
-        }
-
         public bool DeleteVehicle(Vehicle vehicle)
         {
             return true;
         }
+
         public Client CheckClient(Client client)
         {
             try
@@ -73,11 +90,13 @@ namespace HideluzEstacionamentos.Controllers
             var vehicle = new Vehicle();
             return vehicle;
         }
+
         public Tax CheckTax(int type)
         {
             var tax = new Tax();
             return tax;
         }
+
         public Vehicle[] ParkedVehicles()
         {
             var vehicles = new Vehicle[500];
@@ -91,10 +110,36 @@ namespace HideluzEstacionamentos.Controllers
             return ClientTypes;
         }
 
+        public DataTable FillClientTable()
+        {
+            DataTable AllClients = new DataTable();
+            AllClients.Load(ClientDAO.SelectAllClients());
+            return AllClients;
+        }
+
         public bool CheckClientExists(Client client)
         {
             if (ClientDAO.CheckClientExists(client)) { return true; }
             else { return false; }
+        }
+
+        public Client RowConverter(DataRowView SelectedRow, Client client)
+        {
+            client.Document = SelectedRow.Row.ItemArray[1].ToString();
+            client.Name = SelectedRow.Row.ItemArray[2].ToString();
+            client.Email = SelectedRow.Row.ItemArray[3].ToString();
+            client.Phone = SelectedRow.Row.ItemArray[4].ToString();
+            client.IdType = SelectedRow.Row.ItemArray[5].ToString() == "Avulso" ? 1 : 2;
+            client.Address.State = SelectedRow.Row.ItemArray[6].ToString();
+            client.Address.City = SelectedRow.Row.ItemArray[7].ToString();
+            client.Address.Neighborhood = SelectedRow.Row.ItemArray[8].ToString();
+            client.Address.Street = SelectedRow.Row.ItemArray[9].ToString();
+            client.Address.Number = SelectedRow.Row.ItemArray[10].ToString();
+            client.Address.ZIPCode = SelectedRow.Row.ItemArray[11].ToString();
+            client.Status = Convert.ToBoolean(SelectedRow.Row.ItemArray[12]);
+            client.CreatedDate = Convert.ToDateTime(SelectedRow.Row.ItemArray[13].ToString());
+
+            return client;
         }
     }
 }

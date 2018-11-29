@@ -11,18 +11,23 @@ namespace HideluzEstacionamentos.Controllers
     {
         LoginDAO LoginDAO = new LoginDAO();
 
-        public bool SelectUser(Login login)
+        public bool ValidateUser(Login inputLogin)
         {
             try
             {
-                var tunga = LoginDAO.Select(login);
-                if (tunga) { return true; }
+                if (LoginDAO.CheckUser(inputLogin)) { return true; }
+
                 else { return false; }
             }
             catch (Exception err)
             {
                 throw err;
             }
+        }
+
+        public Login FillUserData(Login inputLogin)
+        {
+            return LoginDAO.FillUserData(inputLogin);
         }
     }
 }

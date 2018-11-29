@@ -12,9 +12,10 @@ namespace HideluzEstacionamentos.Views
 {
     public partial class FormLoggerv2 : Form
     {
-        public FormLoggerv2()
+        public FormLoggerv2(Login user)
         {
             InitializeComponent();
+            lbl_Username.Text = user.Name;
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -27,7 +28,6 @@ namespace HideluzEstacionamentos.Views
         {
             panel_selectedMenu.Height = btn_clients.Height;
             panel_selectedMenu.Top = btn_clients.Top;
-            clientMenuView1.BringToFront();
         }
 
         private void btn_vehicles_Click(object sender, EventArgs e)
