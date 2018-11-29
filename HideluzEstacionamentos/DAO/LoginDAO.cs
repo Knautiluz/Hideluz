@@ -8,26 +8,47 @@ namespace HideluzEstacionamentos.DAO
 
         MySqlCommand command = null;
 
-        public bool Select(Login login)
+        public bool CheckUser(Login inputLogin)
         {
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT count(*) FROM users WHERE username = @username and password = @password", connection);
-                command.Parameters.AddWithValue("@username", login.Username);
-                command.Parameters.AddWithValue("@password", login.Password);
+                command = new MySqlCommand("SELECT count(*) FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
+                command.Parameters.AddWithValue("@username", inputLogin.Username);
+                command.Parameters.AddWithValue("@password", inputLogin.Password);
+                var count = Convert.ToInt32(command.ExecuteScalar());
 
-                var count = command.ExecuteScalar();
-
-                if (Convert.ToInt32(count) > 0)
+                if (count > 0)
                 {
                     return true;
                 }
 
-                else
+                else { return false; }
+
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        public Login FillUserData(Login inputLogin)
+        {
+            try
+            {
+                OpenConnection();
+                command = new MySqlCommand("SELECT * FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
+                command.Parameters.AddWithValue("@username", inputLogin.Username);
+                command.Parameters.AddWithValue("@password", inputLogin.Password);
+
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    return false;
+                    inputLogin.Name = reader["tx_nome"].ToString();
+                    inputLogin.IdType = Convert.ToInt32(reader["id_tipo"]);
                 }
+                return inputLogin;
+
             }
             catch (Exception err)
             {
