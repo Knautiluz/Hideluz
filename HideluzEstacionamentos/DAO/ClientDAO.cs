@@ -7,15 +7,13 @@ namespace HideluzEstacionamentos.DAO
     public class ClientDAO : Connection
     {
 
-        MySqlCommand command = null;
-
         public void Save(Client client)
         {
             try
             {
                 OpenConnection();
 
-                command = new MySqlCommand(
+                MySqlCommand command = new MySqlCommand(
                             "INSERT INTO tb_clientes (tx_cpf, tx_nome, tx_email, tx_telefone, id_tipocliente, tx_estado, tx_cidade, tx_bairro, tx_rua, tx_numero, tx_cep, fl_ativo)" +
                             "VALUES (@document, @name, @email, @phone, @type, @state, @city, @neighborhood, @street, @number, @zipcode, @status)", connection);
                 command.Parameters.AddWithValue("@document", client.Document);
@@ -50,7 +48,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT * FROM tb_clientes where tx_cpf = @ClientDocument LIMIT 1", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tb_clientes where tx_cpf = @ClientDocument LIMIT 1", connection);
                 command.Parameters.AddWithValue("@ClientDocument", client.Document);
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -78,6 +76,10 @@ namespace HideluzEstacionamentos.DAO
 
                 throw err;
             }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public MySqlDataReader SelectAllClients()
@@ -85,7 +87,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT tb_clientes.id, tx_cpf, tx_nome, tx_email, tx_telefone, tx_tipo, tx_estado," +
+                MySqlCommand command = new MySqlCommand("SELECT tb_clientes.id, tx_cpf, tx_nome, tx_email, tx_telefone, tx_tipo, tx_estado," +
                     "tx_cidade, tx_bairro, tx_rua, tx_numero, tx_cep, fl_ativo, dt_criacao FROM tb_clientes " +
                     "inner join tb_tipo_cliente on tb_tipo_cliente.id = tb_clientes.id_tipocliente;", connection);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -95,6 +97,10 @@ namespace HideluzEstacionamentos.DAO
             {
                 throw err;
             }
+            finally
+            {
+                OpenConnection();
+            }
         }
 
         public void UpdateClient(Client OldClient, Client UpdatedClient)
@@ -102,7 +108,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("UPDATE tb_clientes set tx_cpf = @ClientDocument, tx_nome = @ClientName, tx_email = @ClientEmail," +
+                MySqlCommand command = new MySqlCommand("UPDATE tb_clientes set tx_cpf = @ClientDocument, tx_nome = @ClientName, tx_email = @ClientEmail," +
                     "tx_telefone = @ClientPhone, id_tipocliente = @ClientType, tx_estado = @ClientState, tx_cidade = @ClientCity," +
                     "tx_bairro = @ClientNeighborhood, tx_rua = @ClientStreet, tx_numero = @ClientNumber, tx_cep = @ClientZIPCode," +
                     "fl_ativo = @ClientStatus WHERE tx_cpf = @OldClientDocument", connection);
@@ -127,6 +133,10 @@ namespace HideluzEstacionamentos.DAO
 
                 throw err;
             }
+            finally
+            {
+                OpenConnection();
+            }
         }
 
         public void DeleteClient(Client client)
@@ -134,15 +144,18 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("DELETE FROM tb_clientes WHERE tx_cpf = @ClientDocument", connection);
+                MySqlCommand command = new MySqlCommand("DELETE FROM tb_clientes WHERE tx_cpf = @ClientDocument", connection);
                 command.Parameters.AddWithValue("@ClientDocument", client.Document);
 
                 command.ExecuteNonQuery();
             }
             catch (Exception err)
             {
-
                 throw err;
+            }
+            finally
+            {
+                CloseConnection();
             }
         }
 
@@ -151,7 +164,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT COUNT(*) FROM tb_clientes where tx_cpf = @ClientDocument LIMIT 1", connection);
+                MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM tb_clientes where tx_cpf = @ClientDocument LIMIT 1", connection);
                 command.Parameters.AddWithValue("@ClientDocument", client.Document);
                 var count = Convert.ToInt32(command.ExecuteScalar());
                 if (count >= 1) { return true; }
@@ -159,8 +172,11 @@ namespace HideluzEstacionamentos.DAO
             }
             catch (Exception err)
             {
-
                 throw err;
+            }
+            finally
+            {
+                CloseConnection();
             }
         }
 
@@ -170,7 +186,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT * FROM tb_tipo_cliente", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tb_tipo_cliente", connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 return reader;
             }
