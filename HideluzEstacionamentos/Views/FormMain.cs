@@ -36,16 +36,16 @@ namespace HideluzEstacionamentos
             if (Controller.ValidateUser(InputLogin))
             {
                 Controller.FillUserData(InputLogin);
-                MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Splash.Close();
+                MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FormLoggerv2 formLogged = new FormLoggerv2(InputLogin);
                 formLogged.Show();
             }
 
             else
             {
-                MessageBox.Show("Dados inválidos", "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Splash.Close();
+                MessageBox.Show("Dados inválidos", "Falha ao tentar logar.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 var form = Application.OpenForms[0];
                 form.Show();
             }
