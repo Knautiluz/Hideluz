@@ -35,5 +35,10 @@ namespace HideluzEstacionamentos.Controllers
         {
             InitializerDAO.InsertDefaultClientValues();
         }
+
+        public void CreateClientsTable()
+        {
+            InitializerDAO.CreateClientTypeTable();
+        }
     }
 }
