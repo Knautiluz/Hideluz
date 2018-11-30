@@ -47,5 +47,11 @@ namespace HideluzEstacionamentos.Views
             panel_selectedMenu.Height = btn_reports.Height;
             panel_selectedMenu.Top = btn_reports.Top;
         }
+
+        private void FormLoggerv2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var form = Application.OpenForms[0];
+            form.Show();
+        }
     }
 }
