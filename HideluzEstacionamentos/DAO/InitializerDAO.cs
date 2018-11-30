@@ -137,6 +137,43 @@ namespace HideluzEstacionamentos.DAO
             }
         }
 
+        public void CreateClientsTable()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_clientes` (" +
+                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
+                    "`tx_cpf` varchar(256) NOT NULL," +
+                    "`tx_nome` varchar(256) NOT NULL," +
+                    "`tx_email` varchar(256) NOT NULL," +
+                    "`tx_telefone` varchar(256) NOT NULL," +
+                    "`id_tipocliente` int(11) NOT NULL," +
+                    "`tx_estado` varchar(256) NOT NULL," +
+                    "`tx_cidade` varchar(256) NOT NULL," +
+                    "`tx_bairro` varchar(256) NOT NULL," +
+                    "`tx_rua` varchar(256) NOT NULL," +
+                    "`tx_numero` varchar(256) NOT NULL," +
+                    "`tx_cep` varchar(256) NOT NULL," +
+                    "`fl_ativo` bit(1) NOT NULL," +
+                    "`dt_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP," +
+                    "`dt_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
+                    "PRIMARY KEY(`tx_cpf`)," +
+                    "UNIQUE KEY `id_UNIQUE` (`id`)," +
+                    "KEY `idTipoCliente_idx` (`id_tipocliente`)," +
+                    "CONSTRAINT `idTipoCliente` FOREIGN KEY(`id_tipocliente`) REFERENCES `tb_tipo_cliente` (`id`)");
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
         #endregion
     }
 }
