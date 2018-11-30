@@ -263,6 +263,7 @@
             this.Controls.Add(this.panel_TopContent);
             this.Name = "FormLoggerv2";
             this.Text = "FormLoggerv2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoggerv2_FormClosing);
             this.panel_TopContent.ResumeLayout(false);
             this.panel_Logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

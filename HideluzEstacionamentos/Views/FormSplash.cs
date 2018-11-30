@@ -17,7 +17,6 @@ namespace HideluzEstacionamentos
 
         private void Splash_Load(object sender, EventArgs e)
         {
-            SplashProgressBar.ForeColor = Color.Red;
             SplashProgressBar.PerformStep();
         }
     }

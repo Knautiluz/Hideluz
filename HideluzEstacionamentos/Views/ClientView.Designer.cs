@@ -39,7 +39,7 @@
             this.txt_SearchInformation = new System.Windows.Forms.MaskedTextBox();
             this.lbl_SearchClient = new System.Windows.Forms.Label();
             this.dataGrid_AllClients = new System.Windows.Forms.DataGridView();
-            this.btn_UpdateClient = new System.Windows.Forms.Button();
+            this.btn_SelectClient = new System.Windows.Forms.Button();
             this.btn_RegisterSubmit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.checkBox_ClientStatus = new System.Windows.Forms.CheckBox();
@@ -82,7 +82,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.dataGrid_AllClients);
-            this.panel1.Controls.Add(this.btn_UpdateClient);
+            this.panel1.Controls.Add(this.btn_SelectClient);
             this.panel1.Controls.Add(this.btn_RegisterSubmit);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -194,20 +194,20 @@
             this.dataGrid_AllClients.Size = new System.Drawing.Size(812, 181);
             this.dataGrid_AllClients.TabIndex = 44;
             // 
-            // btn_UpdateClient
+            // btn_SelectClient
             // 
-            this.btn_UpdateClient.BackColor = System.Drawing.Color.Green;
-            this.btn_UpdateClient.FlatAppearance.BorderSize = 0;
-            this.btn_UpdateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_UpdateClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_UpdateClient.ForeColor = System.Drawing.Color.White;
-            this.btn_UpdateClient.Location = new System.Drawing.Point(712, 500);
-            this.btn_UpdateClient.Name = "btn_UpdateClient";
-            this.btn_UpdateClient.Size = new System.Drawing.Size(125, 30);
-            this.btn_UpdateClient.TabIndex = 42;
-            this.btn_UpdateClient.Text = "Selecionar";
-            this.btn_UpdateClient.UseVisualStyleBackColor = false;
-            this.btn_UpdateClient.Click += new System.EventHandler(this.btn_UpdateClient_Click);
+            this.btn_SelectClient.BackColor = System.Drawing.Color.Green;
+            this.btn_SelectClient.FlatAppearance.BorderSize = 0;
+            this.btn_SelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SelectClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SelectClient.ForeColor = System.Drawing.Color.White;
+            this.btn_SelectClient.Location = new System.Drawing.Point(697, 500);
+            this.btn_SelectClient.Name = "btn_SelectClient";
+            this.btn_SelectClient.Size = new System.Drawing.Size(140, 30);
+            this.btn_SelectClient.TabIndex = 42;
+            this.btn_SelectClient.Text = "Selecionar";
+            this.btn_SelectClient.UseVisualStyleBackColor = false;
+            this.btn_SelectClient.Click += new System.EventHandler(this.btn_SelectClient_Click);
             // 
             // btn_RegisterSubmit
             // 
@@ -216,11 +216,11 @@
             this.btn_RegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_RegisterSubmit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RegisterSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn_RegisterSubmit.Location = new System.Drawing.Point(581, 500);
+            this.btn_RegisterSubmit.Location = new System.Drawing.Point(551, 500);
             this.btn_RegisterSubmit.Name = "btn_RegisterSubmit";
-            this.btn_RegisterSubmit.Size = new System.Drawing.Size(125, 30);
+            this.btn_RegisterSubmit.Size = new System.Drawing.Size(140, 30);
             this.btn_RegisterSubmit.TabIndex = 41;
-            this.btn_RegisterSubmit.Text = "Novo Cliente";
+            this.btn_RegisterSubmit.Text = "Cadastrar Cliente";
             this.btn_RegisterSubmit.UseVisualStyleBackColor = false;
             this.btn_RegisterSubmit.Click += new System.EventHandler(this.btn_RegisterSubmit_Click);
             // 
@@ -544,7 +544,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider_OK;
         private System.Windows.Forms.MaskedTextBox txt_ClientZIPCode;
         private System.Windows.Forms.Button btn_DeleteClient;
-        private System.Windows.Forms.Button btn_UpdateClient;
+        private System.Windows.Forms.Button btn_SelectClient;
         private System.Windows.Forms.DataGridView dataGrid_AllClients;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_SearchClient;
