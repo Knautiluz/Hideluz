@@ -135,15 +135,6 @@ namespace HideluzEstacionamentos.Views
             }
         }
 
-        private void btn_UpdateClient_Click(object sender, EventArgs e)
-        {
-            DataRowView SelectedRow = (DataRowView)dataGrid_AllClients.CurrentRow.DataBoundItem;
-            Client = Controller.RowConverter(SelectedRow, Client);
-            PopulateFormClient(Client);
-            btn_UpdateSubmit.Enabled = true;
-            btn_DeleteClient.Enabled = true;
-        }
-
         private void btn_DeleteClient_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Deseja excluir esse cliente?", "Excluir Cliente", MessageBoxButtons.YesNo);
@@ -162,6 +153,18 @@ namespace HideluzEstacionamentos.Views
                     MessageBox.Show("Ocorreu um problema ao excluir o cliente");
                 }
 
+            }
+        }
+
+        private void btn_SelectClient_Click(object sender, EventArgs e)
+        {
+            DataRowView SelectedRow = (DataRowView)dataGrid_AllClients.CurrentRow?.DataBoundItem;
+            if (!(SelectedRow == null))
+            {
+                Client = Controller.RowConverter(SelectedRow, Client);
+                PopulateFormClient(Client);
+                btn_UpdateSubmit.Enabled = true;
+                btn_DeleteClient.Enabled = true;
             }
         }
 
@@ -519,8 +522,8 @@ namespace HideluzEstacionamentos.Views
             txt_ClientZIPCode.Clear();
         }
 
-        #endregion
 
+        #endregion
 
     }
 }
