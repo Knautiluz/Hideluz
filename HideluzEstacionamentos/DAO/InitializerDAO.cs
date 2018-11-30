@@ -161,7 +161,7 @@ namespace HideluzEstacionamentos.DAO
                     "PRIMARY KEY(`tx_cpf`)," +
                     "UNIQUE KEY `id_UNIQUE` (`id`)," +
                     "KEY `idTipoCliente_idx` (`id_tipocliente`)," +
-                    "CONSTRAINT `idTipoCliente` FOREIGN KEY(`id_tipocliente`) REFERENCES `tb_tipo_cliente` (`id`)");
+                    "CONSTRAINT `idTipoCliente` FOREIGN KEY(`id_tipocliente`) REFERENCES `tb_tipo_cliente` (`id`)", connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception err)

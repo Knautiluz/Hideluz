@@ -38,7 +38,7 @@ namespace HideluzEstacionamentos.Controllers
 
         public void CreateClientsTable()
         {
-            InitializerDAO.CreateClientTypeTable();
+            InitializerDAO.CreateClientsTable();
         }
     }
 }
