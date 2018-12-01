@@ -71,8 +71,7 @@ namespace HideluzEstacionamentos.Views
                     txt_ClientZIPCode.Clear();
                     txt_ClientState.Clear();
                     txt_ClientCity.Clear();
-                    dataGrid_AllClients.Update();
-                    dataGrid_AllClients.Refresh();
+                    RefreshDataGrid();
                 }
 
                 catch (Exception)
@@ -131,6 +130,7 @@ namespace HideluzEstacionamentos.Views
                     MessageBox.Show("Cliente atualizado!");
                     btn_UpdateSubmit.Enabled = false;
                     btn_DeleteClient.Enabled = false;
+                    RefreshDataGrid();
                 }
             }
         }
@@ -144,7 +144,7 @@ namespace HideluzEstacionamentos.Views
                 {
                     ClearFields();
                     MessageBox.Show("Cliente excluido");
-                    dataGrid_AllClients.Refresh();
+                    RefreshDataGrid();
                     btn_UpdateSubmit.Enabled = false;
                     btn_DeleteClient.Enabled = false;
                 }
@@ -520,6 +520,12 @@ namespace HideluzEstacionamentos.Views
             txt_ClientStreet.Clear();
             txt_ClientNumber.Clear();
             txt_ClientZIPCode.Clear();
+        }
+
+        public void RefreshDataGrid()
+        {
+            dataGrid_AllClients.Refresh();
+            dataGrid_AllClients.DataSource = Controller.FillClientTable();
         }
 
 

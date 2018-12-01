@@ -99,7 +99,7 @@ namespace HideluzEstacionamentos.DAO
             }
             finally
             {
-                OpenConnection();
+                CloseConnection();
             }
         }
 
@@ -135,7 +135,7 @@ namespace HideluzEstacionamentos.DAO
             }
             finally
             {
-                OpenConnection();
+                CloseConnection();
             }
         }
 
