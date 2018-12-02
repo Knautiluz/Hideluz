@@ -1,6 +1,6 @@
 ﻿using HideluzEstacionamentos.Controllers;
+using HideluzEstacionamentos.Models;
 using System;
-using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
@@ -15,7 +15,7 @@ namespace HideluzEstacionamentos.Views
         public ClientView()
         {
             InitializeComponent();
-            combo_ClientType.DataSource = Controller.FillType();
+            combo_ClientType.DataSource = Controller.FillClientType();
             combo_ClientType.DisplayMember = "tx_tipo";
             combo_ClientType.ValueMember = "id";
             dataGrid_AllClients.DataSource = Controller.FillClientTable();
@@ -161,7 +161,7 @@ namespace HideluzEstacionamentos.Views
             DataRowView SelectedRow = (DataRowView)dataGrid_AllClients.CurrentRow?.DataBoundItem;
             if (!(SelectedRow == null))
             {
-                Client = Controller.RowConverter(SelectedRow, Client);
+                Client = Controller.RowConverterClient(SelectedRow, Client);
                 PopulateFormClient(Client);
                 btn_UpdateSubmit.Enabled = true;
                 btn_DeleteClient.Enabled = true;
@@ -375,62 +375,23 @@ namespace HideluzEstacionamentos.Views
 
         private bool GeneralValidator()
         {
-            int falses = 0;
             errorProvider1.Clear();
             errorProvider_OK.Clear();
+            int falses = 0;
 
-            if (!DocumentValidator())
-            {
-                falses += 1;
-            }
+            if (!DocumentValidator()) { falses = +1; }
+            if (!NameValidator()) { falses = +1; }
+            if (!EmailValidator()) { falses = +1; }
+            if (!PhoneValidator()) { falses = +1; }
+            if (!StateValidator()) { falses = +1; }
+            if (!CityValidator()) { falses = +1; }
+            if (!NeighborhoodValidator()) { falses = +1; }
+            if (!StreetValidator()) { falses = +1; }
+            if (!ZIPCodeValidator()) { falses = +1; }
+            if (!NumberValidator()) { falses = +1; }
 
-            if (!NameValidator())
-            {
-                falses += 1;
-            }
-
-            if (!EmailValidator())
-            {
-                falses += 1;
-            }
-
-            if (!PhoneValidator())
-            {
-                falses += 1;
-            }
-
-            if (!StateValidator())
-            {
-                falses += 1;
-            }
-
-            if (!CityValidator())
-            {
-                falses += 1;
-            }
-
-            if (!NeighborhoodValidator())
-            {
-                falses += 1;
-            }
-
-            if (!StreetValidator())
-            {
-                falses += 1;
-            }
-
-            if (!ZIPCodeValidator())
-            {
-                falses += 1;
-            }
-
-            if (!NumberValidator())
-            {
-                falses += 1;
-            }
-
-            if (falses == 0) { return true; }
-            else { return false; }
+            if (falses > 0) { return false; }
+            else { return true; }
         }
 
         private bool InputValidator()
@@ -527,7 +488,6 @@ namespace HideluzEstacionamentos.Views
             dataGrid_AllClients.Refresh();
             dataGrid_AllClients.DataSource = Controller.FillClientTable();
         }
-
 
         #endregion
 

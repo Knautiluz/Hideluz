@@ -1,4 +1,5 @@
 ﻿using HideluzEstacionamentos.Controllers;
+using HideluzEstacionamentos.Models;
 using HideluzEstacionamentos.Views;
 using System;
 using System.Windows.Forms;
@@ -7,7 +8,6 @@ namespace HideluzEstacionamentos
 {
     public partial class FormMain : Form
     {
-        //atributos de inicialização.
         private Login InputLogin = new Login();
         private LoginController Controller = new LoginController();
         private InitializerController Initializator = new InitializerController();
@@ -29,16 +29,21 @@ namespace HideluzEstacionamentos
             Initializator.CreateUserTypeTable();
             Initializator.CreateUsersTable();
             Initializator.InsertDefaultUsersValues();
+
             Initializator.CreateClientTypeTable();
             Initializator.InsertDefaultClientValues();
             Initializator.CreateClientsTable();
+
+            Initializator.CreateVehicleTypeTable();
+            Initializator.InsertDefaultVehicleValues();
+            Initializator.CreateVehiclesTable();
 
             if (Controller.ValidateUser(InputLogin))
             {
                 Controller.FillUserData(InputLogin);
                 Splash.Close();
                 MessageBox.Show("Login realizado com sucesso!", "Usuário logado.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormLoggerv2 formLogged = new FormLoggerv2(InputLogin);
+                FormLogged formLogged = new FormLogged(InputLogin);
                 formLogged.Show();
             }
 

@@ -61,20 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\AuxMethods.cs" />
     <Compile Include="Controllers\OperatorController.cs" />
-    <Compile Include="Controllers\TaxController.cs" />
     <Compile Include="Controllers\InitializerController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\InitializerDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
-    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="DAO\VehicleDAO.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Operator.cs" />
-    <Compile Include="Models\Tax.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Views\ClientView.cs">
@@ -83,67 +79,13 @@
     <Compile Include="Views\ClientView.Designer.cs">
       <DependentUpon>ClientView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClientMenuView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ClientMenuView.Designer.cs">
-      <DependentUpon>ClientMenuView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ClientSearchView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ClientSearchView.Designer.cs">
-      <DependentUpon>ClientSearchView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormLoggerv2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormLoggerv2.Designer.cs">
-      <DependentUpon>FormLoggerv2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormModifyTax.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormModifyTax.Designer.cs">
-      <DependentUpon>FormModifyTax.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRegisterTax.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRegisterTax.Designer.cs">
-      <DependentUpon>FormRegisterTax.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRemoveTax.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRemoveTax.Designer.cs">
-      <DependentUpon>FormRemoveTax.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRemoveUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRemoveUser.Designer.cs">
-      <DependentUpon>FormRemoveUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormModifyUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormModifyUser.Designer.cs">
-      <DependentUpon>FormModifyUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRegisterUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRegisterUser.Designer.cs">
-      <DependentUpon>FormRegisterUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Views\FormLogged.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormLogged.Designer.cs">
       <DependentUpon>FormLogged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Views\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,118 +93,28 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs" />
-    <Compile Include="Views\FormModifyClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormModifyClient.Designer.cs">
-      <DependentUpon>FormModifyClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormModifyVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormModifyVehicle.Designer.cs">
-      <DependentUpon>FormModifyVehicle.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\FormRegisterClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRegisterClient.Designer.cs">
-      <DependentUpon>FormRegisterClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRegisterVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRegisterVehicle.Designer.cs">
-      <DependentUpon>FormRegisterVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRemoveClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRemoveClient.Designer.cs">
-      <DependentUpon>FormRemoveClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormRemoveVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormRemoveVehicle.Designer.cs">
-      <DependentUpon>FormRemoveVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormSearchClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormSearchClient.Designer.cs">
-      <DependentUpon>FormSearchClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormSearchTax.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormSearchTax.Designer.cs">
-      <DependentUpon>FormSearchTax.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormSearchUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormSearchUser.Designer.cs">
-      <DependentUpon>FormSearchUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FormSearchVehicle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormSearchVehicle.Designer.cs">
-      <DependentUpon>FormSearchVehicle.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\VehicleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleView.Designer.cs">
+      <DependentUpon>VehicleView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\ClientView.resx">
       <DependentUpon>ClientView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ClientMenuView.resx">
-      <DependentUpon>ClientMenuView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ClientSearchView.resx">
-      <DependentUpon>ClientSearchView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormLoggerv2.resx">
-      <DependentUpon>FormLoggerv2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormModifyTax.resx">
-      <DependentUpon>FormModifyTax.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRegisterTax.resx">
-      <DependentUpon>FormRegisterTax.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRemoveClient.resx">
-      <DependentUpon>FormRemoveClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRemoveTax.resx">
-      <DependentUpon>FormRemoveTax.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRemoveUser.resx">
-      <DependentUpon>FormRemoveUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormModifyUser.resx">
-      <DependentUpon>FormModifyUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRegisterUser.resx">
-      <DependentUpon>FormRegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormLogged.resx">
       <DependentUpon>FormLogged.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormModifyClient.resx">
-      <DependentUpon>FormModifyClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormModifyVehicle.resx">
-      <DependentUpon>FormModifyVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -274,29 +126,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\FormRegisterClient.resx">
-      <DependentUpon>FormRegisterClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRegisterVehicle.resx">
-      <DependentUpon>FormRegisterVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormRemoveVehicle.resx">
-      <DependentUpon>FormRemoveVehicle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormSearchClient.resx">
-      <DependentUpon>FormSearchClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormSearchTax.resx">
-      <DependentUpon>FormSearchTax.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormSearchUser.resx">
-      <DependentUpon>FormSearchUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormSearchVehicle.resx">
-      <DependentUpon>FormSearchVehicle.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormSplash.resx">
       <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleView.resx">
+      <DependentUpon>VehicleView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

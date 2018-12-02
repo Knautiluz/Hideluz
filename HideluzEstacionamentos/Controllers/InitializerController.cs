@@ -1,15 +1,13 @@
 ﻿using HideluzEstacionamentos.DAO;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HideluzEstacionamentos.Controllers
 {
     public class InitializerController
     {
         InitializerDAO InitializerDAO = new InitializerDAO();
+
+        #region Users Table
 
         public void CreateUsersTable()
         {
@@ -26,6 +24,10 @@ namespace HideluzEstacionamentos.Controllers
             InitializerDAO.InsertDefaultUserValues();
         }
 
+        #endregion
+
+        #region Clients Tables
+
         public void CreateClientTypeTable()
         {
             InitializerDAO.CreateClientTypeTable();
@@ -40,5 +42,34 @@ namespace HideluzEstacionamentos.Controllers
         {
             InitializerDAO.CreateClientsTable();
         }
+
+        #endregion
+
+        #region Vehicles Tables
+
+        public void CreateVehicleTypeTable()
+        {
+            InitializerDAO.CreateVehicleTypeTable();
+        }
+
+        public void InsertDefaultVehicleValues()
+        {
+            InitializerDAO.InsertDefaultVehicleValues();
+        }
+
+        public void CreateVehiclesTable()
+        {
+            try
+            {
+                InitializerDAO.CreateVehiclesTable();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        #endregion
     }
 }

@@ -188,7 +188,7 @@
             this.dataGrid_AllClients.AllowUserToAddRows = false;
             this.dataGrid_AllClients.AllowUserToDeleteRows = false;
             this.dataGrid_AllClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_AllClients.Location = new System.Drawing.Point(25, 313);
+            this.dataGrid_AllClients.Location = new System.Drawing.Point(26, 346);
             this.dataGrid_AllClients.Name = "dataGrid_AllClients";
             this.dataGrid_AllClients.ReadOnly = true;
             this.dataGrid_AllClients.Size = new System.Drawing.Size(812, 181);
@@ -201,7 +201,7 @@
             this.btn_SelectClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SelectClient.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SelectClient.ForeColor = System.Drawing.Color.White;
-            this.btn_SelectClient.Location = new System.Drawing.Point(697, 500);
+            this.btn_SelectClient.Location = new System.Drawing.Point(698, 533);
             this.btn_SelectClient.Name = "btn_SelectClient";
             this.btn_SelectClient.Size = new System.Drawing.Size(140, 30);
             this.btn_SelectClient.TabIndex = 42;
@@ -216,7 +216,7 @@
             this.btn_RegisterSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_RegisterSubmit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_RegisterSubmit.ForeColor = System.Drawing.Color.White;
-            this.btn_RegisterSubmit.Location = new System.Drawing.Point(551, 500);
+            this.btn_RegisterSubmit.Location = new System.Drawing.Point(552, 533);
             this.btn_RegisterSubmit.Name = "btn_RegisterSubmit";
             this.btn_RegisterSubmit.Size = new System.Drawing.Size(140, 30);
             this.btn_RegisterSubmit.TabIndex = 41;
