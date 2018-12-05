@@ -10,6 +10,9 @@ namespace HideluzEstacionamentos.Controllers
         /* Instancia ClientDAO */
         ClientDAO ClientDAO = new ClientDAO();
         VehicleDAO VehicleDAO = new VehicleDAO();
+        TaxDAO TaxDAO = new TaxDAO();
+
+        #region Client Controller
 
         public bool AddClient(Client Client)
         {
@@ -109,6 +112,10 @@ namespace HideluzEstacionamentos.Controllers
 
             return client;
         }
+
+        #endregion
+
+        #region Vehicle Controller
 
         public void AddVehicle(Vehicle vehicle)
         {
@@ -213,5 +220,84 @@ namespace HideluzEstacionamentos.Controllers
 
             return vehicle;
         }
+
+        #endregion
+
+        #region Tax Controller
+
+        public void AddTax(Tax tax)
+        {
+            try
+            {
+                TaxDAO.CreateTax(tax);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public bool UpdateTax(Tax OldTax, Tax UpdatedTax)
+        {
+
+            if (OldTax != UpdatedTax)
+            {
+                try
+                {
+                    TaxDAO.UpdateTax(OldTax, UpdatedTax);
+                    return true;
+                }
+                catch (Exception err)
+                {
+
+                    throw err;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteTax(Tax tax)
+        {
+            try
+            {
+                TaxDAO.DeleteTax(tax);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public DataTable FillTaxType()
+        {
+            DataTable TaxesType = new DataTable();
+            TaxesType.Load(TaxDAO.FillTaxType());
+            return TaxesType;
+        }
+
+        public DataTable FillTaxTable()
+        {
+            DataTable AllTaxes = new DataTable();
+            AllTaxes.Load(TaxDAO.SelectAllTaxes());
+            return AllTaxes;
+        }
+
+        public Tax RowConverterTax(DataRowView SelectedRow, Tax tax)
+        {
+            tax.Id = Convert.ToInt32(SelectedRow.Row.ItemArray[0]);
+            tax.Price = Convert.ToDecimal(SelectedRow.Row.ItemArray[1]);
+            tax.IdType = (SelectedRow.Row.ItemArray[2].ToString() == "Diária") ? 1 : (SelectedRow.Row.ItemArray[2].ToString() == "Mensal") ? 2 : 3;
+            tax.IdVehicleType = SelectedRow.Row.ItemArray[3].ToString() == "Carro" ? 1 : 2;
+
+            return tax;
+        }
+
+        #endregion
+
     }
 }
