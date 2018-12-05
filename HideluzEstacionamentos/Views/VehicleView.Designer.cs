@@ -84,7 +84,7 @@
             this.panel2.Controls.Add(this.btn_VehicleSearch);
             this.panel2.Controls.Add(this.txt_SearchInformation);
             this.panel2.Controls.Add(this.lbl_SearchClient);
-            this.panel2.Location = new System.Drawing.Point(596, 29);
+            this.panel2.Location = new System.Drawing.Point(595, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(242, 273);
             this.panel2.TabIndex = 48;
@@ -222,7 +222,7 @@
             this.panel3.Controls.Add(this.txt_VehicleModel);
             this.panel3.Controls.Add(this.lbl_VehicleModel);
             this.panel3.Controls.Add(this.lbl_VehicleOwner);
-            this.panel3.Location = new System.Drawing.Point(26, 29);
+            this.panel3.Location = new System.Drawing.Point(25, 20);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(564, 273);
             this.panel3.TabIndex = 14;

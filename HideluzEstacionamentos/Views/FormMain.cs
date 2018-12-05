@@ -38,6 +38,10 @@ namespace HideluzEstacionamentos
             Initializator.InsertDefaultVehicleValues();
             Initializator.CreateVehiclesTable();
 
+            Initializator.CreateTaxesTypeTable();
+            Initializator.InsertDefaultTaxesValues();
+            Initializator.CreateTaxesTable();
+
             if (Controller.ValidateUser(InputLogin))
             {
                 Controller.FillUserData(InputLogin);
