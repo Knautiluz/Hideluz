@@ -38,9 +38,6 @@
     <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -69,8 +66,10 @@
     <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\InitializerDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\TaxDAO.cs" />
     <Compile Include="DAO\VehicleDAO.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Tax.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Views\ClientView.cs">
@@ -101,6 +100,12 @@
     <Compile Include="Views\FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TaxView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TaxView.Designer.cs">
+      <DependentUpon>TaxView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\VehicleView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FormSplash.resx">
       <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaxView.resx">
+      <DependentUpon>TaxView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VehicleView.resx">
       <DependentUpon>VehicleView.cs</DependentUpon>
