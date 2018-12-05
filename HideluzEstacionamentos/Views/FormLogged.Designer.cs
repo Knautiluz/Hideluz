@@ -45,8 +45,9 @@
             this.panel_selectedMenu = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
             this.panel_ContentView = new System.Windows.Forms.Panel();
-            this.clientView = new HideluzEstacionamentos.Views.ClientView();
             this.vehicleView = new HideluzEstacionamentos.Views.VehicleView();
+            this.clientView = new HideluzEstacionamentos.Views.ClientView();
+            this.taxView = new HideluzEstacionamentos.Views.TaxView();
             this.panel_TopContent.SuspendLayout();
             this.panel_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -240,12 +241,20 @@
             // panel_ContentView
             // 
             this.panel_ContentView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.panel_ContentView.Controls.Add(this.taxView);
             this.panel_ContentView.Controls.Add(this.vehicleView);
             this.panel_ContentView.Controls.Add(this.clientView);
             this.panel_ContentView.Location = new System.Drawing.Point(181, 59);
             this.panel_ContentView.Name = "panel_ContentView";
             this.panel_ContentView.Size = new System.Drawing.Size(860, 580);
             this.panel_ContentView.TabIndex = 1;
+            // 
+            // vehicleView
+            // 
+            this.vehicleView.Location = new System.Drawing.Point(-3, 0);
+            this.vehicleView.Name = "vehicleView";
+            this.vehicleView.Size = new System.Drawing.Size(865, 580);
+            this.vehicleView.TabIndex = 1;
             // 
             // clientView
             // 
@@ -255,12 +264,12 @@
             this.clientView.Size = new System.Drawing.Size(865, 580);
             this.clientView.TabIndex = 0;
             // 
-            // vehicleView
+            // taxView
             // 
-            this.vehicleView.Location = new System.Drawing.Point(-3, 0);
-            this.vehicleView.Name = "vehicleView";
-            this.vehicleView.Size = new System.Drawing.Size(865, 580);
-            this.vehicleView.TabIndex = 1;
+            this.taxView.Location = new System.Drawing.Point(-3, 0);
+            this.taxView.Name = "taxView";
+            this.taxView.Size = new System.Drawing.Size(865, 580);
+            this.taxView.TabIndex = 2;
             // 
             // FormLogged
             // 
@@ -306,5 +315,6 @@
         private System.Windows.Forms.Label lbl_Welcome;
         private ClientView clientView;
         private VehicleView vehicleView;
+        private TaxView taxView;
     }
 }

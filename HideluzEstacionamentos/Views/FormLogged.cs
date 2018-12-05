@@ -36,6 +36,7 @@ namespace HideluzEstacionamentos.Views
         {
             panel_selectedMenu.Height = btn_taxes.Height;
             panel_selectedMenu.Top = btn_taxes.Top;
+            taxView.BringToFront();
         }
 
         private void btn_reports_Click(object sender, EventArgs e)
