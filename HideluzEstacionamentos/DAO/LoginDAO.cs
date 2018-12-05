@@ -1,19 +1,17 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HideluzEstacionamentos.Models;
+using MySql.Data.MySqlClient;
 using System;
 
 namespace HideluzEstacionamentos.DAO
 {
     public class LoginDAO : Connection
     {
-
-        MySqlCommand command = null;
-
         public bool CheckUser(Login inputLogin)
         {
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT count(*) FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
+                MySqlCommand command = new MySqlCommand("SELECT count(*) FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
                 command.Parameters.AddWithValue("@username", inputLogin.Username);
                 command.Parameters.AddWithValue("@password", inputLogin.Password);
                 var count = Convert.ToInt32(command.ExecuteScalar());
@@ -37,7 +35,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                command = new MySqlCommand("SELECT * FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tb_usuarios WHERE tx_usuario = @username and tx_senha = @password LIMIT 1", connection);
                 command.Parameters.AddWithValue("@username", inputLogin.Username);
                 command.Parameters.AddWithValue("@password", inputLogin.Password);
 

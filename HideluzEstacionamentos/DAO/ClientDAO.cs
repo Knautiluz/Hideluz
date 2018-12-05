@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HideluzEstacionamentos.Models;
+using MySql.Data.MySqlClient;
 using System;
-using System.Data;
 
 namespace HideluzEstacionamentos.DAO
 {
@@ -99,7 +99,7 @@ namespace HideluzEstacionamentos.DAO
             }
             finally
             {
-                OpenConnection();
+                CloseConnection();
             }
         }
 
@@ -135,7 +135,7 @@ namespace HideluzEstacionamentos.DAO
             }
             finally
             {
-                OpenConnection();
+                CloseConnection();
             }
         }
 

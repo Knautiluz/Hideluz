@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace HideluzEstacionamentos.Models
+﻿namespace HideluzEstacionamentos.Models
 {
     public class Tax
     {
-        public string Id { get; set; }
-        public double PricePerHour { get; set; }
-        public DateTime EntryTime { get; set; }
-        public DateTime DepartureTime { get; set; }
+        public int Id { get; set; }
+        public decimal Price { get; set; }
+        public int IdType { get; set; }
+        public int IdVehicleType { get; set; }
     }
 }

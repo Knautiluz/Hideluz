@@ -1,7 +1,6 @@
-﻿using HideluzEstacionamentos.Models;
-using System;
+﻿using System;
 
-namespace HideluzEstacionamentos
+namespace HideluzEstacionamentos.Models
 {
     public class Client
     {
@@ -16,8 +15,7 @@ namespace HideluzEstacionamentos
 
         public Client()
         {
-            Address Address = new Address();
-            this.Address = Address;
+            Address = new Address();
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using HideluzEstacionamentos.Models;
-using HideluzEstacionamentos.DAO;
+﻿using HideluzEstacionamentos.DAO;
+using HideluzEstacionamentos.Models;
 using System;
 using System.Data;
 
@@ -9,6 +9,10 @@ namespace HideluzEstacionamentos.Controllers
     {
         /* Instancia ClientDAO */
         ClientDAO ClientDAO = new ClientDAO();
+        VehicleDAO VehicleDAO = new VehicleDAO();
+        TaxDAO TaxDAO = new TaxDAO();
+
+        #region Client Controller
 
         public bool AddClient(Client Client)
         {
@@ -21,11 +25,6 @@ namespace HideluzEstacionamentos.Controllers
             {
                 throw err;
             }
-        }
-
-        public bool AddVehicle(Vehicle Vehicle, Operator Operator)
-        {
-            return true;
         }
 
         public bool UpdateClient(Client OldClient, Client UpdatedClient)
@@ -62,16 +61,6 @@ namespace HideluzEstacionamentos.Controllers
             }
         }
 
-        public bool ChangeVehicle(Vehicle vehicle)
-        {
-            return true;
-        }
-
-        public bool DeleteVehicle(Vehicle vehicle)
-        {
-            return true;
-        }
-
         public Client CheckClient(Client client)
         {
             try
@@ -85,25 +74,7 @@ namespace HideluzEstacionamentos.Controllers
             }
         }
 
-        public Vehicle CheckVehicle(string plate)
-        {
-            var vehicle = new Vehicle();
-            return vehicle;
-        }
-
-        public Tax CheckTax(int type)
-        {
-            var tax = new Tax();
-            return tax;
-        }
-
-        public Vehicle[] ParkedVehicles()
-        {
-            var vehicles = new Vehicle[500];
-            return vehicles;
-        }
-
-        public DataTable FillType()
+        public DataTable FillClientType()
         {
             DataTable ClientTypes = new DataTable();
             ClientTypes.Load(ClientDAO.FillClientType());
@@ -123,7 +94,7 @@ namespace HideluzEstacionamentos.Controllers
             else { return false; }
         }
 
-        public Client RowConverter(DataRowView SelectedRow, Client client)
+        public Client RowConverterClient(DataRowView SelectedRow, Client client)
         {
             client.Document = SelectedRow.Row.ItemArray[1].ToString();
             client.Name = SelectedRow.Row.ItemArray[2].ToString();
@@ -141,5 +112,192 @@ namespace HideluzEstacionamentos.Controllers
 
             return client;
         }
+
+        #endregion
+
+        #region Vehicle Controller
+
+        public void AddVehicle(Vehicle vehicle)
+        {
+            try
+            {
+                VehicleDAO.CreateVehicle(vehicle);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public bool CheckVehicleExists(Vehicle vehicle)
+        {
+            if (VehicleDAO.CheckVehicleExists(vehicle)) { return true; }
+            else { return false; }
+        }
+
+        public bool CheckOwnerExists(Vehicle vehicle)
+        {
+            if (VehicleDAO.CheckOwnerExists(vehicle)) { return true; }
+            else { return false; }
+        }
+
+        public DataTable FillVehicleType()
+        {
+            DataTable VehicleTypes = new DataTable();
+            VehicleTypes.Load(VehicleDAO.FillVehicleType());
+            return VehicleTypes;
+        }
+
+        public DataTable FillVehicleTable()
+        {
+            DataTable AllVehicles = new DataTable();
+            AllVehicles.Load(VehicleDAO.SelectAllVehicles());
+            return AllVehicles;
+        }
+
+        public Vehicle CheckVehicle(Vehicle vehicle)
+        {
+            try
+            {
+                VehicleDAO.SearchByPlate(vehicle);
+                return vehicle;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        public bool UpdateVehicle(Vehicle OldVehicle, Vehicle UpdatedVehicle)
+        {
+            if (CheckOwnerExists(OldVehicle))
+            {
+
+                if (OldVehicle != UpdatedVehicle)
+                {
+                    try
+                    {
+                        VehicleDAO.UpdateVehicle(OldVehicle, UpdatedVehicle);
+                        return true;
+                    }
+                    catch (Exception err)
+                    {
+
+                        throw err;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return false;
+        }
+
+        public bool DeleteVehicle(Vehicle vehicle)
+        {
+            try
+            {
+                VehicleDAO.DeleteVehicle(vehicle);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public Vehicle RowConverterVehicle(DataRowView SelectedRow, Vehicle vehicle)
+        {
+            vehicle.Plate = SelectedRow.Row.ItemArray[1].ToString();
+            vehicle.Model = SelectedRow.Row.ItemArray[2].ToString();
+            vehicle.OwnerDocument = SelectedRow.Row.ItemArray[3].ToString();
+            vehicle.IdType = SelectedRow.Row.ItemArray[4].ToString() == "Carro" ? 1 : 2;
+            vehicle.Status = Convert.ToBoolean(SelectedRow.Row.ItemArray[5]);
+            vehicle.CreatedDate = Convert.ToDateTime(SelectedRow.Row.ItemArray[6].ToString());
+
+            return vehicle;
+        }
+
+        #endregion
+
+        #region Tax Controller
+
+        public void AddTax(Tax tax)
+        {
+            try
+            {
+                TaxDAO.CreateTax(tax);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public bool UpdateTax(Tax OldTax, Tax UpdatedTax)
+        {
+
+            if (OldTax != UpdatedTax)
+            {
+                try
+                {
+                    TaxDAO.UpdateTax(OldTax, UpdatedTax);
+                    return true;
+                }
+                catch (Exception err)
+                {
+
+                    throw err;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteTax(Tax tax)
+        {
+            try
+            {
+                TaxDAO.DeleteTax(tax);
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public DataTable FillTaxType()
+        {
+            DataTable TaxesType = new DataTable();
+            TaxesType.Load(TaxDAO.FillTaxType());
+            return TaxesType;
+        }
+
+        public DataTable FillTaxTable()
+        {
+            DataTable AllTaxes = new DataTable();
+            AllTaxes.Load(TaxDAO.SelectAllTaxes());
+            return AllTaxes;
+        }
+
+        public Tax RowConverterTax(DataRowView SelectedRow, Tax tax)
+        {
+            tax.Id = Convert.ToInt32(SelectedRow.Row.ItemArray[0]);
+            tax.Price = Convert.ToDecimal(SelectedRow.Row.ItemArray[1]);
+            tax.IdType = (SelectedRow.Row.ItemArray[2].ToString() == "Diária") ? 1 : (SelectedRow.Row.ItemArray[2].ToString() == "Mensal") ? 2 : 3;
+            tax.IdVehicleType = SelectedRow.Row.ItemArray[3].ToString() == "Carro" ? 1 : 2;
+
+            return tax;
+        }
+
+        #endregion
+
     }
 }
