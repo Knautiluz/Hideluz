@@ -260,5 +260,90 @@ namespace HideluzEstacionamentos.DAO
         }
 
         #endregion
+
+        #region Taxes
+
+        public void CreateTaxesTypeTable()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tipo_tarifa` (" +
+                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
+                    "`tx_tipo` varchar(256) NOT NULL," +
+                    "PRIMARY KEY(`id`))");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void InsertDefaultTaxesValues()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand DefaultClientTypeDaily = new MySqlCommand("INSERT INTO tb_tipo_tarifa " +
+                    "SELECT t.* " +
+                    "FROM((SELECT 1 as col1, 'Diária' as col2)) t " +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_tarifa)", connection);
+
+                MySqlCommand DefaultClientTypeMonthly = new MySqlCommand("INSERT INTO tb_tipo_tarifa " +
+                    "SELECT t.* " +
+                    "FROM((SELECT 2 as col1, 'Mensal' as col2)) t " +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_tarifa where tx_tipo != 'Diária')", connection);
+
+                MySqlCommand DefaultClientTypeHour = new MySqlCommand("INSERT INTO tb_tipo_tarifa " +
+                    "SELECT t.* " +
+                    "FROM((SELECT 3 as col1, 'Hora' as col2)) t " +
+                    "WHERE NOT EXISTS(SELECT* FROM tb_tipo_tarifa where tx_tipo != 'Diária' and tx_tipo != 'Mensal')", connection);
+
+                DefaultClientTypeDaily.ExecuteNonQuery();
+                DefaultClientTypeMonthly.ExecuteNonQuery();
+                DefaultClientTypeHour.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void CreateTaxesTable()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tarifas` (" +
+                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
+                    "`dl_preco` decimal(10, 0) NOT NULL," +
+                    "`id_tipo_tarifa` int(11) NOT NULL," +
+                    "`id_tipo_veiculo_tarifa` int(11) NOT NULL," +
+                    "PRIMARY KEY(`id`)," +
+                    "KEY `IdTipoTarifa_idx` (`id_tipo_tarifa`)," +
+                    "KEY `IdTipoVeiculoTarifa_idx` (`id_tipo_veiculo_tarifa`)," +
+                    "CONSTRAINT `IdTipoTarifa` FOREIGN KEY(`id_tipo_tarifa`) REFERENCES `tb_tipo_tarifa` (`id`)," +
+                    "CONSTRAINT `IdTipoVeiculoTarifa` FOREIGN KEY(`id_tipo_veiculo_tarifa`) REFERENCES `tb_tipo_veiculo` (`id`))", connection);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        #endregion
     }
 }

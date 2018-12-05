@@ -71,5 +71,48 @@ namespace HideluzEstacionamentos.Controllers
         }
 
         #endregion
+
+        #region Taxes Tables
+
+        public void CreateTaxesTypeTable()
+        {
+            try
+            {
+                InitializerDAO.CreateTaxesTypeTable();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public void InsertDefaultTaxesValues()
+        {
+            try
+            {
+                InitializerDAO.InsertDefaultTaxesValues();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public void CreateTaxesTable()
+        {
+            try
+            {
+                InitializerDAO.CreateTaxesTable();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        #endregion
     }
 }
