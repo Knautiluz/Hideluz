@@ -29,6 +29,7 @@ namespace HideluzEstacionamentos
             Initializator.CreateUserTypeTable();
             Initializator.CreateUsersTable();
             Initializator.InsertDefaultUsersValues();
+            Initializator.InsertDefaultUser();
 
             Initializator.CreateClientTypeTable();
             Initializator.InsertDefaultClientValues();
@@ -42,6 +43,7 @@ namespace HideluzEstacionamentos
             Initializator.CreateTaxesTypeTable();
             Initializator.InsertDefaultTaxesValues();
             Initializator.CreateTaxesTable();
+            Initializator.CreateRegistryTable();
 
             if (Controller.ValidateUser(InputLogin))
             {

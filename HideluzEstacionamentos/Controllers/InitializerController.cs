@@ -24,6 +24,18 @@ namespace HideluzEstacionamentos.Controllers
             InitializerDAO.InsertDefaultUserValues();
         }
 
+        public void InsertDefaultUser()
+        {
+            try
+            {
+                InitializerDAO.InsertDefaultUser();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Clients Tables
@@ -95,7 +107,6 @@ namespace HideluzEstacionamentos.Controllers
             }
             catch (Exception err)
             {
-
                 throw err;
             }
         }
@@ -108,7 +119,6 @@ namespace HideluzEstacionamentos.Controllers
             }
             catch (Exception err)
             {
-
                 throw err;
             }
         }
@@ -121,7 +131,18 @@ namespace HideluzEstacionamentos.Controllers
             }
             catch (Exception err)
             {
+                throw err;
+            }
+        }
 
+        public void CreateRegistryTable()
+        {
+            try
+            {
+                InitializerDAO.CreateRegistryTable();
+            }
+            catch (Exception err)
+            {
                 throw err;
             }
         }

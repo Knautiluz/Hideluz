@@ -142,9 +142,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
             this.label1.Location = new System.Drawing.Point(54, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 33);
+            this.label1.Size = new System.Drawing.Size(164, 33);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Bem-Vindo!";
+            this.label1.Text = "Bem-vindo!";
             // 
             // lbl_WelcomeText
             // 

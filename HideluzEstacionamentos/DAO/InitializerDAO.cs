@@ -84,6 +84,24 @@ namespace HideluzEstacionamentos.DAO
             }
         }
 
+        public void InsertDefaultUser()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand DefaultUser = new MySqlCommand("INSERT INTO tb_usuarios" +
+                    " SELECT t.*" +
+                    " FROM((SELECT 1 as col1, 'Administrador' as col2, 'admin' as col3, 'admin' as col4, now() as col5, 1 as col6)) t" +
+                    " WHERE NOT EXISTS(SELECT* FROM tb_usuarios)", connection);
+                DefaultUser.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Clients
@@ -293,13 +311,14 @@ namespace HideluzEstacionamentos.DAO
             {
                 OpenConnection();
                 MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_tipo_tarifa` (" +
-                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
-                    "`tx_tipo` varchar(256) NOT NULL," +
-                    "PRIMARY KEY(`id`))");
+                    " `id` int(11) NOT NULL AUTO_INCREMENT," +
+                    " `tx_tipo` varchar(256) NOT NULL," +
+                    " PRIMARY KEY(`id`))", connection);
+                command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw;
+                throw err;
             }
             finally
             {
@@ -365,6 +384,31 @@ namespace HideluzEstacionamentos.DAO
             finally
             {
                 CloseConnection();
+            }
+        }
+
+        public void CreateRegistryTable()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand RegistryTable = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_registro` (" +
+                    " `id` int(11) NOT NULL AUTO_INCREMENT," +
+                    " `dt_entrada` timestamp NOT NULL," +
+                    " `dt_saida` timestamp NULL DEFAULT NULL," +
+                    " `tx_documento_cliente` varchar(256) NOT NULL," +
+                    " `tx_placa_veiculo` varchar(256) NOT NULL," +
+                    " `id_tarifa` int(11) NOT NULL," +
+                    " `dl_total` decimal(10, 0) DEFAULT NULL," +
+                    " PRIMARY KEY(`id`,`dt_entrada`)," +
+                    " KEY `IdClienteRegistro_idx` (`tx_documento_cliente`)," +
+                    " CONSTRAINT `IdClienteRegistro` FOREIGN KEY(`tx_documento_cliente`) REFERENCES `tb_clientes` (`tx_cpf`))", connection);
+                RegistryTable.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
             }
         }
 

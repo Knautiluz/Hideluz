@@ -258,8 +258,6 @@ namespace HideluzEstacionamentos.Views
             txt_EntryTimeLeave.Text = SelectedRow.Row.ItemArray[1].ToString();
         }
 
-        #endregion
-
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap bm = new Bitmap(panel_Receipt.Width, panel_Receipt.Height);
@@ -273,5 +271,7 @@ namespace HideluzEstacionamentos.Views
             printPreviewDialog1.BringToFront();
             printPreviewDialog1.Show();
         }
+
+        #endregion
     }
 }

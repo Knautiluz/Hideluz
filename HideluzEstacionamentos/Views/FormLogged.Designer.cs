@@ -31,30 +31,30 @@
             this.panel_TopContent = new System.Windows.Forms.Panel();
             this.panel_Logo = new System.Windows.Forms.Panel();
             this.panel_TopInfo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lbl_Username = new System.Windows.Forms.Label();
-            this.lbl_Welcome = new System.Windows.Forms.Label();
-            this.panel_selectedMenu = new System.Windows.Forms.Panel();
-            this.panel_ContentView = new System.Windows.Forms.Panel();
             this.btn_reports = new System.Windows.Forms.Button();
             this.btn_taxes = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_Username = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_Welcome = new System.Windows.Forms.Label();
             this.btn_vehicles = new System.Windows.Forms.Button();
             this.btn_clients = new System.Windows.Forms.Button();
+            this.panel_selectedMenu = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel_ContentView = new System.Windows.Forms.Panel();
+            this.homeView = new HideluzEstacionamentos.Views.HomeView();
             this.taxView = new HideluzEstacionamentos.Views.TaxView();
             this.vehicleView = new HideluzEstacionamentos.Views.VehicleView();
             this.clientView = new HideluzEstacionamentos.Views.ClientView();
-            this.homeView = new HideluzEstacionamentos.Views.HomeView();
             this.panel_TopContent.SuspendLayout();
             this.panel_Logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel_ContentView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_ContentView.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_TopContent
@@ -84,6 +84,15 @@
             this.panel_TopInfo.Size = new System.Drawing.Size(864, 59);
             this.panel_TopInfo.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HideluzEstacionamentos.Properties.Resources.HideluzLogoTop;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(181, 59);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
@@ -99,58 +108,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 580);
             this.panel2.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(79)))));
-            this.panel4.Controls.Add(this.lbl_Username);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.lbl_Welcome);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(180, 79);
-            this.panel4.TabIndex = 5;
-            // 
-            // lbl_Username
-            // 
-            this.lbl_Username.AutoSize = true;
-            this.lbl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.ForeColor = System.Drawing.Color.White;
-            this.lbl_Username.Location = new System.Drawing.Point(66, 38);
-            this.lbl_Username.Name = "lbl_Username";
-            this.lbl_Username.Size = new System.Drawing.Size(63, 13);
-            this.lbl_Username.TabIndex = 2;
-            this.lbl_Username.Text = "userName";
-            // 
-            // lbl_Welcome
-            // 
-            this.lbl_Welcome.AutoSize = true;
-            this.lbl_Welcome.ForeColor = System.Drawing.Color.Silver;
-            this.lbl_Welcome.Location = new System.Drawing.Point(66, 23);
-            this.lbl_Welcome.Name = "lbl_Welcome";
-            this.lbl_Welcome.Size = new System.Drawing.Size(60, 13);
-            this.lbl_Welcome.TabIndex = 0;
-            this.lbl_Welcome.Text = "Bem-vindo,";
-            // 
-            // panel_selectedMenu
-            // 
-            this.panel_selectedMenu.BackColor = System.Drawing.Color.Crimson;
-            this.panel_selectedMenu.Location = new System.Drawing.Point(0, 90);
-            this.panel_selectedMenu.Name = "panel_selectedMenu";
-            this.panel_selectedMenu.Size = new System.Drawing.Size(5, 40);
-            this.panel_selectedMenu.TabIndex = 2;
-            // 
-            // panel_ContentView
-            // 
-            this.panel_ContentView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.panel_ContentView.Controls.Add(this.homeView);
-            this.panel_ContentView.Controls.Add(this.taxView);
-            this.panel_ContentView.Controls.Add(this.vehicleView);
-            this.panel_ContentView.Controls.Add(this.clientView);
-            this.panel_ContentView.Location = new System.Drawing.Point(181, 59);
-            this.panel_ContentView.Name = "panel_ContentView";
-            this.panel_ContentView.Size = new System.Drawing.Size(860, 580);
-            this.panel_ContentView.TabIndex = 1;
             // 
             // btn_reports
             // 
@@ -184,6 +141,28 @@
             this.btn_taxes.UseVisualStyleBackColor = true;
             this.btn_taxes.Click += new System.EventHandler(this.btn_taxes_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(36)))), ((int)(((byte)(79)))));
+            this.panel4.Controls.Add(this.lbl_Username);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.lbl_Welcome);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(180, 79);
+            this.panel4.TabIndex = 5;
+            // 
+            // lbl_Username
+            // 
+            this.lbl_Username.AutoSize = true;
+            this.lbl_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Username.ForeColor = System.Drawing.Color.White;
+            this.lbl_Username.Location = new System.Drawing.Point(66, 38);
+            this.lbl_Username.Name = "lbl_Username";
+            this.lbl_Username.Size = new System.Drawing.Size(63, 13);
+            this.lbl_Username.TabIndex = 2;
+            this.lbl_Username.Text = "userName";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::HideluzEstacionamentos.Properties.Resources.profle_32;
@@ -192,6 +171,16 @@
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            // 
+            // lbl_Welcome
+            // 
+            this.lbl_Welcome.AutoSize = true;
+            this.lbl_Welcome.ForeColor = System.Drawing.Color.Silver;
+            this.lbl_Welcome.Location = new System.Drawing.Point(66, 23);
+            this.lbl_Welcome.Name = "lbl_Welcome";
+            this.lbl_Welcome.Size = new System.Drawing.Size(60, 13);
+            this.lbl_Welcome.TabIndex = 0;
+            this.lbl_Welcome.Text = "Bem-vindo,";
             // 
             // btn_vehicles
             // 
@@ -225,6 +214,14 @@
             this.btn_clients.UseVisualStyleBackColor = true;
             this.btn_clients.Click += new System.EventHandler(this.btn_clients_Click);
             // 
+            // panel_selectedMenu
+            // 
+            this.panel_selectedMenu.BackColor = System.Drawing.Color.Crimson;
+            this.panel_selectedMenu.Location = new System.Drawing.Point(0, 90);
+            this.panel_selectedMenu.Name = "panel_selectedMenu";
+            this.panel_selectedMenu.Size = new System.Drawing.Size(5, 40);
+            this.panel_selectedMenu.TabIndex = 2;
+            // 
             // btn_home
             // 
             this.btn_home.FlatAppearance.BorderSize = 0;
@@ -241,14 +238,24 @@
             this.btn_home.UseVisualStyleBackColor = true;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
-            // pictureBox1
+            // panel_ContentView
             // 
-            this.pictureBox1.Image = global::HideluzEstacionamentos.Properties.Resources.HideluzLogoTop;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 59);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel_ContentView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.panel_ContentView.Controls.Add(this.homeView);
+            this.panel_ContentView.Controls.Add(this.taxView);
+            this.panel_ContentView.Controls.Add(this.vehicleView);
+            this.panel_ContentView.Controls.Add(this.clientView);
+            this.panel_ContentView.Location = new System.Drawing.Point(181, 59);
+            this.panel_ContentView.Name = "panel_ContentView";
+            this.panel_ContentView.Size = new System.Drawing.Size(860, 580);
+            this.panel_ContentView.TabIndex = 1;
+            // 
+            // homeView
+            // 
+            this.homeView.Location = new System.Drawing.Point(-3, 0);
+            this.homeView.Name = "homeView";
+            this.homeView.Size = new System.Drawing.Size(865, 580);
+            this.homeView.TabIndex = 3;
             // 
             // taxView
             // 
@@ -272,13 +279,6 @@
             this.clientView.Size = new System.Drawing.Size(865, 580);
             this.clientView.TabIndex = 0;
             // 
-            // homeView
-            // 
-            this.homeView.Location = new System.Drawing.Point(-3, 0);
-            this.homeView.Name = "homeView";
-            this.homeView.Size = new System.Drawing.Size(865, 580);
-            this.homeView.TabIndex = 3;
-            // 
             // FormLogged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,16 +289,16 @@
             this.Controls.Add(this.panel_TopContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormLogged";
-            this.Text = "FormLoggerv2";
+            this.Text = "Hideluz Estacionamentos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLoggerv2_FormClosing);
             this.panel_TopContent.ResumeLayout(false);
             this.panel_Logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel_ContentView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_ContentView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
