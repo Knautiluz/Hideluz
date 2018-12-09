@@ -68,6 +68,40 @@ namespace HideluzEstacionamentos.Views
             }
         }
 
+        private void btn_SelectParkedVehicle_Click(object sender, EventArgs e)
+        {
+            DataRowView SelectedRow = (DataRowView)dataGrid_ParkedVehicles.CurrentRow?.DataBoundItem;
+            if (!(SelectedRow == null))
+            {
+                PopulateFormLeaveReceipt(SelectedRow);
+                btn_LeaveSubmit.Enabled = true;
+            }
+        }
+
+        private void btn_LeaveSubmit_Click(object sender, EventArgs e)
+        {
+            var EntryTime = Convert.ToDateTime(txt_EntryTimeLeave.Text);
+            var VehiclePlate = txt_VehiclePlateLeave.Text;
+            var RegistryID = Convert.ToInt32(txt_ClientLeave.Text.Split('-')[0].Trim());
+            var AuxTreatment = txt_TaxTypeLeave.Text.Split('-');
+            var TaxPrice = decimal.Parse(AuxTreatment[0], CultureInfo.InvariantCulture);
+            var TaxType = AuxTreatment[1].Trim();
+
+            var total = Controller.TaxCalculator(EntryTime, TaxPrice, TaxType);
+
+            try
+            {
+                Controller.AddVehicleLeave(RegistryID, VehiclePlate, total);
+                RefreshDataGrid();
+                UpdateReceiptLeave(VehiclePlate, total);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Buttons Events
@@ -215,50 +249,29 @@ namespace HideluzEstacionamentos.Views
             lbl_PricePay.Visible = true;
         }
 
-
-        #endregion
-
-        private void btn_SelectParkedVehicle_Click(object sender, EventArgs e)
-        {
-            DataRowView SelectedRow = (DataRowView)dataGrid_ParkedVehicles.CurrentRow?.DataBoundItem;
-            if (!(SelectedRow == null))
-            {
-                PopulateFormLeaveReceipt(SelectedRow);
-                btn_LeaveSubmit.Enabled = true;
-            }
-        }
-
         private void PopulateFormLeaveReceipt(DataRowView SelectedRow)
         {
-            txt_ClientLeave.Text = SelectedRow.Row.ItemArray[0].ToString() + " - " +  SelectedRow.Row.ItemArray[2].ToString();
+            txt_ClientLeave.Text = SelectedRow.Row.ItemArray[0].ToString() + " - " + SelectedRow.Row.ItemArray[2].ToString();
             txt_VehicleTypeLeave.Text = SelectedRow.Row.ItemArray[4].ToString();
             txt_TaxTypeLeave.Text = SelectedRow.Row.ItemArray[3].ToString();
             txt_VehiclePlateLeave.Text = SelectedRow.Row.ItemArray[5].ToString();
             txt_EntryTimeLeave.Text = SelectedRow.Row.ItemArray[1].ToString();
         }
 
-        private void btn_LeaveSubmit_Click(object sender, EventArgs e)
+        #endregion
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            var EntryTime = Convert.ToDateTime(txt_EntryTimeLeave.Text);
-            var VehiclePlate = txt_VehiclePlateLeave.Text;
-            var RegistryID = Convert.ToInt32(txt_ClientLeave.Text.Split('-')[0].Trim());
-            var AuxTreatment = txt_TaxTypeLeave.Text.Split('-');
-            var TaxPrice = decimal.Parse(AuxTreatment[0], CultureInfo.InvariantCulture);
-            var TaxType = AuxTreatment[1].Trim();
+            Bitmap bm = new Bitmap(panel_Receipt.Width, panel_Receipt.Height);
+            panel_Receipt.DrawToBitmap(bm, new Rectangle(0, 0, panel_Receipt.Width, panel_Receipt.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
 
-            var total = Controller.TaxCalculator(EntryTime, TaxPrice, TaxType);
-
-            try
-            {
-                Controller.AddVehicleLeave(RegistryID, VehiclePlate, total);
-                RefreshDataGrid();
-                UpdateReceiptLeave(VehiclePlate, total);
-            }
-            catch (Exception err)
-            {
-
-                throw err;
-            }
+        private void btn_PrintReceipt_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.BringToFront();
+            printPreviewDialog1.Show();
         }
     }
 }

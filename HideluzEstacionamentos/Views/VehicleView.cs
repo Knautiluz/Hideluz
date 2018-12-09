@@ -38,6 +38,7 @@ namespace HideluzEstacionamentos.Views
             vehicle.Model = txt_VehicleModel.Text;
             vehicle.OwnerDocument = txt_VehicleDocumentOwner.Text;
             vehicle.IdType = Convert.ToInt32(combo_VehicleType.SelectedValue);
+            vehicle.Status = check_VehicleStatus.Checked ? true : false;
 
             if (GeneralValidator())
             {

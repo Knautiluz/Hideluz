@@ -43,6 +43,13 @@
             this.lbl_ClientName = new System.Windows.Forms.Label();
             this.lbl_Entrance = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_EntryTimeLeave = new System.Windows.Forms.TextBox();
+            this.lbl_EntryTime = new System.Windows.Forms.Label();
+            this.txt_VehiclePlateLeave = new System.Windows.Forms.TextBox();
+            this.txt_TaxTypeLeave = new System.Windows.Forms.TextBox();
+            this.txt_VehicleTypeLeave = new System.Windows.Forms.TextBox();
+            this.txt_ClientLeave = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_LeaveSubmit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +58,8 @@
             this.ReceiptPanel = new System.Windows.Forms.Panel();
             this.btn_EmailReceipt = new System.Windows.Forms.Button();
             this.panel_Receipt = new System.Windows.Forms.Panel();
+            this.lbl_PricePay = new System.Windows.Forms.Label();
+            this.lbl_TotalToPay = new System.Windows.Forms.Label();
             this.lbl_VehiclePlateReceipt = new System.Windows.Forms.Label();
             this.lbl_VehiclePlateReceiptName = new System.Windows.Forms.Label();
             this.lbl_DateReceipt = new System.Windows.Forms.Label();
@@ -60,20 +69,13 @@
             this.btn_PrintReceipt = new System.Windows.Forms.Button();
             this.lbl_Receipt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_SelectParkedVehicle = new System.Windows.Forms.Button();
             this.dataGrid_ParkedVehicles = new System.Windows.Forms.DataGridView();
             this.lbl_ParkedVehicles = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_OK = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_SelectParkedVehicle = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_ClientLeave = new System.Windows.Forms.TextBox();
-            this.txt_VehicleTypeLeave = new System.Windows.Forms.TextBox();
-            this.txt_TaxTypeLeave = new System.Windows.Forms.TextBox();
-            this.txt_VehiclePlateLeave = new System.Windows.Forms.TextBox();
-            this.txt_EntryTimeLeave = new System.Windows.Forms.TextBox();
-            this.lbl_EntryTime = new System.Windows.Forms.Label();
-            this.lbl_TotalToPay = new System.Windows.Forms.Label();
-            this.lbl_PricePay = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.ReceiptPanel.SuspendLayout();
@@ -240,6 +242,66 @@
             this.panel1.Size = new System.Drawing.Size(287, 300);
             this.panel1.TabIndex = 19;
             // 
+            // txt_EntryTimeLeave
+            // 
+            this.txt_EntryTimeLeave.Enabled = false;
+            this.txt_EntryTimeLeave.Location = new System.Drawing.Point(23, 193);
+            this.txt_EntryTimeLeave.Name = "txt_EntryTimeLeave";
+            this.txt_EntryTimeLeave.Size = new System.Drawing.Size(230, 20);
+            this.txt_EntryTimeLeave.TabIndex = 72;
+            // 
+            // lbl_EntryTime
+            // 
+            this.lbl_EntryTime.AutoSize = true;
+            this.lbl_EntryTime.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EntryTime.Location = new System.Drawing.Point(23, 175);
+            this.lbl_EntryTime.Name = "lbl_EntryTime";
+            this.lbl_EntryTime.Size = new System.Drawing.Size(96, 15);
+            this.lbl_EntryTime.TabIndex = 71;
+            this.lbl_EntryTime.Text = "Data de Entrada:";
+            // 
+            // txt_VehiclePlateLeave
+            // 
+            this.txt_VehiclePlateLeave.Enabled = false;
+            this.txt_VehiclePlateLeave.Location = new System.Drawing.Point(23, 151);
+            this.txt_VehiclePlateLeave.Name = "txt_VehiclePlateLeave";
+            this.txt_VehiclePlateLeave.Size = new System.Drawing.Size(230, 20);
+            this.txt_VehiclePlateLeave.TabIndex = 70;
+            // 
+            // txt_TaxTypeLeave
+            // 
+            this.txt_TaxTypeLeave.Enabled = false;
+            this.txt_TaxTypeLeave.Location = new System.Drawing.Point(131, 105);
+            this.txt_TaxTypeLeave.Name = "txt_TaxTypeLeave";
+            this.txt_TaxTypeLeave.Size = new System.Drawing.Size(122, 20);
+            this.txt_TaxTypeLeave.TabIndex = 69;
+            // 
+            // txt_VehicleTypeLeave
+            // 
+            this.txt_VehicleTypeLeave.Enabled = false;
+            this.txt_VehicleTypeLeave.Location = new System.Drawing.Point(23, 105);
+            this.txt_VehicleTypeLeave.Name = "txt_VehicleTypeLeave";
+            this.txt_VehicleTypeLeave.Size = new System.Drawing.Size(103, 20);
+            this.txt_VehicleTypeLeave.TabIndex = 68;
+            // 
+            // txt_ClientLeave
+            // 
+            this.txt_ClientLeave.Enabled = false;
+            this.txt_ClientLeave.Location = new System.Drawing.Point(23, 61);
+            this.txt_ClientLeave.Name = "txt_ClientLeave";
+            this.txt_ClientLeave.Size = new System.Drawing.Size(230, 20);
+            this.txt_ClientLeave.TabIndex = 67;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(23, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 15);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Placa do Veículo:";
+            // 
             // btn_LeaveSubmit
             // 
             this.btn_LeaveSubmit.BackColor = System.Drawing.Color.Green;
@@ -344,6 +406,30 @@
             this.panel_Receipt.Size = new System.Drawing.Size(221, 269);
             this.panel_Receipt.TabIndex = 66;
             // 
+            // lbl_PricePay
+            // 
+            this.lbl_PricePay.AutoSize = true;
+            this.lbl_PricePay.Font = new System.Drawing.Font("Myriad Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PricePay.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbl_PricePay.Location = new System.Drawing.Point(45, 224);
+            this.lbl_PricePay.Name = "lbl_PricePay";
+            this.lbl_PricePay.Size = new System.Drawing.Size(126, 33);
+            this.lbl_PricePay.TabIndex = 7;
+            this.lbl_PricePay.Text = "R$ 10,00";
+            this.lbl_PricePay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_PricePay.Visible = false;
+            // 
+            // lbl_TotalToPay
+            // 
+            this.lbl_TotalToPay.AutoSize = true;
+            this.lbl_TotalToPay.Font = new System.Drawing.Font("Myriad Pro", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalToPay.Location = new System.Drawing.Point(64, 210);
+            this.lbl_TotalToPay.Name = "lbl_TotalToPay";
+            this.lbl_TotalToPay.Size = new System.Drawing.Size(92, 14);
+            this.lbl_TotalToPay.TabIndex = 6;
+            this.lbl_TotalToPay.Text = "TOTAL A PAGAR";
+            this.lbl_TotalToPay.Visible = false;
+            // 
             // lbl_VehiclePlateReceipt
             // 
             this.lbl_VehiclePlateReceipt.AutoSize = true;
@@ -419,7 +505,6 @@
             // btn_PrintReceipt
             // 
             this.btn_PrintReceipt.BackColor = System.Drawing.Color.Green;
-            this.btn_PrintReceipt.Enabled = false;
             this.btn_PrintReceipt.FlatAppearance.BorderSize = 0;
             this.btn_PrintReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_PrintReceipt.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -431,6 +516,7 @@
             this.btn_PrintReceipt.TabIndex = 65;
             this.btn_PrintReceipt.Text = "IMPRIMIR";
             this.btn_PrintReceipt.UseVisualStyleBackColor = false;
+            this.btn_PrintReceipt.Click += new System.EventHandler(this.btn_PrintReceipt_Click);
             // 
             // lbl_Receipt
             // 
@@ -454,6 +540,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(584, 238);
             this.panel2.TabIndex = 21;
+            // 
+            // btn_SelectParkedVehicle
+            // 
+            this.btn_SelectParkedVehicle.BackColor = System.Drawing.Color.Green;
+            this.btn_SelectParkedVehicle.FlatAppearance.BorderSize = 0;
+            this.btn_SelectParkedVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SelectParkedVehicle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SelectParkedVehicle.ForeColor = System.Drawing.Color.White;
+            this.btn_SelectParkedVehicle.Location = new System.Drawing.Point(441, 212);
+            this.btn_SelectParkedVehicle.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_SelectParkedVehicle.Name = "btn_SelectParkedVehicle";
+            this.btn_SelectParkedVehicle.Size = new System.Drawing.Size(133, 22);
+            this.btn_SelectParkedVehicle.TabIndex = 66;
+            this.btn_SelectParkedVehicle.Text = "SELECIONAR";
+            this.btn_SelectParkedVehicle.UseVisualStyleBackColor = false;
+            this.btn_SelectParkedVehicle.Click += new System.EventHandler(this.btn_SelectParkedVehicle_Click);
             // 
             // dataGrid_ParkedVehicles
             // 
@@ -487,105 +589,19 @@
             this.errorProvider_OK.ContainerControl = this;
             this.errorProvider_OK.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_OK.Icon")));
             // 
-            // btn_SelectParkedVehicle
+            // printDocument1
             // 
-            this.btn_SelectParkedVehicle.BackColor = System.Drawing.Color.Green;
-            this.btn_SelectParkedVehicle.FlatAppearance.BorderSize = 0;
-            this.btn_SelectParkedVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SelectParkedVehicle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SelectParkedVehicle.ForeColor = System.Drawing.Color.White;
-            this.btn_SelectParkedVehicle.Location = new System.Drawing.Point(441, 212);
-            this.btn_SelectParkedVehicle.Margin = new System.Windows.Forms.Padding(10);
-            this.btn_SelectParkedVehicle.Name = "btn_SelectParkedVehicle";
-            this.btn_SelectParkedVehicle.Size = new System.Drawing.Size(133, 22);
-            this.btn_SelectParkedVehicle.TabIndex = 66;
-            this.btn_SelectParkedVehicle.Text = "SELECIONAR";
-            this.btn_SelectParkedVehicle.UseVisualStyleBackColor = false;
-            this.btn_SelectParkedVehicle.Click += new System.EventHandler(this.btn_SelectParkedVehicle_Click);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // label2
+            // printPreviewDialog1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 15);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "Placa do Veículo:";
-            // 
-            // txt_ClientLeave
-            // 
-            this.txt_ClientLeave.Enabled = false;
-            this.txt_ClientLeave.Location = new System.Drawing.Point(23, 61);
-            this.txt_ClientLeave.Name = "txt_ClientLeave";
-            this.txt_ClientLeave.Size = new System.Drawing.Size(230, 20);
-            this.txt_ClientLeave.TabIndex = 67;
-            // 
-            // txt_VehicleTypeLeave
-            // 
-            this.txt_VehicleTypeLeave.Enabled = false;
-            this.txt_VehicleTypeLeave.Location = new System.Drawing.Point(23, 105);
-            this.txt_VehicleTypeLeave.Name = "txt_VehicleTypeLeave";
-            this.txt_VehicleTypeLeave.Size = new System.Drawing.Size(103, 20);
-            this.txt_VehicleTypeLeave.TabIndex = 68;
-            // 
-            // txt_TaxTypeLeave
-            // 
-            this.txt_TaxTypeLeave.Enabled = false;
-            this.txt_TaxTypeLeave.Location = new System.Drawing.Point(131, 105);
-            this.txt_TaxTypeLeave.Name = "txt_TaxTypeLeave";
-            this.txt_TaxTypeLeave.Size = new System.Drawing.Size(122, 20);
-            this.txt_TaxTypeLeave.TabIndex = 69;
-            // 
-            // txt_VehiclePlateLeave
-            // 
-            this.txt_VehiclePlateLeave.Enabled = false;
-            this.txt_VehiclePlateLeave.Location = new System.Drawing.Point(23, 151);
-            this.txt_VehiclePlateLeave.Name = "txt_VehiclePlateLeave";
-            this.txt_VehiclePlateLeave.Size = new System.Drawing.Size(230, 20);
-            this.txt_VehiclePlateLeave.TabIndex = 70;
-            // 
-            // txt_EntryTimeLeave
-            // 
-            this.txt_EntryTimeLeave.Enabled = false;
-            this.txt_EntryTimeLeave.Location = new System.Drawing.Point(23, 193);
-            this.txt_EntryTimeLeave.Name = "txt_EntryTimeLeave";
-            this.txt_EntryTimeLeave.Size = new System.Drawing.Size(230, 20);
-            this.txt_EntryTimeLeave.TabIndex = 72;
-            // 
-            // lbl_EntryTime
-            // 
-            this.lbl_EntryTime.AutoSize = true;
-            this.lbl_EntryTime.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EntryTime.Location = new System.Drawing.Point(23, 175);
-            this.lbl_EntryTime.Name = "lbl_EntryTime";
-            this.lbl_EntryTime.Size = new System.Drawing.Size(96, 15);
-            this.lbl_EntryTime.TabIndex = 71;
-            this.lbl_EntryTime.Text = "Data de Entrada:";
-            // 
-            // lbl_TotalToPay
-            // 
-            this.lbl_TotalToPay.AutoSize = true;
-            this.lbl_TotalToPay.Font = new System.Drawing.Font("Myriad Pro", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalToPay.Location = new System.Drawing.Point(64, 210);
-            this.lbl_TotalToPay.Name = "lbl_TotalToPay";
-            this.lbl_TotalToPay.Size = new System.Drawing.Size(92, 14);
-            this.lbl_TotalToPay.TabIndex = 6;
-            this.lbl_TotalToPay.Text = "TOTAL A PAGAR";
-            this.lbl_TotalToPay.Visible = false;
-            // 
-            // lbl_PricePay
-            // 
-            this.lbl_PricePay.AutoSize = true;
-            this.lbl_PricePay.Font = new System.Drawing.Font("Myriad Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PricePay.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_PricePay.Location = new System.Drawing.Point(45, 224);
-            this.lbl_PricePay.Name = "lbl_PricePay";
-            this.lbl_PricePay.Size = new System.Drawing.Size(126, 33);
-            this.lbl_PricePay.TabIndex = 7;
-            this.lbl_PricePay.Text = "R$ 10,00";
-            this.lbl_PricePay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_PricePay.Visible = false;
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // HomeView
             // 
@@ -660,5 +676,7 @@
         private System.Windows.Forms.Label lbl_EntryTime;
         private System.Windows.Forms.Label lbl_TotalToPay;
         private System.Windows.Forms.Label lbl_PricePay;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
