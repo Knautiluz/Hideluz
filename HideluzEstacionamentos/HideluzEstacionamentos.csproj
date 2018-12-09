@@ -72,6 +72,11 @@
     <Compile Include="Models\Tax.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClientView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +105,12 @@
     <Compile Include="Views\FormSplash.Designer.cs">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TaxView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,16 +134,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\FormSplash.resx">
       <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TaxView.resx">
       <DependentUpon>TaxView.cs</DependentUpon>
@@ -155,11 +164,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Splash.jpg" />
+    <None Include="Resources\carIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\unknown.png" />
+    <None Include="Resources\clientsIcon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\clockicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profle-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taxIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HideluzLogoTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HideluzNewLogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
