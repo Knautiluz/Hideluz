@@ -38,7 +38,6 @@ namespace HideluzEstacionamentos.Controllers
                 }
                 catch (Exception err)
                 {
-
                     throw err;
                 }
             }
@@ -70,6 +69,19 @@ namespace HideluzEstacionamentos.Controllers
             }
             catch (Exception err)
             {
+                throw err;
+            }
+        }
+
+        public Client SearchClientById(int ClientID, Client client)
+        {
+            try
+            {
+                return ClientDAO.SearchClientById(ClientID, client);
+            }
+            catch (Exception err)
+            {
+
                 throw err;
             }
         }
@@ -111,19 +123,6 @@ namespace HideluzEstacionamentos.Controllers
             client.CreatedDate = Convert.ToDateTime(SelectedRow.Row.ItemArray[13].ToString());
 
             return client;
-        }
-
-        public Client SearchClientById(int ClientID, Client client)
-        {
-            try
-            {
-                return ClientDAO.SearchClientById(ClientID, client);
-            }
-            catch (Exception err)
-            {
-
-                throw err;
-            }
         }
 
         #endregion

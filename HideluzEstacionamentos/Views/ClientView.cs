@@ -450,6 +450,7 @@ namespace HideluzEstacionamentos.Views
             txt_ClientStreet.Text = SelectedClient.Address.Street;
             txt_ClientZIPCode.Text = SelectedClient.Address.ZIPCode;
             txt_ClientNumber.Text = SelectedClient.Address.Number;
+            checkBox_ClientStatus.Checked = SelectedClient.Status;
         }
 
         private void FillClientInfo(Client client)
