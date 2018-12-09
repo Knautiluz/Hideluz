@@ -4,11 +4,11 @@ using System;
 
 namespace HideluzEstacionamentos.Controllers
 {
-    public class LoginController
+    public class UserController
     {
-        LoginDAO LoginDAO = new LoginDAO();
+        UserDAO LoginDAO = new UserDAO();
 
-        public bool ValidateUser(Login inputLogin)
+        public bool ValidateUser(User inputLogin)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace HideluzEstacionamentos.Controllers
             }
         }
 
-        public Login FillUserData(Login inputLogin)
+        public User FillUserData(User inputLogin)
         {
             return LoginDAO.FillUserData(inputLogin);
         }

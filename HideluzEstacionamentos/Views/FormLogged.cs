@@ -6,7 +6,7 @@ namespace HideluzEstacionamentos.Views
 {
     public partial class FormLogged : Form
     {
-        public FormLogged(Login user)
+        public FormLogged(User user)
         {
             InitializeComponent();
             lbl_Username.Text = user.Name;
@@ -38,12 +38,6 @@ namespace HideluzEstacionamentos.Views
             panel_selectedMenu.Height = btn_taxes.Height;
             panel_selectedMenu.Top = btn_taxes.Top;
             taxView.BringToFront();
-        }
-
-        private void btn_reports_Click(object sender, EventArgs e)
-        {
-            panel_selectedMenu.Height = btn_reports.Height;
-            panel_selectedMenu.Top = btn_reports.Top;
         }
 
         private void FormLoggerv2_FormClosing(object sender, FormClosingEventArgs e)

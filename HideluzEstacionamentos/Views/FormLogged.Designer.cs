@@ -33,7 +33,6 @@
             this.panel_TopInfo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_reports = new System.Windows.Forms.Button();
             this.btn_taxes = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_Username = new System.Windows.Forms.Label();
@@ -96,7 +95,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(43)))), ((int)(((byte)(92)))));
-            this.panel2.Controls.Add(this.btn_reports);
             this.panel2.Controls.Add(this.btn_taxes);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.btn_vehicles);
@@ -108,22 +106,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 580);
             this.panel2.TabIndex = 0;
-            // 
-            // btn_reports
-            // 
-            this.btn_reports.FlatAppearance.BorderSize = 0;
-            this.btn_reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reports.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reports.ForeColor = System.Drawing.Color.White;
-            this.btn_reports.Image = global::HideluzEstacionamentos.Properties.Resources.reportsIcon;
-            this.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_reports.Location = new System.Drawing.Point(7, 274);
-            this.btn_reports.Name = "btn_reports";
-            this.btn_reports.Size = new System.Drawing.Size(171, 40);
-            this.btn_reports.TabIndex = 7;
-            this.btn_reports.Text = "       Relatórios";
-            this.btn_reports.UseVisualStyleBackColor = true;
-            this.btn_reports.Click += new System.EventHandler(this.btn_reports_Click);
             // 
             // btn_taxes
             // 
@@ -312,7 +294,6 @@
         private System.Windows.Forms.Panel panel_selectedMenu;
         private System.Windows.Forms.Button btn_vehicles;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_reports;
         private System.Windows.Forms.Button btn_taxes;
         private System.Windows.Forms.Panel panel_Logo;
         private System.Windows.Forms.Panel panel_ContentView;

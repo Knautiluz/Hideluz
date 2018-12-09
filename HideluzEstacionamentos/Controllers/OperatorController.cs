@@ -142,45 +142,6 @@ namespace HideluzEstacionamentos.Controllers
             }
         }
 
-        public bool CheckVehicleExists(Vehicle vehicle)
-        {
-            if (VehicleDAO.CheckVehicleExists(vehicle)) { return true; }
-            else { return false; }
-        }
-
-        public bool CheckOwnerExists(Vehicle vehicle)
-        {
-            if (VehicleDAO.CheckOwnerExists(vehicle)) { return true; }
-            else { return false; }
-        }
-
-        public DataTable FillVehicleType()
-        {
-            DataTable VehicleTypes = new DataTable();
-            VehicleTypes.Load(VehicleDAO.FillVehicleType());
-            return VehicleTypes;
-        }
-
-        public DataTable FillVehicleTable()
-        {
-            DataTable AllVehicles = new DataTable();
-            AllVehicles.Load(VehicleDAO.SelectAllVehicles());
-            return AllVehicles;
-        }
-
-        public Vehicle CheckVehicle(Vehicle vehicle)
-        {
-            try
-            {
-                VehicleDAO.SearchByPlate(vehicle);
-                return vehicle;
-            }
-            catch (Exception err)
-            {
-                throw err;
-            }
-        }
-
         public bool UpdateVehicle(Vehicle OldVehicle, Vehicle UpdatedVehicle)
         {
             if (CheckOwnerExists(OldVehicle))
@@ -219,6 +180,45 @@ namespace HideluzEstacionamentos.Controllers
             {
                 throw;
             }
+        }
+
+        public Vehicle CheckVehicle(Vehicle vehicle)
+        {
+            try
+            {
+                VehicleDAO.SearchByPlate(vehicle);
+                return vehicle;
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+        }
+
+        public bool CheckVehicleExists(Vehicle vehicle)
+        {
+            if (VehicleDAO.CheckVehicleExists(vehicle)) { return true; }
+            else { return false; }
+        }
+
+        public bool CheckOwnerExists(Vehicle vehicle)
+        {
+            if (VehicleDAO.CheckOwnerExists(vehicle)) { return true; }
+            else { return false; }
+        }
+
+        public DataTable FillVehicleType()
+        {
+            DataTable VehicleTypes = new DataTable();
+            VehicleTypes.Load(VehicleDAO.FillVehicleType());
+            return VehicleTypes;
+        }
+
+        public DataTable FillVehicleTable()
+        {
+            DataTable AllVehicles = new DataTable();
+            AllVehicles.Load(VehicleDAO.SelectAllVehicles());
+            return AllVehicles;
         }
 
         public Vehicle RowConverterVehicle(DataRowView SelectedRow, Vehicle vehicle)

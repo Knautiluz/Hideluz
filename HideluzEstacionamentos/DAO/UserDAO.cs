@@ -4,9 +4,9 @@ using System;
 
 namespace HideluzEstacionamentos.DAO
 {
-    public class LoginDAO : Connection
+    public class UserDAO : Connection
     {
-        public bool CheckUser(Login inputLogin)
+        public bool CheckUser(User inputLogin)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace HideluzEstacionamentos.DAO
             }
         }
 
-        public Login FillUserData(Login inputLogin)
+        public User FillUserData(User inputLogin)
         {
             try
             {

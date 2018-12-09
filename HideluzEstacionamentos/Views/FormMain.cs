@@ -8,8 +8,8 @@ namespace HideluzEstacionamentos
 {
     public partial class FormMain : Form
     {
-        private Login InputLogin = new Login();
-        private LoginController Controller = new LoginController();
+        private User InputLogin = new User();
+        private UserController Controller = new UserController();
         private InitializerController Initializator = new InitializerController();
 
         public FormMain()

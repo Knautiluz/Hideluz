@@ -327,6 +327,7 @@
             // 
             // combo_ClientType
             // 
+            this.combo_ClientType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_ClientType.FormattingEnabled = true;
             this.combo_ClientType.Location = new System.Drawing.Point(20, 235);
             this.combo_ClientType.Name = "combo_ClientType";
