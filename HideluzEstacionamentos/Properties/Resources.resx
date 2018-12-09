@@ -118,10 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unknown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unknown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clientsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clientsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clockicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clockicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HideluzLogoTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HideluzLogoTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HideluzNewLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HideluzNewLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock_closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock_open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profle_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profle-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reportsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reportsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="taxIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\taxIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

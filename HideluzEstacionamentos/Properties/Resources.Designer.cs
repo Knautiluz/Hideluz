@@ -63,9 +63,9 @@ namespace HideluzEstacionamentos.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Splash {
+        internal static System.Drawing.Bitmap carIcon {
             get {
-                object obj = ResourceManager.GetObject("Splash", resourceCulture);
+                object obj = ResourceManager.GetObject("carIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,99 @@ namespace HideluzEstacionamentos.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unknown {
+        internal static System.Drawing.Bitmap clientsIcon {
             get {
-                object obj = ResourceManager.GetObject("unknown", resourceCulture);
+                object obj = ResourceManager.GetObject("clientsIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clockicon {
+            get {
+                object obj = ResourceManager.GetObject("clockicon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HideluzLogoTop {
+            get {
+                object obj = ResourceManager.GetObject("HideluzLogoTop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HideluzNewLogo {
+            get {
+                object obj = ResourceManager.GetObject("HideluzNewLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap homeIcon {
+            get {
+                object obj = ResourceManager.GetObject("homeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_closed {
+            get {
+                object obj = ResourceManager.GetObject("lock_closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_open {
+            get {
+                object obj = ResourceManager.GetObject("lock_open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profle_32 {
+            get {
+                object obj = ResourceManager.GetObject("profle_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reportsIcon {
+            get {
+                object obj = ResourceManager.GetObject("reportsIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taxIcon {
+            get {
+                object obj = ResourceManager.GetObject("taxIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
