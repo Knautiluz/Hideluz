@@ -33,6 +33,7 @@ namespace HideluzEstacionamentos
             Initializator.CreateClientTypeTable();
             Initializator.InsertDefaultClientValues();
             Initializator.CreateClientsTable();
+            Initializator.InsertDefaultClient();
 
             Initializator.CreateVehicleTypeTable();
             Initializator.InsertDefaultVehicleValues();

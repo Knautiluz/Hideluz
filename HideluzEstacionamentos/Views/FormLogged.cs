@@ -16,6 +16,7 @@ namespace HideluzEstacionamentos.Views
         {
             panel_selectedMenu.Height = btn_home.Height;
             panel_selectedMenu.Top = btn_home.Top;
+            homeView.BringToFront();
         }
 
         private void btn_clients_Click(object sender, EventArgs e)

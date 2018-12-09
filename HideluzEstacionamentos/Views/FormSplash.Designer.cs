@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSplash));
             this.SplashProgressBar = new System.Windows.Forms.ProgressBar();
             this.picture_LogoSplash = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture_LogoSplash)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +51,7 @@
             // 
             // picture_LogoSplash
             // 
-            this.picture_LogoSplash.Image = ((System.Drawing.Image)(resources.GetObject("picture_LogoSplash.Image")));
+            this.picture_LogoSplash.Image = global::HideluzEstacionamentos.Properties.Resources.HideluzNewLogo;
             this.picture_LogoSplash.Location = new System.Drawing.Point(245, 90);
             this.picture_LogoSplash.Name = "picture_LogoSplash";
             this.picture_LogoSplash.Size = new System.Drawing.Size(300, 250);
@@ -72,16 +71,16 @@
             this.panel1.Size = new System.Drawing.Size(790, 510);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(359, 486);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Versão 1.0.0";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(355, 385);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Carregando...";
             // 
             // label3
             // 
@@ -94,16 +93,16 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Copyright 2018. All rights reserved";
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(355, 385);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Carregando...";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(359, 486);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Versão 1.0.0";
             // 
             // FormSplash
             // 
