@@ -275,20 +275,20 @@ namespace HideluzEstacionamentos.DAO
             {
                 OpenConnection();
                 MySqlCommand command = new MySqlCommand("CREATE TABLE IF NOT EXISTS `tb_veiculos` (" +
-                    "`id` int(11) NOT NULL AUTO_INCREMENT," +
-                    "`tx_placa` varchar(45) NOT NULL," +
-                    "`tx_modelo` varchar(45) NOT NULL," +
-                    "`tx_documento_cliente` varchar(45) NOT NULL," +
-                    "`id_tipo` int(11) NOT NULL," +
-                    "`fl_ativo` bit(1) NOT NULL," +
-                    "`dt_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP," +
-                    "`dt_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
-                    "PRIMARY KEY(`tx_placa`)," +
-                    "UNIQUE KEY `id_UNIQUE` (`id`)," +
-                    "KEY `IdTipoVeiculo_idx` (`id_tipo`)," +
-                    "KEY `DocumentoVeiculoCliente_idx` (`tx_documento_cliente`)," +
-                    "CONSTRAINT `DocumentoVeiculoCliente` FOREIGN KEY(`tx_documento_cliente`) REFERENCES `tb_clientes` (`tx_cpf`)," +
-                    "CONSTRAINT `IdTipoVeiculo` FOREIGN KEY(`id_tipo`) REFERENCES `tb_tipo_veiculo` (`id`))", connection);
+                    " `id` int(11) NOT NULL AUTO_INCREMENT," +
+                    " `tx_placa` varchar(45) NOT NULL," +
+                    " `tx_modelo` varchar(45) NOT NULL," +
+                    " `tx_documento_cliente` varchar(45) NOT NULL," +
+                    " `id_tipo` int(11) NOT NULL," +
+                    " `fl_ativo` bit(1) NOT NULL," +
+                    " `dt_criacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP," +
+                    " `dt_atualizacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
+                    " PRIMARY KEY(`tx_placa`)," +
+                    " UNIQUE KEY `id_UNIQUE` (`id`)," +
+                    " KEY `IdTipoVeiculo_idx` (`id_tipo`)," +
+                    " KEY `DocumentoVeiculoCliente_idx` (`tx_documento_cliente`)," +
+                    " CONSTRAINT `DocumentoVeiculoCliente` FOREIGN KEY(`tx_documento_cliente`) REFERENCES `tb_clientes` (`tx_cpf`) ON DELETE CASCADE ON UPDATE CASCADE," +
+                    " CONSTRAINT `IdTipoVeiculo` FOREIGN KEY(`id_tipo`) REFERENCES `tb_tipo_veiculo` (`id`))", connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception err)
