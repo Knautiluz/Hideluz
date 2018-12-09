@@ -154,6 +154,32 @@ namespace HideluzEstacionamentos.DAO
             }
         }
 
-        
+        public MySqlDataReader FillTaxTypeComplete(int VehicleType)
+        {
+
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("SELECT tb_tarifas.id, CONCAT(tb_tipo_tarifa.tx_tipo, @Divisor, tb_tarifas.dl_preco) as tx_tipo FROM tb_tarifas " +
+                    " INNER JOIN tb_tipo_tarifa ON tb_tipo_tarifa.id = tb_tarifas.id_tipo_tarifa" +
+                    " WHERE tb_tarifas.id_tipo_veiculo_tarifa = @VehicleType;", connection);
+                command.Parameters.AddWithValue("@VehicleType", VehicleType);
+                command.Parameters.AddWithValue("@Divisor", " - ");
+                MySqlDataReader reader = command.ExecuteReader();
+                return reader;
+            }
+
+            catch (Exception err)
+            {
+                throw err;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+        }
+
     }
 }

@@ -113,6 +113,19 @@ namespace HideluzEstacionamentos.Controllers
             return client;
         }
 
+        public Client SearchClientById(int ClientID, Client client)
+        {
+            try
+            {
+                return ClientDAO.SearchClientById(ClientID, client);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Vehicle Controller
@@ -221,6 +234,59 @@ namespace HideluzEstacionamentos.Controllers
             return vehicle;
         }
 
+        public DataTable FillParkedVehiclesTable()
+        {
+            DataTable ParkedVehicles = new DataTable();
+            ParkedVehicles.Load(VehicleDAO.FillParkedVehicles());
+            return ParkedVehicles;
+        }
+
+        public DataTable FillVehicleList(int ClientID, int VehicleTypeID)
+        {
+            DataTable VehicleList = new DataTable();
+            VehicleList.Load(VehicleDAO.FillVehicleList(ClientID, VehicleTypeID));
+            return VehicleList;
+        }
+
+        public void AddVehicleEntrance(Client EntryClient, Vehicle EntryVehicle, Tax EntryTax)
+        {
+            try
+            {
+                VehicleDAO.AddVehicleEntrance(EntryClient, EntryVehicle, EntryTax);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public bool CheckVehicleAlreadyParked(Vehicle vehicle)
+        {
+            try
+            {
+                return VehicleDAO.CheckVehicleAlreadyParked(vehicle);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
+        public void AddVehicleLeave(int RegistryID, string VehiclePlate, decimal TotalPrice)
+        {
+            try
+            {
+                VehicleDAO.AddVehicleLeave(RegistryID, VehiclePlate, TotalPrice);
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Tax Controller
@@ -295,6 +361,35 @@ namespace HideluzEstacionamentos.Controllers
             tax.IdVehicleType = SelectedRow.Row.ItemArray[3].ToString() == "Carro" ? 1 : 2;
 
             return tax;
+        }
+
+        public DataTable FillTaxTypeComplete(int VehicleTypeID)
+        {
+            DataTable TaxesType = new DataTable();
+            TaxesType.Load(TaxDAO.FillTaxTypeComplete(VehicleTypeID));
+            return TaxesType;
+        }
+
+        public decimal TaxCalculator(DateTime EntryTime, decimal TaxPrice, string TaxType)
+        {
+            if (TaxType == "Diária")
+            {
+                return TaxPrice;
+            }
+
+            if (TaxType == "Hora")
+            {
+                decimal hours = DateTime.Now.Hour - EntryTime.Hour;
+                decimal minutes = DateTime.Now.Minute - EntryTime.Minute;
+                decimal total = ((hours * 60) + minutes) / 60;
+                total = Math.Ceiling(total);
+                if (total == 0) { return TaxPrice; }
+                else { return TaxPrice * total; }
+            }
+            else
+            {
+                return TaxPrice;
+            }
         }
 
         #endregion

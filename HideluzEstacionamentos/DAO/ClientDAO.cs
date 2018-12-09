@@ -202,5 +202,44 @@ namespace HideluzEstacionamentos.DAO
             }
 
         }
+
+        public Client SearchClientById(int ClientID, Client client)
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tb_clientes where id = @ClientID LIMIT 1", connection);
+                command.Parameters.AddWithValue("@ClientID", ClientID);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    client.Document = reader["tx_cpf"].ToString();
+                    client.Name = reader["tx_nome"].ToString();
+                    client.Email = reader["tx_email"].ToString();
+                    client.Phone = reader["tx_telefone"].ToString();
+                    client.IdType = Convert.ToInt32(reader["id_tipocliente"].ToString());
+                    client.Address.State = reader["tx_estado"].ToString();
+                    client.Address.City = reader["tx_cidade"].ToString();
+                    client.Address.Neighborhood = reader["tx_bairro"].ToString();
+                    client.Address.Street = reader["tx_rua"].ToString();
+                    client.Address.Number = reader["tx_numero"].ToString();
+                    client.Address.ZIPCode = reader["tx_cep"].ToString();
+                    client.CreatedDate = Convert.ToDateTime(reader["dt_criacao"].ToString());
+                    client.Status = Convert.ToBoolean(reader["fl_ativo"]);
+                }
+
+                return client;
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
     }
 }
