@@ -43,6 +43,19 @@ namespace HideluzEstacionamentos.Controllers
             InitializerDAO.CreateClientsTable();
         }
 
+        public void InsertDefaultClient()
+        {
+            try
+            {
+                InitializerDAO.InsertDefaultClient();
+            }
+            catch (Exception err)
+            {
+
+                throw err;
+            }
+        }
+
         #endregion
 
         #region Vehicles Tables

@@ -174,6 +174,30 @@ namespace HideluzEstacionamentos.DAO
             }
         }
 
+        public void InsertDefaultClient()
+        {
+            try
+            {
+                OpenConnection();
+                MySqlCommand DefaultClient = new MySqlCommand("INSERT INTO tb_clientes" +
+                    " SELECT t.* FROM((SELECT 1 as col1, '000.000.000-00' as col2, 'Cliente Desconhecido' as col3," +
+                    " 'desconhecido@hideluz.com.br' as col4, '(00) 00000-0000' as col5, 1 as col6, 'São Paulo' as col7, 'Campinas' as col8," +
+                    " 'Bairro Padrão' as col9, 'Rua Padrão' as col10, 0 as col11, '00000-000' as col12, 1 as col13," +
+                    " NOW() as col14, NOW() as col15)) t" +
+                    " WHERE NOT EXISTS(SELECT* FROM tb_clientes)", connection);
+
+                DefaultClient.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw err;
+            }
+            finally
+            {
+                OpenConnection();
+            }
+        }
+
         #endregion
 
         #region Vehicles
