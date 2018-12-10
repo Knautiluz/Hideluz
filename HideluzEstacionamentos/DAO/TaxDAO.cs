@@ -63,7 +63,7 @@ namespace HideluzEstacionamentos.DAO
             try
             {
                 OpenConnection();
-                MySqlCommand command = new MySqlCommand("DELETE FROM tb_tarifas WHERE tx_placa = @TaxId", connection);
+                MySqlCommand command = new MySqlCommand("DELETE FROM tb_tarifas WHERE id = @TaxId", connection);
                 command.Parameters.AddWithValue("@TaxId", tax.Id);
 
                 command.ExecuteNonQuery();
