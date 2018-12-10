@@ -5,7 +5,8 @@ namespace HideluzEstacionamentos.DAO
 {
     public class Connection
     {
-        string connString = "Server=localhost; Port=3306; Database=hideluz; Uid=root; pwd=root";
+        string connString = "Server=hideluz.mysql.uhserver.com;Database=hideluz;Uid=hideko;Pwd=SwordMaster@10;";
+
         protected MySqlConnection connection = null;
 
         public void OpenConnection()
